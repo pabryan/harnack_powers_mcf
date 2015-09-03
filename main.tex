@@ -64,21 +64,21 @@ The following evolution equations and commutator identities hold
 \begin{enumerate}
   \item $\partial_tg_{ij}=-2\varphi h_{ij}$
   \item $\partial_tg^{ij}=2\varphi g^{im}g^{jn}h_{ij}=2\varphi h^{ij}$
+    \item $\partial_t h_{ij}=\nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+\lambda \varphi g_{ij}$
   \item $\partial_t h_i^j=\nabla^j\nabla_i\varphi+\varphi(h^2)_i^j+\lambda \varphi\delta_i^j$
+  \item \begin{align*}
+\partial_t h_{ij}=&\Box h_{ij}+\varphi^{kl}h_{rk}h_l^rh_{ij}-\varphi'fh_{ri}h_j^r-\varphi h_i^kh_{kj}\\
+&+\varphi^{kl,rs}\nabla_ih_{kl}\nabla_jh_{rs}\\
+&+\lambda \{(\varphi+\varphi'f)g_{ij}-\varphi^{kl}g_{kl}h_{ij}\}
+\end{align*}
   \item \begin{align*}
 \partial_t h_i^j=&\Box h_i^j+\varphi^{kl}h_{rk}h_l^rh_i^j-\varphi'fh_{ri}h^{rj}+\varphi h_i^kh_k^j\\
 &+\varphi^{kl,rs}\nabla_ih_{kl}\nabla^jh_{rs}\\
 &+\lambda \{(\varphi+\varphi'f)\delta_i^j-\varphi^{kl}g_{kl}h_i^j\}
 \end{align*}
-  \item $\partial_t h_{ij}=\nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+\lambda \varphi g_{ij}$
-\item \begin{align*}
-\partial_t h_{ij}=&\Box h_{ij}+\varphi^{kl}h_{rk}h_l^rh_{ij}-\varphi'fh_{ri}h_j^r-\varphi h_i^kh_{kj}\\
-&+\varphi^{kl,rs}\nabla_ih_{kl}\nabla_jh_{rs}\\
-&+\lambda \{(\varphi+\varphi'f)g_{ij}-\varphi^{kl}g_{kl}h_{ij}\}
-\end{align*}
   \item $\partial_t \varphi=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij}+\lambda \varphi\varphi^{ij}g_{ij}$
   \item \begin{align*}
-(\partial_t\Box-\Box\partial_t)\varphi=&\varphi^{ij,kl}\nabla_i\nabla_j\varphi(\nabla_k\nabla_l\varphi-\varphi(h^2)_{kl}+\lambda \varphi g_{kl})\\
+(\partial_t\Box-\Box\partial_t)\varphi=&\varphi^{ij,kl}\nabla_i\nabla_j\varphi(\nabla_k\nabla_l\varphi+\varphi(h^2)_{kl}+\lambda \varphi g_{kl})\\
 &+2\varphi\varphi^{ik}h_k^j\nabla_i\nabla_j\varphi+2\varphi^{ik}h_k^j\nabla_i\varphi\nabla_j\varphi+(1-\alpha)\varphi|\nabla \varphi|^2
 \end{align*}
 \item \begin{align*}
@@ -101,8 +101,8 @@ The following evolution equations and commutator identities hold
  Define $\gamma:=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij}-b^{ij}\nabla_i\varphi\nabla_j\varphi=\beta-b^{ij}\nabla_i\varphi\nabla_j\varphi.$ To prove the main theorem, we will apply the maximum principle to $t\gamma+\frac{\alpha\varphi}{\alpha+1}.$
 \begin{lemma}Under the flow we have
 \begin{align*}
-\partial_t (t\gamma+\frac{\alpha\varphi}{\alpha+1})=&\Box (t\gamma+\frac{\alpha\varphi}{\alpha+1}) +\left\{\frac{(\alpha+1)\gamma}{\alpha\varphi}+\varphi^{ij}(h^2)_{ij}+\lambda\varphi^{ij}g_{ij}\right\}(t\gamma+\frac{\alpha\varphi}{\alpha+1})\\
-&+\left\{\varphi^{mn,pq}+2\varphi^{mq}b^{np}-\frac{\alpha+1}{\alpha}\frac{\varphi^{mn}\varphi^{pq}}{\varphi}\right\}\eta_{mn}\eta_{pq}+t\lambda R,
+\partial_t (t\gamma+\frac{\alpha\varphi}{\alpha+1})=&\Box (t\gamma+\frac{\alpha\varphi}{\alpha+1})+\left\{\frac{(\alpha+1)\gamma}{\alpha\varphi}+\varphi^{ij}(h^2)_{ij}+\lambda\varphi^{ij}g_{ij}\right\}(t\gamma+\frac{\alpha\varphi}{\alpha+1})\\
+&+t\left\{\varphi^{mn,pq}+2\varphi^{mq}b^{np}-\frac{\alpha+1}{\alpha}\frac{\varphi^{mn}\varphi^{pq}}{\varphi}\right\}\eta_{mn}\eta_{pq}+t\lambda R,
 \end{align*}
 where $\eta_{mn}=\nabla_m\nabla_n\varphi+\varphi(h^2)_{mn}-b^{rs}\nabla_r\varphi\nabla_sh_{mn}$, and
 \begin{align*}
@@ -112,7 +112,7 @@ R:=&\varphi\Box(\varphi^{ij}g_{ij})+2\varphi^{ij}\nabla_i\varphi\nabla_j(\varphi
 &+\varphi^2\varphi^{ij,kl}g_{kl}(h^2)_{ij}+2\alpha\varphi^3.
 \end{align*}
 \end{lemma}
-\bibliographystyle{amsplain}
-\begin{thebibliography}{10}
+
+\bibliographystyle{amsplain}\begin{thebibliography}{10}
 \end{thebibliography}
 \end{document}
