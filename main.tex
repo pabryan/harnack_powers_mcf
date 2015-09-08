@@ -52,26 +52,72 @@
 
 \maketitle
 
-\section{Evolution equations}
-We consider the flow equation
-\eq{\dot{x}=-\p(f)\nu}
-in a space form of sectional curvature $\l,$ where $f$ is a 1-homogeneous, concave and inverse concave curvature function. Let
-\eq{\p^{ij}=\fr{\del\p}{\del h_{ij}}}
-and for a tensor $T,$
-\eq{\Box T=\p^{ij}T_{;ij},}
-where $_{;i}$ denotes differentiation $\nabla_{i}$ with respect to the L\'evi-Civita connection $\nabla.$
-The evolution equations in the following lemma are standard, compare \cite[p.~94-95]{Gerhardt:/2006}. \cref{EvInvh} can easily be derived from \cref{EvInvg} and \cref{EvCovh}, also compare the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
-\Theo{lemma}{Eveq1}{
+\section{Introduction}
 
-\eq{\label{Evg}\dot{g}_{ij}=-2\p h_{ij}.}
-\eq{\label{EvInvg}\dot{g}^{ij}=2\p h^{ij}.}
-\eq{\label{EvMixedh}\dot{h}^{j}_{i}={\p_{;i}}^{j}+\p h^{j}_{k}h^{k}_{i}+\l\p\d^{j}_{i}.}
-\eq{\label{EvCovh}\dot{h}_{ij}=\p_{;ij}-\p h^{k}_{i}h_{kj}+\l\p g_{ij}.}
-\eq{\label{Evphi}\dot{\p}-\Box\p=\p^{ij}h_{ik}h^{k}_{j}\p+\l\p^{ij}g_{ij}\p.}
-\eq{\label{EvInvh}\dot{b}^{ij}-\Box b^{ij}&=-\p^{rs}h_{rk}h^{k}_{s}b^{ij}+\br{\p'f+\p}g^{ij}-\l\br{\p'f+\p}b^{ir}b^{j}_{r}+\l\p^{kl}g_{kl}b^{ij}\\
-						&\hp{=}-\br{2b^{lq}\p^{kp}+\p^{kl,pq}}b^{ir}b^{js}h_{kl;r}h_{pq;s},}
-						where $(b^{ij})$ denotes the inverse of $(h_{ij}).$
-}
+We consider the evolution of a hypersurface $M^n$ by
+\[\partial_tx=-\varphi\nu,~ x:M^n\times[0,T)\to M_K,\]
+where \(M_K\) is the simply connected space form of constant sectional curvature \(K\) and where $\varphi$ is a function on positive symmetric matrices, evaluated at the Weingarten map,
+\[
+\varphi = \varphi(\mathcal{W}) = \varphi(h^j_i).
+\]
+We sometimes think of \(\varphi\) as a function of the metric and second fundamental form
+\[
+\varphi(g, h) = \varphi(g^{jk} h_{ik}).
+\]
+
+We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is homogeneous degree one, inverse concave (concave also?) and \(\alpha \in (0,1)\). 
+
+Our principal result is a Harnack inequality for these flows, extending the inequality in \cite{2015arXiv150802821B, bryanlouie} and inspired by \cite{MR1316556, MR1100812, MR1296393, MR1480081}. Namely, we prove that if \(\varphi = H^{\alpha}\) for \(0 < \alpha \leq 1\) we have
+
+\begin{theorem}
+If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
+\[
+\partial_tH^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
+\]
+If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
+\[
+\partial_tH^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
+\]
+\end{theorem}
+
+\section{Evolution equations}
+Define \(M_t:=x(M^n,t)\) and let $\nabla$ denote the Levi-Civita connection of $M_t$. Let 
+\[
+\varphi^{ij} = \fr{\partial\varphi}{\partial h_{ij}}, \quad \varphi^{ij,kl} = \fr{\partial^2\varphi}{\partial h_{kl} \partial h_{ij}}.
+\]
+and define the operator
+\[
+\Box = \varphi^{ij} \nabla_i \nabla_j
+\]
+
+The evolution equations in the following lemma are standard and can be found in many places. The basic tools are commuting derivatives using that \(\bar{R}_{ijkl} = K(\bar{g}_{ik}\bar{g}_{jl} - \bar{g}_{il}\bar{g}_{jk})\), the Gauss equation \(R_{ijkl} = \bar{R}_{ijkl} + h_{ik}h_{jl} - h_{jl}h_{ik}\) and the Codazzi equation \(\nabla_i h_{jk} = \nabla_j h_{ik}\). Compare \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
+
+\begin{lemma}
+The following evolution equations and commutator identities hold
+\begin{enumerate}
+  \item $\partial_tg_{ij}=-2\varphi h_{ij}$
+  \item $\partial_tg^{ij}=2\varphi g^{im}g^{jn}h_{ij}=2\varphi h^{ij}$
+    \item $\partial_t h_{ij}=\nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+\lambda \varphi g_{ij}$
+  \item $\partial_t h_i^j=\nabla^j\nabla_i\varphi+\varphi(h^2)_i^j+\lambda \varphi\delta_i^j$
+  \item \begin{align*}
+\partial_t h_{ij}=&\Box h_{ij}+\varphi^{kl}h_{rk}h_l^rh_{ij}-\varphi'fh_{ri}h_j^r-\varphi h_i^kh_{kj}\\
+&+\varphi^{kl,rs}\nabla_ih_{kl}\nabla_jh_{rs}\\
+&+\lambda \{(\varphi+\varphi'f)g_{ij}-\varphi^{kl}g_{kl}h_{ij}\}
+\end{align*}
+  \item \begin{align*}
+\partial_t h_i^j=&\Box h_i^j+\varphi^{kl}h_{rk}h_l^rh_i^j-\varphi'fh_{ri}h^{rj}+\varphi h_i^kh_k^j\\
+&+\varphi^{kl,rs}\nabla_ih_{kl}\nabla^jh_{rs}\\
+&+\lambda \{(\varphi+\varphi'f)\delta_i^j-\varphi^{kl}g_{kl}h_i^j\}
+\end{align*}
+  \item \begin{align*}
+\partial_t b^{ij} &= \Box b^{ij} - \p^{rs}h_{rk}h^{k}_{s}b^{ij}+\br{\p'f+\p}g^{ij}-\l\br{\p'f+\p}b^{ir}b^{j}_{r}+\l\p^{kl}g_{kl}b^{ij} \\
+& \quad -\br{2b^{lq}\p^{kp}+\p^{kl,pq}}b^{ir}b^{js}h_{kl;r}h_{pq;s}
+\end{align*}
+where $(b^{ij})$ denotes the inverse of $(h_{ij}).$
+
+  \item $\partial_t \varphi=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij}+\lambda \varphi\varphi^{ij}g_{ij}$
+\end{enumerate}
+\end{lemma}
 
 \Theo{lemma}{EvGamma}{
 The Christoffel symbols evolve according to
