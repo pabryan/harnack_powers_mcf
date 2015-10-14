@@ -58,7 +58,7 @@ We consider the evolution of a hypersurface $M^n$ by
 \[
 \partial_tx=-\varphi\nu,~ x:M^n\times[0,T)\to M_K,
 \]
-where \((M_K, \bar{g})\) is the simply connected space form of constant sectional curvature \(K\) and where $\varphi$ is a function on positive symmetric matrices, evaluated at the Weingarten map,
+where \((M_K\) is the simply connected space form of constant sectional curvature \(K\) and where $\varphi$ is a function on positive symmetric matrices, evaluated at the Weingarten map,
 \[
 \varphi = \varphi(\mathcal{W}) = \varphi(h^j_i).
 \]
@@ -80,8 +80,40 @@ If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
 \]
 \end{theorem}
 
-\section{Evolution equations}
-Define \(M_t := x(M^n,t)\) and let $\nabla$ denote the Levi-Civita connection of $M_t$. Let 
+\section{Preliminaries}
+
+Define \(M_t := x(M^n,t)\) and let $\nabla$ denote the Levi-Civita connection of $M_t$. Let $g = \{g_{ij}\}$, $A = \{h_{ij}\},$ and $Rm_{ijkl}$ denote, in order, the induced metric, the second fundamental form, and the curvature tensor of $M^n$. The mean curvature of $M^n$ is the trace of the second fundamental form with respect to $g$, $H = g^{ij}h_{ij}$. Let $\overline{g}$ and $\overline{Rm}_{\alpha\beta\gamma\theta}$ denote, respectively, the metric and the curvature tensor of $\mathbb{S}^{n+1}$. Greek indices run through $\{0,\cdots,n\}$ and Latin indices belong to the set $\{1,\cdots,n\}.$
+
+Write $\nu$ for the outer unit normal to $M_t.$ For a fixed time, we choose a local orthonormal frame $\{\partial_0=\nu, \cdots, \partial_i=\frac{\partial F(\cdot,t)}{\partial x_i}, \cdots, \partial_n\}$ in $\mathbb{S}^{n+1}.$ We use the following standard notation
+\[
+h_i^j = g^{mj}h_{im}
+\]
+\[
+(h^2)_i^j = g^{mj}g^{rs}h_{ir}h_{sm}
+\]
+\[
+|A|^2 = g^{ij}g^{kl}h_{ik}h_{lj} = h_{ij}h^{ij}
+\]
+\[
+C = g^{ij}g^{kl}g^{mn}h_{ik}h_{lm}h_{nj} = h_i^kh_k^lh_l^i.
+\]
+Here, $\{g^{ij}\}$ is the inverse matrix of $\{g_{ij}\}.$ For a strictly convex hypersurface, \(A\) is strictly positive-definite and hence has a stricltly positive-definite inverse, which we denote by \(b = \{b^{ij}\}\).
+
+
+The relations between $A$, $Rm$, and $\overline{Rm}$ are given by the Gau{\ss} and Codazzi equations:
+\[
+Rm_{ijkl} =\overline{Rm}_{ijkl} +h_{ik}h_{jl} - h_{il}h_{jk}
+\]
+\[
+\nabla_ih_{jk} = \nabla_{k}h_{ij}.
+\]
+Moreover, $\nabla_i$ and $\Delta$ commute as follows
+\[
+(\nabla_i\Delta - \Delta\nabla_i)f = -Rc_i^j \nabla_j f
+\]
+for all smooth functions on $M^n.$
+
+Let 
 \[
 \varphi^{ij} = \fr{\partial\varphi}{\partial h_{ij}}, \quad \varphi^{ij,kl} = \fr{\partial^2\varphi}{\partial h_{kl} \partial h_{ij}}.
 \]
@@ -89,7 +121,8 @@ and define the operator
 \[
 \Box = \varphi^{ij} \nabla_i \nabla_j.
 \]
-For a strictly convex hypersurface, \(h\) is strictly positive-definite and hence has a stricltly positive-definite inverse, which we denote by \(b\), or in coordinates as \(b^{ij}\).
+
+\section{Evolution equations}
 
 The evolution equations in the following lemma are standard and can be found in many places \cite{MR1316556, MR1100812, MR1296393, MR1480081}. The basic tools are commuting derivatives using that \(\bar{R}_{ijkl} = K(\bar{g}_{ik}\bar{g}_{jl} - \bar{g}_{il}\bar{g}_{jk})\) for space forms, the Gauss equation \(R_{ijkl} = \bar{R}_{ijkl} + h_{ik}h_{jl} - h_{jl}h_{ik}\) and the Codazzi equation \(\nabla_i h_{jk} = \nabla_j h_{ik}\) on spaceforms. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
 
