@@ -127,11 +127,12 @@ and define the operator
 The evolution equations in the following lemma are standard and can be found in many places \cite{MR1316556, MR1100812, MR1296393, MR1480081}. The basic tools are commuting derivatives using that \(\bar{R}_{ijkl} = K(\bar{g}_{ik}\bar{g}_{jl} - \bar{g}_{il}\bar{g}_{jk})\) for space forms, the Gauss equation \(R_{ijkl} = \bar{R}_{ijkl} + h_{ik}h_{jl} - h_{jl}h_{ik}\) and the Codazzi equation \(\nabla_i h_{jk} = \nabla_j h_{ik}\) on spaceforms. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
 
 \begin{lemma}
-\label{lem:evolution_commutation}
-The following evolution equations and commutator identities hold
+\label{lem:evolution}
+The following evolution equations hold
 \begin{enumerate}
   \item $\partial_tg_{ij} = -2\varphi h_{ij}$
   \item $\partial_tg^{ij} = 2\varphi g^{im}g^{jn}h_{ij} = 2\varphi h^{ij}$
+  \item $\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - g^{kl} h_{li} \nabla_j \varphi - g^{kl} h_{lj} \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi$
   \item $\partial_t h_{ij} = \nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+K \varphi g_{ij}$
   \item $\partial_t h_i^j = \nabla^j\nabla_i\varphi+\varphi(h^2)_i^j+K \varphi\delta_i^j$
   \item \begin{align*}
@@ -152,36 +153,6 @@ The following evolution equations and commutator identities hold
   \item $\partial_t \varphi=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}$
 \end{enumerate}
 \end{lemma}
-
-\begin{lemma}
-\label{EvGamma}
-The Christoffel symbols evolve according to
-\begin{equation}
-\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - g^{kl} h_{li} \nabla_j \varphi - g^{kl} h_{lj} \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi.
-\end{equation}
-\end{lemma}
-
-\begin{proof}
-In local coordinates, we have
-\[
-\G^{k}_{ij} = \frac{1}{2} g^{kl} \left(\partial_j g_{il} + \partial_i g_{jl} - \partial_l g_{ij}\right).
-\]
-Since $\partial_t \G^{k}_{ij}$ is a tensor, we may calculate using normal coordinates at any given point, at which \(\G^k_{ij} = 0\). Then we have
-\[
-\frac{1}{2} \partial_t g^{kl} (\partial_j g_{il} + \partial_i g_{jl} - \partial_l g_{ij}) = 2\varphi g^{kr} h_{rs} \G^s_{ij} = 0.
-\]
-from lemma \eqref{lem:evolution_commutation}. Now commuting derivatives \([\partial_t, \partial_i] = 0\), and using the Codazzi equations we obtain
-\[
-\begin{split}
-\partial_t {\G}^{k}_{ij} & = \frac{1}{2} g^{kl} \left(\partial_j \partial_t g_{il} + \partial_i \partial_t g_{jl} - \partial_l \partial_t g_{ij}\right) \\
-&= - g^{kl} \left(\partial_j (\varphi h_{il}) + \partial_i (\varphi h_{jl}) - \partial_l (\varphi h_{ij})\right) \\
-&= -\varphi g^{kl} \partial_l h_{ij} - g^{kl} h_{il} \partial_j \varphi  - g^{kl} h_{lj} \partial_i \varphi + g^{kl} h_{ij} \partial_i \varphi.
-\end{split}
-\]
-The result follows since in normal coordinates, \(\nabla_i = \partial_i\) at our given point. 
-\end{proof}
-
-
 
 \Theo{lemma}{deltBox}{
 There holds
