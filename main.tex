@@ -62,10 +62,6 @@ where \((M_K\) is the simply connected space form of constant sectional curvatur
 \[
 \varphi = \varphi(\mathcal{W}) = \varphi(h^j_i).
 \]
-We sometimes think of \(\varphi\) as a function of the metric and second fundamental form
-\[
-\varphi(g, h) = \varphi(g^{jk} h_{ik}).
-\]
 
 We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is homogeneous degree one, inverse concave (concave also?) and \(\alpha \in (0,1)\). Our principal result is a Harnack inequality for these flows, extending the inequality in \cite{2015arXiv150802821B, bryanlouie} and inspired by \cite{MR1316556, MR1100812, MR1296393, MR1480081}. Namely, we prove that if \(\varphi = H^{\alpha}\) for \(0 < \alpha \leq 1\) we have
 
@@ -99,7 +95,6 @@ C = g^{ij}g^{kl}g^{mn}h_{ik}h_{lm}h_{nj} = h_i^kh_k^lh_l^i.
 \]
 Here, $\{g^{ij}\}$ is the inverse matrix of $\{g_{ij}\}.$ For a strictly convex hypersurface, \(A\) is strictly positive-definite and hence has a stricltly positive-definite inverse, which we denote by \(b = \{b^{ij}\}\).
 
-
 The relations between $A$, $Rm$, and $\overline{Rm}$ are given by the Gau{\ss} and Codazzi equations:
 \[
 Rm_{ijkl} =\overline{Rm}_{ijkl} +h_{ik}h_{jl} - h_{il}h_{jk}
@@ -113,14 +108,42 @@ Moreover, $\nabla_i$ and $\Delta$ commute as follows
 \]
 for all smooth functions on $M^n.$
 
-Let 
+Let us write
 \[
-\varphi^{ij} = \fr{\partial\varphi}{\partial h_{ij}}, \quad \varphi^{ij,kl} = \fr{\partial^2\varphi}{\partial h_{kl} \partial h_{ij}}.
+\varphi^{i}_{j} = \frac{\partial \varphi}{\partial h^{j}_{i}}
+\]
+for the first partial derivatives of \(\varphi\). We may also think of \(\varphi\) as a function of the metric and second fundamental form
+\[
+\varphi(g, h) = \varphi(g^{ik} h_{kj}).
+\]
+From this point of view, for the first and second partial derivatives, let us write
+\[
+\varphi^{ij} = \frac{\partial\varphi}{\partial h_{ij}}, \quad \varphi^{ij,kl} = \fr{\partial^2\varphi}{\partial h_{kl} \partial h_{ij}}.
 \]
 and define the operator
 \[
 \Box = \varphi^{ij} \nabla_i \nabla_j.
 \]
+First derivatives from the two perspectives is related by
+\begin{equation}
+\label{eq:delh}
+\varphi^{ij} = \frac{\partial \phi}{\partial h_l^k} \frac{\partial h_l^k}{\partial h_{ij}} = \varphi^l_k g^{ik} \delta^j_l = g^{ik} \varphi^j_k.
+\end{equation}
+and
+\begin{equation}
+\label{eq:delg}
+\frac{\partial\varphi}{\partial g_{ij}} = \varphi^{l}_{k} \frac{\partial h^{k}_{l}}{\partial g_{ij}} = -\varphi^{l}_{k} g^{ki} g^{rj} h_{rl} = -\varphi^{li}h^{j}_{l}.
+\end{equation}
+We will also need the following particular case for second derivatives
+\begin{equation}
+\label{eq:delhdelg}
+\begin{split}
+\frac{\partial \varphi^{ij}}{\partial g_{kl}} &= \frac{\partial}{\partial g_{kl}} \left(g^{sj} \varphi^{i}_{s} \right) = - g^{kj}g^{sl} \varphi^{i}_{s} - g^{sj} (\phi^i_s)^{mk} h^l_m \\
+&= - g^{kj} \varphi^{il} - g^{sj} g_{ns} \phi^{in,mk} h^l_m \\
+&= - g^{kj} \varphi^{il} - \phi^{ij,mk} h^l_m
+\end{split}
+\end{equation}
+where we applied equation \eqref{eq:delg} to \(\phi^i_s\) in the first line.
 
 \section{Evolution equations}
 
@@ -167,14 +190,6 @@ There holds
 
 
 \begin{proof}
-Considering the curvature function $\p$ to depend on $(h_{ij})$ and $(g_{ij}),$
-\eq{\p=\p(h_{ij},g_{ij}),}
-we denote
-\eq{\p^{ij}=\fr{\del \p}{\del h_{ij}},\quad \p^{ij,kl}=\fr{\del^{2}\p}{\del h_{ij}\del h_{kl}},}
-which are tensors, in particular we have
-\eq{\p^{i}_{j}\equiv \fr{\del \p}{\del h^{j}_{i}}=\p^{ik}g_{kj}.}
-Furthermore we have
-\eq{\fr{\del\p}{\del g_{ij}}=\p^{l}_{k}\fr{\del h^{k}_{l}}{\del g_{ij}}=-\p^{l}_{k}g^{ki}g^{rj}h_{rl}=-\p^{li}h^{j}_{l}.}
 Thus
 \eq{\label{deltBox1}\del_{t}\p^{ij}&=\p^{ij,kl}\dot{h}_{kl}+\fr{\del\p^{ij}}{\del g_{kl}}\dot{g}_{kl}\\
 			&=\p^{ij,kl}\br{\dot{h}_{kl}+2\p h_{lm}h^{m}_{k}}+2\p\p^{jk}g^{li}h_{kl}\\
