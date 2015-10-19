@@ -58,57 +58,63 @@ We consider the evolution of a hypersurface $M^n$ by
 \[
 \partial_tx=-\varphi\nu,~ x:M^n\times[0,T)\to M_K,
 \]
-where \((M_K\) is the simply connected space form of constant sectional curvature \(K\) and where $\varphi$ is a function on positive symmetric matrices, evaluated at the Weingarten map,
+where \(M_K\) is the simply connected space form of constant sectional curvature \(K\) and where $\varphi$ is a function on positive, symmetric linear transformations, evaluated at the Weingarten map,
 \[
-\varphi = \varphi(\mathcal{W}) = \varphi(h^j_i).
+\varphi = \varphi(\mathcal{W}).
 \]
+Equivalently, \(\varphi\) is a symmetric function on the eigenvalues of \(\mathcal{W}\) (principal curvatures) \(\kappa_1, \cdots, \kappa_n\).
 
 We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is homogeneous degree one, inverse concave (concave also?) and \(\alpha \in (0,1)\). Our principal result is a Harnack inequality for these flows, extending the inequality in \cite{2015arXiv150802821B, bryanlouie} and inspired by \cite{MR1316556, MR1100812, MR1296393, MR1480081}. Namely, we prove that if \(\varphi = H^{\alpha}\) for \(0 < \alpha \leq 1\) we have
 
 \begin{theorem}
 If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
 \[
-\partial_tH^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
+\partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
 \]
 If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
 \[
-\partial_tH^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
+\partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
 \]
 \end{theorem}
 
 \section{Preliminaries}
 
-Define \(M_t := x(M^n,t)\) and let $\nabla$ denote the Levi-Civita connection of $M_t$. Let $g = \{g_{ij}\}$, $A = \{h_{ij}\},$ and $Rm_{ijkl}$ denote, in order, the induced metric, the second fundamental form, and the curvature tensor of $M^n$. The mean curvature of $M^n$ is the trace of the second fundamental form with respect to $g$, $H = g^{ij}h_{ij}$. Let $\overline{g}$ and $\overline{Rm}_{\alpha\beta\gamma\theta}$ denote, respectively, the metric and the curvature tensor of $\mathbb{S}^{n+1}$. Greek indices run through $\{0,\cdots,n\}$ and Latin indices belong to the set $\{1,\cdots,n\}.$
+Let $\overline{g}$ and $\overline{Rm}$ denote, respectively, the metric and the curvature tensor of $M_K$. Define \(M_t := x(M^n,t)\), and let \(g = x_t^{\ast} \overline{g}\) denote the induced metric on \(M\) with $\nabla$ the corresponding Levi-Civita connection. Write $\nu$ for the outer unit normal to $M_t$ and let \(\{\partial_i\}_{i=1}^n\) be a local frame on \(M\) which extends to a frame \(\{\partial_0 = \nu, (x_t)_{\ast} \partial_1, \cdots, (x_t)_{\ast} \partial_n\}\) on \(M_K\) in a neighbourhood of \(M_t\). 
 
-Write $\nu$ for the outer unit normal to $M_t.$ For a fixed time, we choose a local orthonormal frame $\{\partial_0=\nu, \cdots, \partial_i=\frac{\partial F(\cdot,t)}{\partial x_i}, \cdots, \partial_n\}$ in $\mathbb{S}^{n+1}.$ We use the following standard notation
+Let Greek indices range from \(0\) to \(n\) and Latin indices range from \(1\) to \(n\). The Riemann curvature tensor of \(M_K\) satisfies \(\bar{R}_{\alpha\beta\gamma\theta} = K(\bar{g}_{\alpha\gamma}\bar{g}_{\beta\delta} - \bar{g}_{\alpha\theta}\bar{g}_{\beta\gamma})\). We may write the metric $g = \{g_{ij}\}$, second fundamental form $A = \{h_{ij}\}$, the Weingarten map $\mathcal{W} = h^i_j = g^{mi} h_{jm}$ and the Riemann curvature tensor $Rm_{ijkl}$ with respect to the given frame. We shall write \(\nabla_i\) for covariant derivatives and also use the notation \(\nabla^i = g^{ik} \nabla_k\). Second covariant derivatives will be written \(\nabla^2_{ij}\) and \((\nabla^2)^i_j\). The mean curvature of $M^n$ is the trace of the Weingarten map (equivalently the trace of the second fundamental form with respect to $g$), $H = g^{ij}h_{ij} = h^i_i$.
+
+We use the following standard notation
 \[
-h_i^j = g^{mj}h_{im}
+(h^2)_i^j = g^{mj}g^{rs}h_{ir}h_{sm},
 \]
 \[
-(h^2)_i^j = g^{mj}g^{rs}h_{ir}h_{sm}
+(h^2)_{ij} = g_{kj} (h^2)_i^k = h^k_i h_{kj},
 \]
 \[
-|A|^2 = g^{ij}g^{kl}h_{ik}h_{lj} = h_{ij}h^{ij}
+|A|^2 = g^{ij}g^{kl}h_{ik}h_{lj} = h_{ij}h^{ij},
 \]
 \[
 C = g^{ij}g^{kl}g^{mn}h_{ik}h_{lm}h_{nj} = h_i^kh_k^lh_l^i.
 \]
-Here, $\{g^{ij}\}$ is the inverse matrix of $\{g_{ij}\}.$ For a strictly convex hypersurface, \(A\) is strictly positive-definite and hence has a stricltly positive-definite inverse, which we denote by \(b = \{b^{ij}\}\).
+Here, $\{g^{ij}\}$ is the inverse matrix of $\{g_{ij}\}.$ For a strictly convex hypersurface, \(A\) is strictly positive-definite and hence has a strictly positive-definite inverse, which we denote by \(b = \{b^{ij}\}\).
 
 The relations between $A$, $Rm$, and $\overline{Rm}$ are given by the Gau{\ss} and Codazzi equations:
 \[
-Rm_{ijkl} =\overline{Rm}_{ijkl} +h_{ik}h_{jl} - h_{il}h_{jk}
+\begin{split}
+Rm_{ijkl} &= \overline{Rm}_{ijkl} + h_{ik}h_{jl} - h_{il}h_{jk} \\
+&= K(\bar{g}_{ik}\bar{g}_{jl} - \bar{g}_{il}\bar{g}_{jk}) + h_{ik}h_{jl} - h_{il}h_{jk},
+\end{split}
 \]
 \[
-\nabla_ih_{jk} = \nabla_{k}h_{ij}.
+\nabla_i h_{jk} = \nabla_k h_{ij},
 \]
-Moreover, $\nabla_i$ and $\Delta$ commute as follows
+valid for space forms. Moreover, $\nabla_i$ and $\Delta$ commute as follows
 \[
-(\nabla_i\Delta - \Delta\nabla_i)f = -Rc_i^j \nabla_j f
+(\nabla_i\Delta - \Delta\nabla_i)f = -Rc_i^j \nabla_j f 
 \]
 for all smooth functions on $M^n.$
 
-Let us write
+We also need some notation for derivatives of the speed \(\phi\). Let us write
 \[
 \varphi^{i}_{j} = \frac{\partial \varphi}{\partial h^{j}_{i}}
 \]
@@ -122,9 +128,15 @@ From this point of view, for the first and second partial derivatives, let us wr
 \]
 and define the operator
 \[
-\Box = \varphi^{ij} \nabla_i \nabla_j.
+\Box = \varphi^{ij} \nabla^2_{ij}.
 \]
-First derivatives from the two perspectives is related by
+
+We frequently make use, without comment, of the formula for differentiating an inverse
+\[
+\frac{\partial g^{ij}}{\partial g_{kl}} = - g^{kj} g^{il}.
+\]
+
+First derivatives of \(\phi\) from the two perspectives are related by
 \begin{equation}
 \label{eq:delh}
 \varphi^{ij} = \frac{\partial \phi}{\partial h_l^k} \frac{\partial h_l^k}{\partial h_{ij}} = \varphi^l_k g^{ik} \delta^j_l = g^{ik} \varphi^j_k.
@@ -134,7 +146,7 @@ and
 \label{eq:delg}
 \frac{\partial\varphi}{\partial g_{ij}} = \varphi^{l}_{k} \frac{\partial h^{k}_{l}}{\partial g_{ij}} = -\varphi^{l}_{k} g^{ki} g^{rj} h_{rl} = -\varphi^{li}h^{j}_{l}.
 \end{equation}
-We will also need the following particular case for second derivatives
+We will also need the mixed second derivatives,
 \begin{equation}
 \label{eq:delhdelg}
 \begin{split}
@@ -147,33 +159,33 @@ where we applied equation \eqref{eq:delg} to \(\phi^i_s\) in the first line.
 
 \section{Evolution equations}
 
-The evolution equations in the following lemma are standard and can be found in many places \cite{MR1316556, MR1100812, MR1296393, MR1480081}. The basic tools are commuting derivatives using that \(\bar{R}_{ijkl} = K(\bar{g}_{ik}\bar{g}_{jl} - \bar{g}_{il}\bar{g}_{jk})\) for space forms, the Gauss equation \(R_{ijkl} = \bar{R}_{ijkl} + h_{ik}h_{jl} - h_{jl}h_{ik}\) and the Codazzi equation \(\nabla_i h_{jk} = \nabla_j h_{ik}\) on spaceforms. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
+The evolution equations in the following lemma are standard and can be found in many places \cite{MR1316556, MR1100812, MR1296393, MR1480081}. The basic tools are commuting derivatives, using the definition of the curvature tensor for space forms, the Gauss equation, and the Codazzi equation as described in the previous section. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
 
 \begin{lemma}
 \label{lem:evolution}
 The following evolution equations hold
 \begin{enumerate}
   \item \label{eq:delt_metric} $\partial_tg_{ij} = -2\varphi h_{ij}$
-  \item \label{eq:delt_inversemetric} $\partial_tg^{ij} = 2\varphi g^{im}g^{jn}h_{ij} = 2\varphi h^{ij}$
-  \item \label{eq:delt_christoffel} $\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - g^{kl} h_{li} \nabla_j \varphi - g^{kl} h_{lj} \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi$
-  \item \label{eq:delt_sff} $\partial_t h_{ij} = \nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+K \varphi g_{ij}$
-  \item \label{eq:delt_weingarten} $\partial_t h_i^j = \nabla^j\nabla_i\varphi+\varphi(h^2)_i^j+K \varphi\delta_i^j$
+  \item \label{eq:delt_inversemetric} $\partial_t g^{ij} = 2\varphi h^{ij}$
+  \item \label{eq:delt_christoffel} $\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - h^k_i \nabla_j \varphi - h^k_j \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi$
+  \item \label{eq:delt_sff} $\partial_t h_{ij} = \nabla^2_{ji} \varphi - \varphi(h^2)_{ij} + K \varphi g_{ij}$
+  \item \label{eq:delt_weingarten} $\partial_t h_i^j = (\nabla^2)^j_i\varphi + \varphi(h^2)_i^j + K \varphi\delta_i^j$
   \item \label{eq:delt_sff_box} \begin{align*}
-\partial_t h_{ij} &= \Box h_{ij} + \varphi^{kl}h_{rk}h_l^rh_{ij} - \varphi'fh_{ri}h_j^r - \varphi h_i^kh_{kj} \\
-& \quad + \varphi^{kl,rs}\nabla_ih_{kl}\nabla_jh_{rs} \\
+\partial_t h_{ij} &= \Box h_{ij} + \varphi^{kl} (h^2)_{kl} h_{ij} - (\varphi'f + \varphi) (h^2)_{ij} \\
+& \quad + \varphi^{kl,rs}\nabla_i h_{kl}\nabla_j h_{rs} \\
 & \quad + K \{(\varphi + \varphi'f) g_{ij} - \varphi^{kl}g_{kl}h_{ij}\}
 \end{align*}
   \item \label{eq:delt_weingarten_box} \begin{align*}
-\partial_t h_i^j &= \Box h_i^j + \varphi^{kl}h_{rk}h_l^rh_i^j - \varphi'fh_{ri}h^{rj} + \varphi h_i^kh_k^j \\
-& \quad + \varphi^{kl,rs}\nabla_ih_{kl}\nabla^jh_{rs} \\
+\partial_t h_i^j &= \Box h_i^j + \varphi^{kl} (h^2)_{kl} h_i^j - (\varphi'f - \varphi) (h^2)_i^j \\
+& \quad + \varphi^{kl,rs}\nabla_i h_{kl}\nabla^j h_{rs} \\
 & \quad + K \{(\varphi + \varphi'f) \delta_i^j - \varphi^{kl}g_{kl}h_i^j\}
 \end{align*}
   \item \label{eq:delt_inversesff} \begin{align*}
-\partial_t b^{ij} &= \Box b^{ij} - \varphi^{rs}h_{rk}h^{k}_{s}b^{ij} + (\varphi'f+\varphi) g^{ij} \\  
-& \quad - \br{2b^{lq}\varphi^{kp} + \varphi^{kl,pq}}b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
+\partial_t b^{ij} &= \Box b^{ij} - \varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi'f + \varphi) g^{ij} \\  
+& \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
 & \quad - K \{(\varphi + \varphi'f) b^{ir}b^{j}_{r} + \varphi^{kl}g_{kl}b^{ij}\}
 \end{align*}
-  \item \label{eq:delt_speed} $\partial_t \varphi=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}$
+  \item \label{eq:delt_speed} $\partial_t \varphi = \Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}$
 \end{enumerate}
 \end{lemma}
 
@@ -205,7 +217,7 @@ We obtain from equation \eqref{eq:deltBox} and the evolution of the Christoffel 
 \left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi + \varphi^{ij} \left(\partial_{t} \nabla^2_{i,j} \varphi - \nabla^2_{i,j} \partial_t \varphi\right) \\
 &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi - \varphi^{ij}\partial_t \G^{k}_{ij} \nabla_k \varphi \\
 &= \left(\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) \nabla^2_{i,j} \varphi \\
-&\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + g^{kl} h_{li} \nabla_j \varphi + g^{kl} h_{lj} \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right)
+&\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + h^k_i \nabla_j \varphi + h^k_j \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right)
 \end{split}
 \]
 \end{proof}
