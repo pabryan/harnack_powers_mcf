@@ -190,15 +190,25 @@ There holds
 
 
 \begin{proof}
-Thus
-\eq{\label{deltBox1}\del_{t}\p^{ij}&=\p^{ij,kl}\dot{h}_{kl}+\fr{\del\p^{ij}}{\del g_{kl}}\dot{g}_{kl}\\
-			&=\p^{ij,kl}\br{\dot{h}_{kl}+2\p h_{lm}h^{m}_{k}}+2\p\p^{jk}g^{li}h_{kl}\\
-			&=\p^{ij,kl}\br{\dot{h}_{kl}+2\p h_{lm}h^{m}_{k}}+2\p\p^{jk}h^{i}_{k}.}
-We obtain from (3) in Lemma \ref{lem:evolution},
-\eq{\br{\del_{t}\Box-\Box\del_{t}}\p&=\br{\del_{t}\p^{ij}}\p_{;ij}+\p^{ij}\br{\del_{t}\p_{;ij}-\dot{\p}_{;ij}}\\
-							&=\br{\del_{t}\p^{ij}}\p_{;ij}-\p^{ij}\dot{\G}^{k}_{ij}\p_{;k}\\
-							&=2\p h^{i}_{k}\p^{kj}\p_{;ij}+\p^{ij,rs}\br{\dot{h}_{rs}+2\p h_{rm}h^{m}_{s}}\p_{;ij}\\
-							&\hp{=}+\p\p^{ij}h_{ij;l}g^{kl}\p_{;k}+2\p^{ij}g^{kl}h_{li}\p_{;j}\p_{;k}-\p^{ij}h_{ij}g^{kl}\p_{;l}\p_{;k}. }
+First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove useful later. From equation \eqref{eq:delhdelg} and the evolution of the metric (Lemma \ref{lem:evolution}, (1)), we compute
+\begin{equation}
+\label{eq:deltBox}
+\begin{split}
+\partial_{t} \varphi^{ij} &= \varphi^{ij,kl} \partial_t h_{kl} + \frac{\partial\varphi^{ij}}{\partial g_{kl}} \partial_t g_{kl} \\
+&= \varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi - \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi \varphi^{ij,kl} h_{lm}h^{m}_{k} + 2\varphi\varphi^{jk}g^{li}h_{kl} \\
+&=\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}.
+\end{split}
+\end{equation}
+
+We obtain from equation \eqref{eq:deltBox} and the evolution of the Christoffel symbols (Lemma \ref{lem:evolution} (3)),
+\[
+\begin{split}
+\left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi + \varphi^{ij} \left(\partial_{t} \nabla^2_{i,j} \varphi - \nabla^2_{i,j} \partial_t \varphi\right) \\
+&= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi - \varphi^{ij}\partial_t \G^{k}_{ij} \nabla_k \varphi \\
+&= \left(\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) \nabla^2_{i,j} \varphi \\
+&\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + g^{kl} h_{li} \nabla_j \varphi + g^{kl} h_{lj} \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right)
+\end{split}
+\]
 \end{proof}
 
 \Theo{lemma}{Evbeta}{
@@ -212,7 +222,7 @@ satisfies
 				&\hp{=}+\l\p^{ij,rs}g_{rs}\br{\p_{;ij}\p+h_{ik}h^{k}_{j}\p^{2}}+2\l\p^{ij}h_{ij}\p^{2}.}
 }
 
-\pf{We will need the following auxillary calculation, where we use \cref{deltBox1}.
+\pf{We will need the following auxillary calculation, where we use \cref{eq:deltBox}.
 \eq{\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}}&=\del_{t}\p^{ij}h_{ik}h^{k}_{j}+\p^{ij}\dot{h}_{ik}h^{k}_{j}+\p^{ij}h_{ik}\dot{h}^{k}_{j}\\
 				&=\p^{ij,kl}\br{\dot{h}_{kl}+2\p h_{kr}h^{r}_{l}}h_{ir}h^{r}_{j}+2\p\p^{jk}h^{i}_{k}h_{ir}h^{r}_{j}\\
 				&\hp{=}+\p^{ij}\br{\p_{;ik}-\p h^{r}_{i}h_{rk}+\l\p g_{ik}}h^{k}_{j}\\
