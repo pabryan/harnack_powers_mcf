@@ -153,33 +153,33 @@ The evolution equations in the following lemma are standard and can be found in 
 \label{lem:evolution}
 The following evolution equations hold
 \begin{enumerate}
-  \item $\partial_tg_{ij} = -2\varphi h_{ij}$
-  \item $\partial_tg^{ij} = 2\varphi g^{im}g^{jn}h_{ij} = 2\varphi h^{ij}$
-  \item $\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - g^{kl} h_{li} \nabla_j \varphi - g^{kl} h_{lj} \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi$
-  \item $\partial_t h_{ij} = \nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+K \varphi g_{ij}$
-  \item $\partial_t h_i^j = \nabla^j\nabla_i\varphi+\varphi(h^2)_i^j+K \varphi\delta_i^j$
-  \item \begin{align*}
+  \item \label{eq:delt_metric} $\partial_tg_{ij} = -2\varphi h_{ij}$
+  \item \label{eq:delt_inversemetric} $\partial_tg^{ij} = 2\varphi g^{im}g^{jn}h_{ij} = 2\varphi h^{ij}$
+  \item \label{eq:delt_christoffel} $\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - g^{kl} h_{li} \nabla_j \varphi - g^{kl} h_{lj} \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi$
+  \item \label{eq:delt_sff} $\partial_t h_{ij} = \nabla_j\nabla_i\varphi-\varphi(h^2)_{ij}+K \varphi g_{ij}$
+  \item \label{eq:delt_weingarten} $\partial_t h_i^j = \nabla^j\nabla_i\varphi+\varphi(h^2)_i^j+K \varphi\delta_i^j$
+  \item \label{eq:delt_sff_box} \begin{align*}
 \partial_t h_{ij} &= \Box h_{ij} + \varphi^{kl}h_{rk}h_l^rh_{ij} - \varphi'fh_{ri}h_j^r - \varphi h_i^kh_{kj} \\
 & \quad + \varphi^{kl,rs}\nabla_ih_{kl}\nabla_jh_{rs} \\
 & \quad + K \{(\varphi + \varphi'f) g_{ij} - \varphi^{kl}g_{kl}h_{ij}\}
 \end{align*}
-  \item \begin{align*}
+  \item \label{eq:delt_weingarten_box} \begin{align*}
 \partial_t h_i^j &= \Box h_i^j + \varphi^{kl}h_{rk}h_l^rh_i^j - \varphi'fh_{ri}h^{rj} + \varphi h_i^kh_k^j \\
 & \quad + \varphi^{kl,rs}\nabla_ih_{kl}\nabla^jh_{rs} \\
 & \quad + K \{(\varphi + \varphi'f) \delta_i^j - \varphi^{kl}g_{kl}h_i^j\}
 \end{align*}
-  \item \begin{align*}
+  \item \label{eq:delt_inversesff} \begin{align*}
 \partial_t b^{ij} &= \Box b^{ij} - \varphi^{rs}h_{rk}h^{k}_{s}b^{ij} + (\varphi'f+\varphi) g^{ij} \\  
 & \quad - \br{2b^{lq}\varphi^{kp} + \varphi^{kl,pq}}b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
 & \quad - K \{(\varphi + \varphi'f) b^{ir}b^{j}_{r} + \varphi^{kl}g_{kl}b^{ij}\}
 \end{align*}
-  \item $\partial_t \varphi=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}$
+  \item \label{eq:delt_speed} $\partial_t \varphi=\Box \varphi+\varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}$
 \end{enumerate}
 \end{lemma}
 
 \begin{proposition}
 \label{prop:deltBox}
-There holds
+The following commutation relation holds
 \[
 \begin{split}
 (\partial_{t}\Box - \Box\partial_{t}) \varphi &= 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
@@ -188,9 +188,8 @@ There holds
 \]
 \end{proposition}
 
-
 \begin{proof}
-First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove useful later. From equation \eqref{eq:delhdelg} and the evolution of the metric (Lemma \ref{lem:evolution}, (1)), we compute
+First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove useful later. From the mixed derivative equation \eqref{eq:delhdelg}, the evolution of the metric (Lemma \ref{lem:evolution}, \eqref{eq:delt_metric}), and the evolution of the second fundamental form (Lemma \ref{lem:evolution}, \eqref{eq:delt_sff}) we compute
 \begin{equation}
 \label{eq:deltBox}
 \begin{split}
@@ -200,7 +199,7 @@ First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove
 \end{split}
 \end{equation}
 
-We obtain from equation \eqref{eq:deltBox} and the evolution of the Christoffel symbols (Lemma \ref{lem:evolution} (3)),
+We obtain from equation \eqref{eq:deltBox} and the evolution of the Christoffel symbols (Lemma \ref{lem:evolution}, \eqref{eq:delt_christoffel}),
 \[
 \begin{split}
 \left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi + \varphi^{ij} \left(\partial_{t} \nabla^2_{i,j} \varphi - \nabla^2_{i,j} \partial_t \varphi\right) \\
