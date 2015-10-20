@@ -182,8 +182,8 @@ The following evolution equations hold
 \end{enumerate}
 \end{lemma}
 
-\begin{proposition}
-\label{prop:deltBox}
+\begin{lemma}
+\label{lem:deltBox}
 The following commutation relation holds
 \[
 \begin{split}
@@ -191,7 +191,7 @@ The following commutation relation holds
 &\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}.
 \end{split}
 \]
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
 First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove useful later. From the mixed derivative equation \eqref{eq:delhdelg}, the evolution of the metric (Lemma \ref{lem:evolution}, \eqref{eq:delt_metric}), and the evolution of the second fundamental form (Lemma \ref{lem:evolution}, \eqref{eq:delt_sff}) we compute
@@ -235,7 +235,7 @@ satisfies
 				&=\p^{ij,kl}\br{\p_{;kl}+\p h^{r}_{k}h_{rl}+\l\p g_{kl}}h_{is}h^{s}_{j}+2\p\p^{jk}h^{i}_{k}h_{ir}h^{r}_{j}\\
 				&\hp{=}+2\p^{ij}h^{k}_{i}\p_{;jk}+2\l\p^{ij}h_{ij}\p.}
 
- We use \cref{prop:deltBox} to compute
+ We use \cref{lem:deltBox} to compute
 \eq{\br{\del_{t}-\Box}\b&=\del_{t}\Box\p+\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}\p}-\Box\Box\p-\Box\br{\p^{ij}h_{ik}h^{k}_{j}\p}\\
 			&=\Box\br{\l\p^{ij}g_{ij}\p}+2\p^{ij}h^{k}_{i}\br{\p_{;kj}\p+\p_{;k}\p_{;j}}+\br{\p-\p^{ij}h_{ij}}|\nabla\p|^{2}\\
 					&\hp{=}+\p^{ij,rs}\p_{;ij}\br{\p_{;rs}+\p h_{rm}h^{m}_{s}+\l\p g_{rs}}+\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}\p}\\
