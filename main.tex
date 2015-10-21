@@ -235,7 +235,14 @@ holds.
 \begin{proof}
 From the Ricci identities we obtain
 \[
-\nabla_i (\varphi^{kl} \nabla^2_{k,l} f) - \varphi^{kl}(\nabla^2_{k,l} \nabla_i f) = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+\begin{split}
+\nabla_i (\varphi^{kl} \nabla^2_{k,l} f) - \varphi^{kl}(\nabla^2_{k,l} \nabla_i f) &= \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}(\nabla_i \nabla^2_{k,l} f - \nabla^2_{k,l} \nabla_i f)  \\
+&= \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f \\
+& \quad + \varphi^{kl}(\nabla_i \nabla_k \nabla_l f - \nabla_i \nabla_{\nabla_k \partial_l} f - \nabla_k \nabla_l \nabla_i f + \nabla_{\nabla_k \partial_l} \nabla_i f) \\
+&= \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f \\
+&\quad + \varphi^{kl}(\nabla_i \nabla_k \nabla_l f - \nabla_k \nabla_i \nabla_l f - \nabla_i \nabla_{\nabla_k \partial_l} f  + \nabla_{\nabla_k \partial_l} \nabla_i f) \\
+&= \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+\end{split}
 \]
 and from the Gauss equation we obtain
 \[
