@@ -105,7 +105,10 @@ Rm_{ijkl} &= \overline{Rm}_{ijkl} + h_{ik}h_{jl} - h_{il}h_{jk} \\
 \[
 \nabla_i h_{jk} = \nabla_k h_{ij},
 \]
-valid for space forms.
+valid for space forms. We also make use of the Ricci identity,
+\[
+{R_{ijk}}^m  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
+\]
 
 We also need some notation for derivatives of the speed \(\phi\). Let us write
 \[
@@ -216,6 +219,34 @@ We obtain from equation \eqref{eq:deltBox} and the evolution of the Christoffel 
 The result now follows after rearranging and using \(|\nabla \varphi|^2 = g^{kl}\nabla_k \varphi \nabla_l \varphi\) and \(\nabla_l \varphi = \varphi^{ij} \nabla_l h_{ij}\) by the chain rule.
 \end{proof}
 
+\begin{lemma}
+\label{lem:gradBox}
+For every smooth function $f$, the commutation relation
+\[
+\begin{split}
+(\nabla_i \Box -\Box \nabla_i) f &= \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} f \\
+&\quad + K \varphi^{kl} \left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) \\
+&\quad + \varphi^{kl}\left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f
+\end{split}
+\]
+holds.
+\end{lemma}
+
+\begin{proof}
+From the Ricci identities we obtain
+\[
+\nabla_i (\varphi^{kl} \nabla^2_{k,l} f) - \varphi^{kl}(\nabla^2_{k,l} \nabla_i f) = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+\]
+and from the Gauss equation we obtain
+\[
+\begin{split}
+{R^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
+&= K\left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) + \left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f.
+\end{split}
+\]
+\end{proof}
+
+
 \Theo{lemma}{Evbeta}{
 The quantity 
 \eq{\b=\dot{\p}-\l\p^{ij}g_{ij}\p=\Box\p+\p^{ij}h_{ik}h^{k}_{j}\p.}
@@ -248,19 +279,6 @@ satisfies
 			&\hp{=}+\br{\p-\p^{ij}h_{ij}}|\nabla\p|^{2}+\p^{ij,rs}\p_{;ij}\br{\p_{;rs}+\p h_{rm}h^{m}_{s}+\l\p g_{rs}}\\
 			&\hp{=}+\p^{ij,kl}\br{\p_{;kl}+\p h^{r}_{k}h_{rl}+\l\p g_{kl}}h_{is}h^{s}_{j}\p+2\p^{jk}h^{i}_{k}h_{ir}h^{r}_{j}\p^{2}\\
 				&\hp{=}+2\p^{ij}h^{k}_{i}\p_{;jk}\p+2\l\p^{ij}h_{ij}\p^{2}.}
-}
-
-\Theo{lemma}{gradBox}{
-For every smooth function $F$  there holds
-\eq{\br{\Box F}_{;i}-\Box F_{;i}&=\p^{kl,rs}h_{rs;i}F_{;kl}+\l\p^{kl}g_{ki}F_{;l}-\l\p^{kl}g_{kl}F_{;i}\\
-					&\hp{=}+\p^{kl}h^{m}_{l}h_{ki}F_{;m}-\p^{kl}h_{kl}h^{m}_{i}F_{;m}.}
-}
-
-\pf{
-From the Ricci identities we obtain
-\eq{\br{\p^{kl}F_{;kl}}_{;i}-\p^{kl}F_{;ikl}=\p^{kl,rs}h_{rs;i}F_{;kl}+\p^{kl}{R^{m}}_{kli}F_{;m}}
-and from the Gauss equation we obtain
-\eq{\p^{kl}{R^{m}}_{kli}F_{;m}=\l\p^{kl}g_{ki}F_{;l}-\l\p^{kl}g_{kl}F_{;i}+\p^{kl}h^{m}_{l}h_{ki}F_{;m}-\p^{kl}h_{kl}h^{m}_{i}F_{;m}.}
 }
 
 \Theo{lemma}{Evgradphi}{
