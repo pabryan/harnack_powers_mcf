@@ -215,17 +215,23 @@ and from the Gauss equation we obtain
 \]
 \end{proof}
 
-
-\Theo{lemma}{Evbeta}{
+\begin{lemma}
+\label{lem:evbeta}
 The quantity 
-\eq{\b=\dot{\p}-\l\p^{ij}g_{ij}\p=\Box\p+\p^{ij}h_{ik}h^{k}_{j}\p.}
+\[
+\beta = \partial_t \varphi - K\varphi^{ij}g_{ij}\varphi = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}
+\]
 satisfies
-\eq{\br{\del_{t}-\Box}\b&=\p^{ij}h_{ik}h^{k}_{j}\b+2\p^{ij}h^{k}_{i}\br{2\p_{;kj}\p+\p_{;k}\p_{;j}+h^{s}_{j}h_{sk}\p^{2}}\\
-				&\hp{=}+\br{\p-\p^{ij}h_{ij}}|\nabla\p|^{2}\\
-				&\hp{=}+\p^{ij,kl}\br{\p_{;ij}+h_{ip}h^{p}_{j}\p}\br{\p_{;kl}+h^{m}_{k}h_{ml}\p}\\
-				&\hp{=}+\l\p^{ij}g_{ij}\b+2\l\p^{rs}\br{\p^{ij}g_{ij}}_{;r}\p_{;s}+\l\Box\br{\p^{ij}g_{ij}}\p\\
-				&\hp{=}+\l\p^{ij,rs}g_{rs}\br{\p_{;ij}\p+h_{ik}h^{k}_{j}\p^{2}}+2\l\p^{ij}h_{ij}\p^{2}.}
-}
+\[
+\begin{split}
+(\del_{t} - \Box)\beta &= \varphi^{ij}(h^2)_{ij}\beta + 2\varphi^{ij}h^{k}_{i} (2\varphi\nabla^2_{kj}\varphi + \nabla_k \varphi \nabla_j \varphi + (h^2)_{kj}\varphi^{2}) \\
+&\quad + (\varphi - \varphi^{ij}h_{ij}) |\nabla\varphi|^{2} \\
+&\quad + \varphi^{ij,kl} (\nabla^2_{i,j}\varphi + (h^2)_{ij}\varphi) (\nabla^2_{k,l} \varphi + (h^2)h_{kl}\varphi) \\
+&\quad + K\varphi^{ij}g_{ij} \beta + 2K\varphi^{rs} \nabla_r (\varphi^{ij}g_{ij}) \nabla_s \varphi + K\Box (\varphi^{ij}g_{ij}) \varphi \\
+&\quad + K\varphi^{ij,rs}g_{rs} (\varphi\nabla_{i,j}\varphi + h_{ik}h^{k}_{j}\varphi^{2}) + 2K\varphi^{ij}h_{ij}\varphi^{2}
+\end{split}
+\]
+\end{lemma}
 
 \pf{We will need the following auxillary calculation, where we use \cref{eq:deltBox}.
 \eq{\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}}&=\del_{t}\p^{ij}h_{ik}h^{k}_{j}+\p^{ij}\dot{h}_{ik}h^{k}_{j}+\p^{ij}h_{ik}\dot{h}^{k}_{j}\\
