@@ -235,6 +235,23 @@ satisfies
 \end{lemma}
 
 \begin{proof}
+Let us break up the calculation of
+\[
+(\partial_{t} - \Box)\beta =  \partial_{t}\Box\varphi + \partial_{t} (\varphi\varphi^{ij} (h^2)_{ij}) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij})
+\]
+into smaller pieces. First, we have lots of nice cancellation. Using the evolution of \(\varphi\) from \cref{lem:evolution}, \cref{eq:delt_speed} and the commutator relation from \cref{lem:deltBox} we have,
+\[
+\begin{split}
+\partial_{t}\Box\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) &= \Box\partial_t\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) + [\partial_t, \Box] \varphi \\
+&= \Box(\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) \\
+&\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
+&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
+&= K\Box(\varphi\varphi^{ij}g_{ij}) \\
+&\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
+&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}
+\end{split}
+\]
+
 We will need the following auxillary calculation, where we use \cref{eq:deltBox} and \cref{lem:evolution} \cref{eq:delt_squaredsff}.
 \[
 \begin{split}
