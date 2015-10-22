@@ -240,7 +240,8 @@ Let us break up the calculation of
 (\partial_{t} - \Box)\beta =  \partial_{t}\Box\varphi + \partial_{t} (\varphi\varphi^{ij} (h^2)_{ij}) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij})
 \]
 into smaller pieces. First, we have lots of nice cancellation. Using the evolution of \(\varphi\) from \cref{lem:evolution}, \cref{eq:delt_speed} and the commutator relation from \cref{lem:deltBox} we have,
-\[
+\begin{equation}
+\label{eq:deltbeta1}
 \begin{split}
 \partial_{t}\Box\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) &= \Box\partial_t\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) + [\partial_t, \Box] \varphi \\
 &= \Box(\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) \\
@@ -250,32 +251,31 @@ into smaller pieces. First, we have lots of nice cancellation. Using the evoluti
 &\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
 &\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}
 \end{split}
-\]
+\end{equation}
 
-We will need the following auxillary calculation, where we use \cref{eq:deltBox} and \cref{lem:evolution} \cref{eq:delt_squaredsff}.
+Next from \cref{eq:deltBox} and \cref{lem:evolution}, \cref{eq:delt_squaredsff} we obtain
 \[
 \begin{split}
 \partial_{t} (\varphi^{ij}(h^2)_{ij}) &= \partial_{t}(\varphi^{ij}) (h^2)_{ij} + \varphi^{ij} \partial_t (h^2)_{ij} \\
 &= \left(\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) (h^2)_{ij} \\
 &\quad + \varphi^{ij} \left(h^k_j \nabla^2_{i,k} \varphi + h^k_i \nabla^2_{j,k} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}\right) \\
 &= \varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right)(h^2)_{ij} + 2\varphi\varphi^{jk}h^{i}_{k} (h^2)_{ij} \\
-&\quad + 2 \varphi^{ij} h^k_i \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}
+&\quad + 2 \varphi^{ij} h^k_i \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}.
 \end{split}
 \]
 
- We use \cref{lem:deltBox} to compute
-\eq{\br{\del_{t}-\Box}\b&=\del_{t}\Box\p+\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}\p}-\Box\Box\p-\Box\br{\p^{ij}h_{ik}h^{k}_{j}\p}\\
-			&=\Box\br{\l\p^{ij}g_{ij}\p}+2\p^{ij}h^{k}_{i}\br{\p_{;kj}\p+\p_{;k}\p_{;j}}+\br{\p-\p^{ij}h_{ij}}|\nabla\p|^{2}\\
-					&\hp{=}+\p^{ij,rs}\p_{;ij}\br{\p_{;rs}+\p h_{rm}h^{m}_{s}+\l\p g_{rs}}+\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}\p}\\
-			&=\l\p^{ij}g_{ij}\b-\l\p^{kl}g_{kl}\p^{ij}h_{ir}h^{r}_{j}\p+2\l\p^{rs}\br{\p^{ij}g_{ij}}_{;r}\p_{;s}\\
-			&\hp{=}+\l\Box\br{\p^{ij}g_{ij}}\p+2\p^{ij}h^{k}_{i}\br{\p_{;kj}\p+\p_{;k}\p_{;j}}\\
-			&\hp{=}+\br{\p-\p^{ij}h_{ij}}|\nabla\p|^{2}+\p^{ij,rs}\p_{;ij}\br{\p_{;rs}+\p h_{rm}h^{m}_{s}+\l\p g_{rs}}\\
-			&\hp{=}+\p^{ij}h_{ik}h^{k}_{j}\b+\l\p^{ij}h_{ik}h^{k}_{j}\p^{rs}g_{rs}\p+\del_{t}\br{\p^{ij}h_{ik}h^{k}_{j}}\p\\
-			&=\p^{ij}h_{ik}h^{k}_{j}\b+\l\p^{ij}g_{ij}\b+2\l\p^{rs}\br{\p^{ij}g_{ij}}_{;r}\p_{;s}\\
-			&\hp{=}+\l\Box\br{\p^{ij}g_{ij}}\p+2\p^{ij}h^{k}_{i}\br{\p_{;kj}\p+\p_{;k}\p_{;j}}	\\
-			&\hp{=}+\br{\p-\p^{ij}h_{ij}}|\nabla\p|^{2}+\p^{ij,rs}\p_{;ij}\br{\p_{;rs}+\p h_{rm}h^{m}_{s}+\l\p g_{rs}}\\
-			&\hp{=}+\p^{ij,kl}\br{\p_{;kl}+\p h^{r}_{k}h_{rl}+\l\p g_{kl}}h_{is}h^{s}_{j}\p+2\p^{jk}h^{i}_{k}h_{ir}h^{r}_{j}\p^{2}\\
-				&\hp{=}+2\p^{ij}h^{k}_{i}\p_{;jk}\p+2\l\p^{ij}h_{ij}\p^{2}.}
+The remaining term we need to compute is thus
+\begin{equation}
+\label{eq:deltbeta2}
+\begin{split}
+\partial_{t} (\varphi \varphi^{ij}(h^2)_{ij}) &= (\partial_{t} \varphi) \varphi^{ij}(h^2)_{ij} + \varphi \partial_t \varphi^{ij} (h^2)^{ij} \\
+&= (\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}) \varphi^{ij}(h^2)_{ij} \\
+&\quad + \varphi (\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right)(h^2)_{ij} + 2\varphi\varphi^{jk}h^{i}_{k} (h^2)_{ij} \\
+&\quad + 2 \varphi^{ij} h^k_i \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}).
+\end{split}
+\end{equation}
+
+Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2}, keeping track of all the terms and cancelling some terms.
 \end{proof}
 
 \Theo{lemma}{Evgradphi}{
