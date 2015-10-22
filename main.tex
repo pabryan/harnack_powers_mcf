@@ -1,37 +1,6 @@
 \documentclass{amsart}
-\usepackage[ocgcolorlinks,linktoc=all]{hyperref}
-\hypersetup{citecolor=blue,linkcolor=red}
-\newtheorem{theorem}{Theorem}
-\newtheorem*{thmA}{Theorem}
-\newtheorem*{thmB}{Theorem}
-\newtheorem*{rem}{Remark}
-\newtheorem*{thmmain}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem*{propmain}{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{xca}[theorem]{Exercise}
-
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-
-\newcommand{\abs}[1]{\lvert#1\rvert}
-\numberwithin{equation}{section}
-
-\newcommand{\blankbox}[2]{%
-  \parbox{\columnwidth}{\centering
-    \setlength{\fboxsep}{0pt}%
-    \fbox{\raisebox{0pt}[#2]{\hspace{#1}}}%
-  }%
-}
 
 \input{StandardPaper2.tex}
-
-
-
 
 \begin{document}
 
@@ -151,7 +120,7 @@ We will also need the mixed second derivatives,
 &= - g^{kj} \varphi^{il} - \phi^{ij,mk} h^l_m
 \end{split}
 \end{equation}
-where we applied equation \eqref{eq:delg} to \(\phi^i_s\) in the first line.
+where we applied \cref{eq:delg} to \(\phi^i_s\) in the first line.
 
 \section{Evolution equations}
 
@@ -197,7 +166,7 @@ The following commutation relation holds
 \end{lemma}
 
 \begin{proof}
-First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove useful later. From the mixed derivative equation \eqref{eq:delhdelg}, the evolution of the metric (Lemma \ref{lem:evolution}, \eqref{eq:delt_metric}), and the evolution of the second fundamental form (Lemma \ref{lem:evolution}, \eqref{eq:delt_sff}) we compute
+First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove useful later. From the mixed derivative \cref{eq:delhdelg}, the evolution of the metric (\cref{lem:evolution}, \cref{eq:delt_metric}), and the evolution of the second fundamental form (\cref{lem:evolution}, \cref{eq:delt_sff}) we compute
 \begin{equation}
 \label{eq:deltBox}
 \begin{split}
@@ -207,7 +176,7 @@ First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove
 \end{split}
 \end{equation}
 
-We obtain from equation \eqref{eq:deltBox} and the evolution of the Christoffel symbols (Lemma \ref{lem:evolution}, \eqref{eq:delt_christoffel}),
+We obtain from \cref{eq:deltBox} and the evolution of the Christoffel symbols (\cref{lem:evolution}, \cref{eq:delt_christoffel}),
 \[
 \begin{split}
 \left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi + \varphi^{ij} \left(\partial_{t} \nabla^2_{i,j} \varphi - \nabla^2_{i,j} \partial_t \varphi\right) \\

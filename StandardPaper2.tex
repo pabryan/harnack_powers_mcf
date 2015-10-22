@@ -1,17 +1,33 @@
 %\documentclass[10 pt]{amsart}
 
+\usepackage[ocgcolorlinks,linktoc=all]{hyperref}
+\hypersetup{citecolor=blue,linkcolor=red}
 
-
-
-
-
-\numberwithin{equation}{section}
-
+%\usepackage{amsthm}
 \usepackage{cleveref}
 \crefname{lemma}{Lemma}{Lemmata}
+\crefname{equation}{equation}{equations}
 
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
 
+\newtheorem*{thmA}{Theorem}
+\newtheorem*{thmB}{Theorem}
+\newtheorem*{rem}{Remark}
+\newtheorem*{thmmain}{Theorem}
+\newtheorem*{propmain}{Proposition}
 
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
 
 %Symbols
 \renewcommand{\~}{\tilde}
