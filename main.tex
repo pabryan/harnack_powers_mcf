@@ -79,7 +79,7 @@ valid for space forms. We also make use of the Ricci identity,
 {R_{ijk}}^m  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
 \]
 
-We also need some notation for derivatives of the speed \(\phi\). Let us write
+We also need some notation for derivatives of the speed \(\varphi\). Let us write
 \[
 \varphi^{i}_{j} = \frac{\partial \varphi}{\partial h^{j}_{i}}
 \]
@@ -101,10 +101,10 @@ We frequently make use, without comment, of the formula for differentiating an i
 \frac{\partial g^{ij}}{\partial g_{kl}} = - g^{kj} g^{il}.
 \]
 
-First derivatives of \(\phi\) from the two perspectives are related by
+First derivatives of \(\varphi\) from the two perspectives are related by
 \begin{equation}
 \label{eq:delh}
-\varphi^{ij} = \frac{\partial \phi}{\partial h_l^k} \frac{\partial h_l^k}{\partial h_{ij}} = \varphi^l_k g^{ik} \delta^j_l = g^{ik} \varphi^j_k.
+\varphi^{ij} = \frac{\partial \varphi}{\partial h_l^k} \frac{\partial h_l^k}{\partial h_{ij}} = \varphi^l_k g^{ik} \delta^j_l = g^{ik} \varphi^j_k.
 \end{equation}
 and
 \begin{equation}
@@ -115,12 +115,12 @@ We will also need the mixed second derivatives,
 \begin{equation}
 \label{eq:delhdelg}
 \begin{split}
-\frac{\partial \varphi^{ij}}{\partial g_{kl}} &= \frac{\partial}{\partial g_{kl}} \left(g^{sj} \varphi^{i}_{s} \right) = - g^{kj}g^{sl} \varphi^{i}_{s} - g^{sj} (\phi^i_s)^{mk} h^l_m \\
-&= - g^{kj} \varphi^{il} - g^{sj} g_{ns} \phi^{in,mk} h^l_m \\
-&= - g^{kj} \varphi^{il} - \phi^{ij,mk} h^l_m
+\frac{\partial \varphi^{ij}}{\partial g_{kl}} &= \frac{\partial}{\partial g_{kl}} \left(g^{sj} \varphi^{i}_{s} \right) = - g^{kj}g^{sl} \varphi^{i}_{s} - g^{sj} (\varphi^i_s)^{mk} h^l_m \\
+&= - g^{kj} \varphi^{il} - g^{sj} g_{ns} \varphi^{in,mk} h^l_m \\
+&= - g^{kj} \varphi^{il} - \varphi^{ij,mk} h^l_m
 \end{split}
 \end{equation}
-where we applied \cref{eq:delg} to \(\phi^i_s\) in the first line.
+where we applied \cref{eq:delg} to \(\varphi^i_s\) in the first line.
 
 \section{Evolution equations}
 
