@@ -95,6 +95,11 @@ and define the operator
 \[
 \Box = \varphi^{ij} \nabla^2_{ij}.
 \]
+This operator satisfies the product rule
+\begin{equation}
+\label{eq:productbox}
+\Box (fg) = f \Box g + g \Box f + 2 \varphi^{ij} \nabla_i \varphi \nabla_j \varphi.
+\end{equation}
 
 We frequently make use, without comment, of the formula for differentiating an inverse
 \[
@@ -275,7 +280,11 @@ The remaining term we need to compute is thus
 \end{split}
 \end{equation}
 
-Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2}, keeping track of all the terms and cancelling some terms.
+Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2} together. Keeping track of all the terms, using the product rule for \(\Box\) \cref{eq:productbox} to obtain
+\[
+\Box(\varphi \varphi^{ij} g_{ij}) = \varphi^{ij} g_{ij} \Box \varphi + \varphi \Box (\varphi^{ij} g_{ij}) + 2 \varphi^{kl} \nabla_k (\varphi^{ij} g_{ij}) \nabla_l \varphi,
+\]
+and using the definition, \(\beta = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}\) to collect some terms completes the proof.
 \end{proof}
 
 \Theo{lemma}{Evgradphi}{
