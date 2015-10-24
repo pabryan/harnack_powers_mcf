@@ -129,6 +129,12 @@ where we applied \cref{eq:delg} to \(\varphi^i_s\) in the first line.
 
 \section{Evolution equations}
 
+Following \cite{MR1316556, MR1100812, MR1296393, MR1480081}, in this section, we aim to calculate the evolution of
+\[
+\chi =t(\partial_t \varphi - K \varphi \varphi^{ij} g_{ij} - b^{ij} \nabla_i \varphi \nabla_j \varphi) +\delta\varphi
+\]
+where \(\delta \ne 0\) is an arbitrary, non-zero constant. We begin by recalling some standard evolution equations and commutators and then break the remaining calculation into several lemmas.
+
 The evolution equations in the following lemma are standard and can be found in many places \cite{MR1316556, MR1100812, MR1296393, MR1480081}. The basic tools are commuting derivatives, using the definition of the curvature tensor for space forms, the Gauss equation, and the Codazzi equation as described in the previous section. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
 
 \begin{lemma}
@@ -160,12 +166,41 @@ The following evolution equations hold
 \end{enumerate}
 \end{lemma}
 
+We require the commutators \([\nabla, \Box]\) and \([\partial_t, \Box]\). Without further comment we will also use the fact that \([\partial_t, \nabla] f = 0\) for any smooth function \(f\).
+
+\begin{lemma}
+\label{lem:gradBox}
+For every smooth function $f$, the commutation relation
+\[
+\begin{split}
+([\nabla, \Box]f)_i &= \nabla_i \Box f - (\Box \nabla f)_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} f \\
+&\quad + K \varphi^{kl} \left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) \\
+&\quad + \varphi^{kl}\left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f
+\end{split}
+\]
+holds, where \(\nabla f = df\) is the covariant derivative of \(f\) and the subscript \(i\) refers to the \(i\)'th component of a one-form.
+\end{lemma}
+
+\begin{proof}
+From the Ricci identities we obtain
+\[
+\nabla_i (\varphi^{kl} \nabla^2_{k,l} f) - (\varphi^{kl}(\nabla^2_{k,l} \nabla f))_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+\]
+and from the Gauss equation we obtain
+\[
+\begin{split}
+{R^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
+&= K\left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) + \left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f.
+\end{split}
+\]
+\end{proof}
+
 \begin{lemma}
 \label{lem:deltBox}
 The following commutation relation holds
 \[
 \begin{split}
-(\partial_{t}\Box - \Box\partial_{t}) \varphi &= \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
+[\partial_t, \Box] \varphi &= (\partial_{t}\Box - \Box\partial_{t}) \varphi = \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
 &\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}.
 \end{split}
 \]
@@ -182,11 +217,20 @@ First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove
 \end{split}
 \end{equation}
 
-We obtain from \cref{eq:deltBox} and the evolution of the Christoffel symbols (\cref{lem:evolution}, \cref{eq:delt_christoffel}),
+Next, the commutator of \(\partial_t\) and \(\nabla^2_{i,j}\) is given by,
+\begin{equation}
+\label{eq:deltnabla2}
+\begin{split}
+\left(\partial_{t}\nabla^2_{i,j} - \nabla^2_{i,j}\partial_{t}\right) \varphi &= \partial_t \left(\nabla_i \nabla_j \varphi - \nabla_{\nabla_i \partial_j} \varphi\right) - \nabla_i \nabla_j \partial_t \varphi + \nabla_{\nabla_i \partial_j} \partial_t \varphi \\
+&= \G_{ij}^k \nabla_{\partial_k} \partial_t \varphi - \partial_t \left(\G_{ij}^k \nabla_{\partial_k} \varphi\right) \\
+&= - \partial_t \G_{ij}^k \nabla_k \varphi.
+\end{split}
+\end{equation}
+
+We obtain from \cref{eq:deltBox}, \cref{eq:deltnabla2}, and the evolution of the Christoffel symbols (\cref{lem:evolution}, \cref{eq:delt_christoffel}),
 \[
 \begin{split}
-\left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi + \varphi^{ij} \left(\partial_{t} \nabla^2_{i,j} \varphi - \nabla^2_{i,j} \partial_t \varphi\right) \\
-&= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi - \varphi^{ij}\partial_t \G^{k}_{ij} \nabla_k \varphi \\
+\left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi - \varphi^{ij}\partial_t \G^{k}_{ij} \nabla_k \varphi \\
 &= \left(\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) \nabla^2_{i,j} \varphi \\
 &\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + h^k_i \nabla_j \varphi + h^k_j \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right)
 \end{split}
@@ -194,32 +238,30 @@ We obtain from \cref{eq:deltBox} and the evolution of the Christoffel symbols (\
 The result now follows after rearranging and using \(|\nabla \varphi|^2 = g^{kl}\nabla_k \varphi \nabla_l \varphi\) and \(\nabla_l \varphi = \varphi^{ij} \nabla_l h_{ij}\) by the chain rule.
 \end{proof}
 
-\begin{lemma}
-\label{lem:gradBox}
-For every smooth function $f$, the commutation relation
-\[
-\begin{split}
-(\nabla_i \Box -\Box \nabla_i) f &= \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} f \\
-&\quad + K \varphi^{kl} \left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) \\
-&\quad + \varphi^{kl}\left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f
-\end{split}
-\]
-holds.
-\end{lemma}
+The next ingredient is the evolution of the covariant derivative, \(\nabla \phi = d\phi\).
 
-\begin{proof}
-From the Ricci identities we obtain
+\Theo{lemma}{Evgradphi}{
+There holds
+\eq{\br{\del_{t}-\Box}\p_{;i}&=\br{\p^{kl}h_{kr}h^{r}_{l}\p}_{;i}+\l\p^{kl}\p_{;l}g_{ki}+\l\p^{kl,rs}h_{rs;i}g_{kl}\p\\
+				&\hp{=}+\p^{kl,rs}h_{rs;i}\p_{;kl}+\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}.}
+}
+
+\pf{
+\eq{\del_{t}\p_{;i}-\Box\p_{;i}&=\br{\Box\p}_{;i}+\br{\p^{kl}h_{rk}h^{r}_{l}\p}_{;i}+\l\br{\p^{kl}g_{kl}\p}_{;i}\\
+					&\hp{=}-\br{\Box\p}_{;i}+\p^{kl,rs}h_{rs;i}\p_{;kl}+\l\p^{kl}g_{ki}\p_{;l}-\l\p^{kl}g_{kl}\p_{;i}\\
+					&\hp{=}+\p^{kl}h^{m}_{l}h_{ki}\p_{;m}-\p^{kl}h_{kl}h^{m}_{i}\p_{;m}\\
+					&=\br{\p^{kl}h_{rk}h^{r}_{l}\p}_{;i}+\l\p^{kl,rs}h_{rs;i}g_{kl}\p+\p^{kl,rs}h_{rs;i}\p_{;kl}\\
+					&\hp{=}+\l\p^{kl}g_{ki}\p_{;l}+\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}.}
+}
+
+Now we may proceed to the calculation of \(\partial_t \chi\). This we break into a series of lemmas. Define the quantities,
 \[
-\nabla_i (\varphi^{kl} \nabla^2_{k,l} f) - \varphi^{kl}(\nabla^2_{k,l} \nabla_i f) = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+\beta = \partial_t \varphi - K\varphi^{ij}g_{ij}\varphi, \quad \theta =  b^{ij} \nabla_i \varphi \nabla_j \varphi
 \]
-and from the Gauss equation we obtain
+so that we may write
 \[
-\begin{split}
-{R^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
-&= K\left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) + \left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f.
-\end{split}
+\chi =t(\beta - \theta) + \delta\varphi.
 \]
-\end{proof}
 
 \begin{lemma}
 \label{lem:evbeta}
@@ -287,20 +329,6 @@ Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2} together. Keeping track o
 and using the definition, \(\beta = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}\) to collect some terms completes the proof.
 \end{proof}
 
-\Theo{lemma}{Evgradphi}{
-There holds
-\eq{\br{\del_{t}-\Box}\p_{;i}&=\br{\p^{kl}h_{kr}h^{r}_{l}\p}_{;i}+\l\p^{kl}\p_{;l}g_{ki}+\l\p^{kl,rs}h_{rs;i}g_{kl}\p\\
-				&\hp{=}+\p^{kl,rs}h_{rs;i}\p_{;kl}+\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}.}
-}
-
-\pf{
-\eq{\del_{t}\p_{;i}-\Box\p_{;i}&=\br{\Box\p}_{;i}+\br{\p^{kl}h_{rk}h^{r}_{l}\p}_{;i}+\l\br{\p^{kl}g_{kl}\p}_{;i}\\
-					&\hp{=}-\br{\Box\p}_{;i}+\p^{kl,rs}h_{rs;i}\p_{;kl}+\l\p^{kl}g_{ki}\p_{;l}-\l\p^{kl}g_{kl}\p_{;i}\\
-					&\hp{=}+\p^{kl}h^{m}_{l}h_{ki}\p_{;m}-\p^{kl}h_{kl}h^{m}_{i}\p_{;m}\\
-					&=\br{\p^{kl}h_{rk}h^{r}_{l}\p}_{;i}+\l\p^{kl,rs}h_{rs;i}g_{kl}\p+\p^{kl,rs}h_{rs;i}\p_{;kl}\\
-					&\hp{=}+\l\p^{kl}g_{ki}\p_{;l}+\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}.}
-}
-
 \Theo{lemma}{Evtheta}{
 The quantity $\t=b^{ij}\p_{;i}\p_{;j}$ satisfies
 \eq{\br{\del_{t}-\Box}\t&=\p^{rs}h_{rk}h^{k}_{s}\t-\br{2b^{lq}\p^{kp}+\p^{kl,pq}}b^{ir}b^{js}\p_{;i}\p_{j}h_{kl;r}h_{pq;s}\\
@@ -328,7 +356,7 @@ The quantity $\t=b^{ij}\p_{;i}\p_{;j}$ satisfies
 							&\hp{=}+2\l b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}g_{kl}\p.}
 }
 
-\Theo{lemma}{Evchi}{
+\Theo{theorem}{Evchi}{
 Let $\d\neq 0.$ The quantity 
 \eq{\chi=t(\b-\t)+\d\p}
 satisfies
