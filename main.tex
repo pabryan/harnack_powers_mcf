@@ -240,19 +240,31 @@ The result now follows after rearranging and using \(|\nabla \varphi|^2 = g^{kl}
 
 The next ingredient is the evolution of the covariant derivative, \(\nabla \phi = d\phi\).
 
-\Theo{lemma}{Evgradphi}{
+\begin{lemma}
+\label{lem:Evgradphi}
 There holds
-\eq{\br{\del_{t}-\Box}\p_{;i}&=\br{\p^{kl}h_{kr}h^{r}_{l}\p}_{;i}+\l\p^{kl}\p_{;l}g_{ki}+\l\p^{kl,rs}h_{rs;i}g_{kl}\p\\
-				&\hp{=}+\p^{kl,rs}h_{rs;i}\p_{;kl}+\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}.}
-}
+\[
+\begin{split}
+\left((\partial_{t}-\Box)\nabla\varphi\right)_{i} &= \nabla_i \left(\varphi^{kl} (h^2)_{kl}\varphi\right) + K\varphi^{kl}g_{ki} \nabla_l \varphi + K\varphi^{kl,rs} g_{kl}\varphi \nabla_i h_{rs}  \\
+&\quad + \varphi^{kl,rs}\nabla_i h_{rs}\nabla^2_{k,l} \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi.
+\end{split}
+\]
+\end{lemma}
 
-\pf{
-\eq{\del_{t}\p_{;i}-\Box\p_{;i}&=\br{\Box\p}_{;i}+\br{\p^{kl}h_{rk}h^{r}_{l}\p}_{;i}+\l\br{\p^{kl}g_{kl}\p}_{;i}\\
-					&\hp{=}-\br{\Box\p}_{;i}+\p^{kl,rs}h_{rs;i}\p_{;kl}+\l\p^{kl}g_{ki}\p_{;l}-\l\p^{kl}g_{kl}\p_{;i}\\
-					&\hp{=}+\p^{kl}h^{m}_{l}h_{ki}\p_{;m}-\p^{kl}h_{kl}h^{m}_{i}\p_{;m}\\
-					&=\br{\p^{kl}h_{rk}h^{r}_{l}\p}_{;i}+\l\p^{kl,rs}h_{rs;i}g_{kl}\p+\p^{kl,rs}h_{rs;i}\p_{;kl}\\
-					&\hp{=}+\l\p^{kl}g_{ki}\p_{;l}+\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}.}
-}
+\begin{proof}
+Using the evolution of \(\varphi\) \cref{lem:evolution}, \cref{eq:delt_speed} and the commutator \([\nabla, \Box]\) from \cref{lem:gradBox}, we compute
+\[
+\begin{split}
+\partial_{t}\nabla_i \varphi - (\Box\nabla \varphi)_{i} &= \nabla_i \partial_t \varphi - \nabla_i \Box \varphi + ([\nabla, \Box] \varphi)_i \\
+&= \nabla_i \left(\Box\varphi + \varphi^{kl}(h^2)_{kl}\varphi + K \varphi^{kl}g_{kl}\varphi\right) - \nabla_i (\Box\varphi) \\
+&\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} \varphi + K\varphi^{kl}g_{ki} \nabla_l \varphi - K\varphi^{kl}g_{kl}\nabla_i \varphi \\
+&\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
+&= \nabla_i (\varphi^{kl}(h^2)_{kl}\varphi) + K\varphi^{kl,rs}\nabla_i h_{rs}g_{kl}\varphi \\
+&\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} \varphi + K\varphi^{kl}g_{ki}\nabla_l \varphi \\
+&\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi.
+\end{split}
+\]
+\end{proof}
 
 Now we may proceed to the calculation of \(\partial_t \chi\). This we break into a series of lemmas. Define the quantities,
 \[
