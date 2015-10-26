@@ -377,20 +377,32 @@ The quantity $\theta = b^{ij}\nabla_i \varphi\nabla_j\varphi$ satisfies
 \]
 \end{proof}
 
-\Theo{theorem}{Evchi}{
-Let $\d\neq 0.$ The quantity 
-\eq{\chi=t(\b-\t)+\d\p}
+\begin{theorem}
+\label{thm:Evchi}
+Let $\delta \neq 0.$ The quantity 
+\[
+\chi = t(\beta - \theta) +\delta\varphi
+\]
 satisfies
-\eq{\dot{\chi}-\Box\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}h_{ik}h^{k}_{j}+\l\p^{ij}g_{ij}}\chi\\
-				&\hp{=}+t\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}+t\l R,}
+\[
+\begin{split}
+\partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h)^2_{ij} + K\varphi^{ij}g_{ij}\right)\chi \\
+& \quad + t\left(\varphi^{ij,kl} + 2b^{il}\varphi^{jk} - \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi}\right)\eta_{ij}\eta_{kl} + tK R,
+\end{split}
+\]
 where
-\eq{\eta_{ij}=\p_{;ij}-b^{rs}h_{ij;r}\p_{;s}+h_{ip}h^{p}_{j}\p}
-and 
-\eq{R&=2\p^{rs}\br{\p^{ij}g_{ij}}_{;r}\p_{;s}+\Box\br{\p^{ij}g_{ij}}\p\\
-				&\hp{=}+\p^{kl,rs}g_{rs}\br{\p_{;kl}\p+h_{kr}h^{r}_{l}\p^{2}-2b^{ij}h_{kl;i}\p_{;j}\p}+2\p^{ij}h_{ij}\p^{2}\\
-				&\hp{=}+\br{\p'f+\p}b^{ir}b^{j}_{r}\p_{;i}\p_{;j}-2 b^{j}_{k}\p^{kl}\p_{;l}\p_{;j}.
-}
-}
+\[
+\eta_{ij} = \nabla^2_{i,j}\varphi - b^{rs}\nabla_r h_{ij}\nabla_s \varphi + (h)^2_{ij}\varphi
+\]
+and
+\[
+\begin{split}
+R &= 2\varphi^{rs} \nabla_r(\varphi^{ij}g_{ij})\nabla_s\varphi + \Box(\varphi^{ij}g_{ij})\varphi \\
+&\quad + \varphi^{kl,rs}g_{rs}\left(\nabla^2_{k,l}\varphi\varphi + (h^2)_{kl}\varphi^{2} - 2b^{ij}\nabla_i h_{kl}\nabla_j\varphi\varphi\right) + 2\varphi^{ij}h_{ij}\varphi^{2} \\
+&\quad + (\varphi'f + \varphi)b^{ir}b^{j}_{r}\nabla_i\varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi.
+\end{split}
+\]
+\end{theorem}
 	
 \pf{
 \eq{\dot\chi&-\Box\chi=\b-\t+t\br{\br{\del_{t}-\Box}\br{\b-\t}}+\d\br{\dot\p-\Box\p}\\
