@@ -341,32 +341,41 @@ Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2} together. Keeping track o
 and using the definition, \(\beta = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}\) to collect some terms completes the proof.
 \end{proof}
 
-\Theo{lemma}{Evtheta}{
-The quantity $\t=b^{ij}\p_{;i}\p_{;j}$ satisfies
-\eq{\br{\del_{t}-\Box}\t&=\p^{rs}h_{rk}h^{k}_{s}\t-\br{2b^{lq}\p^{kp}+\p^{kl,pq}}b^{ir}b^{js}\p_{;i}\p_{j}h_{kl;r}h_{pq;s}\\
-							&\hp{=}+\br{\p'f+\p-2\p^{kl}h_{kl}}|\nabla\p|^{2}+2\p^{jl}h^{m}_{l}\p_{;m}\p_{;j}\\
-							&\hp{=}+2b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}\br{\p_{;kl}+h_{rk}h^{r}_{l}\p}+4b^{ij}\p^{kl}h_{rk;i}h^{r}_{l}\p_{;j}\p\\
-							&\hp{=}+4\p^{rs}b^{ip}b^{jq}h_{pq;r}\p_{;is}\p_{;j}-2b^{ij}\p^{rs}\p_{;ir}\p_{;js}\\
-							&\hp{=}-\l\br{\p'f+\p}b^{ir}b^{j}_{r}\p_{;i}\p_{;j}+\l\p^{kl}g_{kl}\t+2\l b^{j}_{k}\p^{kl}\p_{;l}\p_{;j}\\
-							&\hp{=}+2\l b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}g_{kl}\p.}
-}
+\begin{lemma}
+\label{lem:Evtheta}
+The quantity $\theta = b^{ij}\nabla_i \varphi\nabla_j\varphi$ satisfies
+\[
+\begin{split}
+(\partial_{t}-\Box)\theta &= \varphi^{rs}(h^2)_{rs}\theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq})b^{ir}b^{js}\nabla_i \varphi\nabla_j\varphi \nabla_r h_{kl} \nabla_s h_{pq} \\
+&\quad + (\varphi'f + \varphi - 2\varphi^{kl}h_{kl})|\nabla\varphi|^{2} + 2\varphi^{jl}h^{m}_{l}\nabla_m\varphi\nabla_j\varphi \\
+&\quad + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi (\nabla^2_{k,l} \varphi + (h^2)_{kl}\varphi) + 4b^{ij}\varphi^{kl}\nabla_i h_{rk}h^{r}_{l}\nabla_j \varphi\varphi \\
+&\quad + 4\varphi^{rs}b^{ip}b^{jq}\nabla_r h_{pq}\nabla^2_{i,s} \varphi \nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{ir}\varphi\nabla^2_{js}\varphi \\
+&\quad - K(\varphi'f + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi + K\varphi^{kl}g_{kl}\theta + 2K b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi \\
+&\quad + 2K b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi.
+\end{split}
+\]
+\end{lemma}
 
-\pf{
-\eq{\br{\del_{t}-\Box}\t&=\br{\dot{b}^{ij}-\Box b^{ij}}\p_{;i}\p_{;j}+2b^{ij}\br{\dot{\p}_{;i}-\Box\p_{;i}}\p_{;j}\\
-							&\hp{=}-4\p^{rs}{b^{ij}}_{;r}\p_{;is}\p_{;j}-2b^{ij}\p^{rs}\p_{;ir}\p_{;js}\\
-							&=-\p^{rs}h_{rk}h^{k}_{s}\t+\br{\p'f+\p}|\nabla\p|^{2}-\l\br{\p'f+\p}b^{ir}b^{j}_{r}\p_{;i}\p_{;j}\\
-							&\hp{=}+\l\p^{kl}g_{kl}\t-\br{2b^{lq}\p^{kp}+\p^{kl,pq}}b^{ir}b^{js}\p_{;i}\p_{;j}h_{kl;r}h_{pq;s}\\
-							&\hp{=}+2\p^{kl}h_{rk}h^{r}_{l}\t+2b^{ij}\br{\p^{kl}h_{rk}h^{r}_{l}}_{;i}\p_{;j}\p+2b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}\p_{;kl}\\
-							&\hp{=}+2b^{ij}\br{\p^{kl}h^{m}_{l}h_{ki}-\p^{kl}h_{kl}h^{m}_{i}}\p_{;m}\p_{;j}\\
-							&\hp{=}+2\l b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}g_{kl}\p+2\l b^{j}_{k}\p^{kl}\p_{;l}\p_{;j}\\
-							&\hp{=}-4\p^{rs}{b^{ij}}_{;r}\p_{;is}\p_{;j}-2b^{ij}\p^{rs}\p_{;ir}\p_{;js}\\
-							&=\p^{rs}h_{rk}h^{k}_{s}\t-\br{2b^{lq}\p^{kp}+\p^{kl,pq}}b^{ir}b^{js}\p_{;i}\p_{;j}h_{kl;r}h_{pq;s}\\
-							&\hp{=}+\br{\p'f+\p}|\nabla\p|^{2}+2\p^{jl}h^{m}_{l}\p_{;m}\p_{;j}-2\p^{kl}h_{kl}|\nabla\p|^{2}\\
-							&\hp{=}+2b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}\br{\p_{;kl}+h_{rk}h^{r}_{l}\p}+4b^{ij}\p^{kl}h_{rk;i}h^{r}_{l}\p_{;j}\p\\
-							&\hp{=}-4\p^{rs}{b^{ij}}_{;r}\p_{;is}\p_{;j}-2b^{ij}\p^{rs}\p_{;ir}\p_{;js}\\
-							&\hp{=}-\l\br{\p'f+\p}b^{ir}b^{j}_{r}\p_{;i}\p_{;j}+\l\p^{kl}g_{kl}\t+2\l b^{j}_{k}\p^{kl}\p_{;l}\p_{;j}\\
-							&\hp{=}+2\l b^{ij}\p^{kl,rs}h_{rs;i}\p_{;j}g_{kl}\p.}
-}
+\begin{proof}
+\[
+\begin{split}
+(\partial_{t} - \Box)\theta &= (\partial_t b^{ij} - \Box b^{ij})\nabla_i\varphi\nabla_j\varphi + 2b^{ij}(\partial_t \nabla_i \varphi - \Box\nabla_i \varphi)\nabla_j\varphi \\
+&\quad - 4\varphi^{rs}\nabla_r b^{ij}\nabla^2_{i,s}\varphi\nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{i,r}\varphi\nabla^2_{j,s}\varphi \\
+&= -\varphi^{rs}h_{rk}h^{k}_{s}\theta + \br{\varphi'f+\varphi}|\nabla\varphi|^{2} - K\br{\varphi'f+\varphi}b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi \\
+&\quad + K\varphi^{kl}g_{kl}\theta - \br{2b^{lq}\varphi^{kp} + \varphi^{kl,pq}} b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
+&\quad + 2\varphi^{kl}h_{rk}h^{r}_{l}\theta + 2b^{ij}\nabla_i\br{\varphi^{kl}h_{rk}h^{r}_{l}}\nabla_j\varphi\varphi + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi\nabla^2_{k,l}\varphi \\
+&\quad + 2b^{ij}\br{\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}}\nabla_m \varphi\nabla_j \varphi \\
+&\quad + 2K b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi + 2K b^{j}_{k}\varphi^{kl}\nabla_l \varphi\nabla_j \varphi \\
+&\quad - 4\varphi^{rs}\nabla_r {b^{ij}}\nabla^2_{i,s} \varphi\nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{i,r}\varphi\nabla^2_{j,s}\varphi \\
+&= \varphi^{rs}h_{rk}h^{k}_{s}\theta - \br{2b^{lq}\varphi^{kp} + \varphi^{kl,pq}}b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_sh_{pq} \\
+&\quad + \br{\varphi'f + \varphi}|\nabla\varphi|^{2} + 2\varphi^{jl}h^{m}_{l}\nabla_m\varphi\nabla_j\varphi - 2\varphi^{kl}h_{kl}|\nabla\varphi|^{2} \\
+&\quad + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j \varphi\br{\nabla^2_{k,l} \varphi + h_{rk}h^{r}_{l}\varphi} + 4b^{ij}\varphi^{kl}\nabla_i h_{rk}h^{r}_{l}\nabla_j \varphi\varphi \\
+&\quad - 4\varphi^{rs}\nabla_r{b^{ij}}\nabla^2_{i,s}\varphi\nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{i,r}\varphi\nabla^2_{j,s}\varphi \\
+&\quad - K\br{\varphi'f + \varphi}b^{ir}b^{j}_{r}\nabla_i\varphi\nabla_j\varphi + K\varphi^{kl}g_{kl}\theta + 2K b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi \\
+&\quad + 2K b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi.
+\end{split}
+\]
+\end{proof}
 
 \Theo{theorem}{Evchi}{
 Let $\d\neq 0.$ The quantity 
