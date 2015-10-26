@@ -346,42 +346,89 @@ and using the definition, \(\beta = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij
 The quantity $\theta = b^{ij}\nabla_i \varphi\nabla_j\varphi$ satisfies
 \[
 \begin{split}
-(\partial_{t}-\Box)\theta &= \varphi^{rs}(h^2)_{rs}\theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq})b^{ir}b^{js}\nabla_i \varphi\nabla_j\varphi \nabla_r h_{kl} \nabla_s h_{pq} \\
+(\partial_{t} - \Box)\theta &= (\varphi^{rs}(h^2)_{rs} - K\varphi^{kl}g_{kl})\theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq})b^{ir}b^{js}\nabla_i \varphi\nabla_j\varphi \nabla_r h_{kl} \nabla_s h_{pq} \\
 &\quad + (\varphi'f + \varphi - 2\varphi^{kl}h_{kl})|\nabla\varphi|^{2} + 2\varphi^{jl}h^{m}_{l}\nabla_m\varphi\nabla_j\varphi \\
 &\quad + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi (\nabla^2_{k,l} \varphi + (h^2)_{kl}\varphi) + 4b^{ij}\varphi^{kl}\nabla_i h_{rk}h^{r}_{l}\nabla_j \varphi\varphi \\
-&\quad + 4\varphi^{rs}b^{ip}b^{jq}\nabla_r h_{pq}\nabla^2_{i,s} \varphi \nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{ir}\varphi\nabla^2_{js}\varphi \\
-&\quad - K(\varphi'f + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi + K\varphi^{kl}g_{kl}\theta + 2K b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi \\
-&\quad + 2K b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi.
+&\quad + K\left[-(\varphi'f + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi + 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi + 2 b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi\right] \\
+&\quad - 2b^{ij}\varphi^{rs}\nabla^2_{ir}\varphi\nabla^2_{js}\varphi + 4\varphi^{rs}b^{ip}b^{jq}\nabla_r h_{pq}\nabla^2_{i,s} \varphi \nabla_j\varphi. \\
 \end{split}
 \]
 \end{lemma}
 
 \begin{proof}
-\[
+Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry \(b^{ij} = b^{ji}\), we have
+\begin{equation}
+\label{eq:delt_theta}
 \begin{split}
-(\partial_{t} - \Box)\theta &= (\partial_t b^{ij} - \Box b^{ij})\nabla_i\varphi\nabla_j\varphi + 2b^{ij}(\partial_t \nabla_i \varphi - \Box\nabla_i \varphi)\nabla_j\varphi \\
-&\quad - 4\varphi^{rs}\nabla_r b^{ij}\nabla^2_{i,s}\varphi\nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{i,r}\varphi\nabla^2_{j,s}\varphi \\
-&= -\varphi^{rs}h_{rk}h^{k}_{s}\theta + \br{\varphi'f+\varphi}|\nabla\varphi|^{2} - K\br{\varphi'f+\varphi}b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi \\
-&\quad + K\varphi^{kl}g_{kl}\theta - \br{2b^{lq}\varphi^{kp} + \varphi^{kl,pq}} b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
-&\quad + 2\varphi^{kl}h_{rk}h^{r}_{l}\theta + 2b^{ij}\nabla_i\br{\varphi^{kl}h_{rk}h^{r}_{l}}\nabla_j\varphi\varphi + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi\nabla^2_{k,l}\varphi \\
-&\quad + 2b^{ij}\br{\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}}\nabla_m \varphi\nabla_j \varphi \\
-&\quad + 2K b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi + 2K b^{j}_{k}\varphi^{kl}\nabla_l \varphi\nabla_j \varphi \\
-&\quad - 4\varphi^{rs}\nabla_r {b^{ij}}\nabla^2_{i,s} \varphi\nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{i,r}\varphi\nabla^2_{j,s}\varphi \\
-&= \varphi^{rs}h_{rk}h^{k}_{s}\theta - \br{2b^{lq}\varphi^{kp} + \varphi^{kl,pq}}b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_sh_{pq} \\
-&\quad + \br{\varphi'f + \varphi}|\nabla\varphi|^{2} + 2\varphi^{jl}h^{m}_{l}\nabla_m\varphi\nabla_j\varphi - 2\varphi^{kl}h_{kl}|\nabla\varphi|^{2} \\
-&\quad + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j \varphi\br{\nabla^2_{k,l} \varphi + h_{rk}h^{r}_{l}\varphi} + 4b^{ij}\varphi^{kl}\nabla_i h_{rk}h^{r}_{l}\nabla_j \varphi\varphi \\
-&\quad - 4\varphi^{rs}\nabla_r{b^{ij}}\nabla^2_{i,s}\varphi\nabla_j\varphi - 2b^{ij}\varphi^{rs}\nabla^2_{i,r}\varphi\nabla^2_{j,s}\varphi \\
-&\quad - K\br{\varphi'f + \varphi}b^{ir}b^{j}_{r}\nabla_i\varphi\nabla_j\varphi + K\varphi^{kl}g_{kl}\theta + 2K b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi \\
-&\quad + 2K b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi.
+(\partial_{t} - \Box)\theta &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + b^{ij} (\partial_{t} - \Box) (\nabla\varphi \otimes \nabla\varphi)_{ij} \\
+&\quad - 2 \varphi^{kl} \nabla_k b^{ij} \nabla_l (\nabla \varphi \otimes \nabla\varphi)_{ij} \\
+&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi \\
+&\quad - 4 \varphi^{kl} \nabla_k b^{ij} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
+&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\ 
+&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi - 4 \varphi^{kl} b^{ip}b^{jq} \nabla_k h_{pq} \nabla^2_{i,l} \varphi \nabla_j\varphi 
 \end{split}
+\end{equation}
+The final line appears verbatim as the final line in the statement of the lemma, so we must deal with the first two terms. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
+\begin{equation}
+\label{eq:delt_theta1}
+\begin{split}
+(\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi &= \nabla_i \varphi \nabla_j \varphi\left[-\varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi'f + \varphi) g^{ij} \right. \\
+& \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
+& \quad - \left. K \{(\varphi + \varphi'f) b^{ir}b^{j}_{r} + \varphi^{kl}g_{kl}b^{ij}\}\right] \\
+&= - \left(K\varphi^{kl}g_{kl} + \varphi^{rs}(h)^2_{rs}\right) \theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq}) b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
+&\quad + (\varphi'f + \varphi)|\nabla\varphi|^{2} \\
+&\quad - K(\varphi'f + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi 
+\end{split}
+\end{equation}
+For the second term, we have
+\begin{equation}
+\label{eq:delt_theta2}
+\begin{split}
+2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi &= 2 b^{ij} \nabla_j \varphi \nabla_i \partial_{t} \varphi - 2 b^{ij} \nabla_j\varphi \nabla_i \Box \varphi + 2 b^{ij} \nabla_j \varphi ([\nabla, \Box] \varphi)_i \\
+&= 2 b^{ij} \nabla_j \varphi \nabla_i (\partial_{t} \varphi - \Box \varphi) + 2 b^{ij} \nabla_j \varphi ([\nabla, \Box] \varphi)_i
+\end{split}
+\end{equation}
+The first term of \cref{eq:delt_theta2} may be calculated empoying the evolution equation for \(\varphi\), \cref{lem:evolution}, \cref{eq:delt_speed}:
+\begin{equation}
+\label{eq:delt_theta2a}
+\begin{split}
+2 b^{ij} \nabla_j \varphi \nabla_i (\partial_{t} \varphi - \Box\varphi) &= 2 b^{ij} \nabla_j \varphi \nabla_i (\varphi\varphi^{kl}(h^2)_{kl} + K \varphi\varphi^{kl}g_{kl}) \\
+&= 2 b^{ij} \nabla_j \varphi (\varphi^{kl}\nabla_i \varphi + \varphi\varphi^{kl,rs} \nabla_i h_{rs})((h^2)_{kl} + K g_{kl}) \\
+&\quad + 2 \varphi b^{ij} \varphi^{kl} \nabla_j \varphi \nabla_i (h^2)_{kl} \\
+&= 2 \varphi^{kl}((h^2)_{kl} + K g_{kl}) \theta \\
+&\quad + 2 \varphi b^{ij} \varphi^{kl,rs} \nabla_j \varphi \nabla_i h_{rs} ((h^2)_{kl} + K g_{kl}) \\
+&\quad + 4 \varphi b^{ij} \varphi^{kl} h^r_l \nabla_j \varphi \nabla_i h_{rk} \\
+\end{split}
+\end{equation}
+where in the last line, we used
+\[
+\nabla_i (h^2)_{kl} = \nabla_i (g^{sr} h_{ks} h_{rl}) = h^s_l \nabla_i h_{ks} + h^r_k \nabla_i h_{rl}.
 \]
+For the calcuation of the second term in \cref{eq:delt_theta2}, we use the commutator \([\nabla, \Box]\) from \cref{lem:gradBox}:
+\begin{equation}
+\label{eq:delt_theta2b}
+\begin{split}
+2 b^{ij} \nabla_j \varphi ([\nabla, \Box] \varphi)_i &= 2 b^{ij} \nabla_j \varphi \left[\varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} \varphi \right. \\
+&\quad + K \varphi^{kl} \left(g_{ki} \nabla_l \varphi - g_{kl} \nabla_i \varphi\right) \\
+&\quad + \left. \varphi^{kl}\left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m \varphi\right]  \\
+&= 2 b^{ij} \varphi^{kl,rs} \nabla_j \varphi \nabla_i h_{rs} \nabla^2_{k,l} \varphi \\
+&\quad + 2 K \varphi^{kl} b^j_k \nabla_j \varphi \nabla_k \varphi - 2K \varphi^{kl}g_{kl} \theta \\
+&\quad + 2\varphi^{kl} \nabla_j \varphi \nabla_m \varphi \delta^j_k g^{rm} h_{lr} - 2\varphi^{kl} \nabla_j \varphi \nabla_m \varphi \delta^j_r g^{rm} h_{kl} \\
+&= 2 b^{ij} \nabla_j \varphi \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} \varphi \\
+&\quad + 2 K \varphi^{kl} b^j_k \nabla_j \varphi \nabla_k \varphi - 2K \varphi^{kl}g_{kl} \theta \\
+&\quad + 2\varphi^{jl} \nabla_j \varphi \nabla_m \varphi h^m_l - 2\varphi^{kl} h_{kl} |\nabla \varphi|^2
+\end{split}
+\end{equation}
+where in the second equality we recall that \(b^{ij}\) is the inverse of \(h_{ij}\).
+
+The proof is now completed by substituting \cref{eq:delt_theta2a} and \cref{eq:delt_theta2b} into \cref{eq:delt_theta2}, and then substituting the resulting expression, along with \cref{eq:delt_theta1} into \cref{eq:delt_theta}, then rearranging.
 \end{proof}
 
 \begin{theorem}
 \label{thm:Evchi}
 Let $\delta \neq 0.$ The quantity 
 \[
-\chi = t(\beta - \theta) +\delta\varphi
+\chi = t(\beta - \theta) + \delta\varphi
 \]
 satisfies
 \[
