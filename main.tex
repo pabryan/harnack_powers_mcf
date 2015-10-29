@@ -313,17 +313,22 @@ Now we may proceed to the calculation of \(\partial_t \chi\). But we will do thi
 \label{lem:evbeta}
 The quantity 
 \[
-\beta = \partial_t \varphi - K\varphi^{ij}g_{ij}\varphi = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}
+\beta = \partial_t \varphi - K\Phi\varphi = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}
 \]
 satisfies
 \[
 \begin{split}
-(\del_{t} - \Box)\beta &= \left(\varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij} \right)\beta \\
+(\partial_{t} - \Box)\beta &= \left(\varphi^{ij}(h^2)_{ij} + K\Phi \right)\beta \\
 &\quad + (\varphi - \varphi^{ij}h_{ij}) |\nabla\varphi|^{2} \\
-&\quad + \varphi^{ij,kl} (\nabla^2_{i,j}\varphi + (h^2)_{ij}\varphi) (\nabla^2_{k,l} \varphi + (h^2)h_{kl}\varphi) \\
-&\quad + K\left[2\varphi^{rs} \nabla_r (\varphi^{ij}g_{ij}) \nabla_s \varphi + \Box (\varphi^{ij}g_{ij}) \varphi \right.\\
-&\quad \left. + \varphi^{ij,rs}g_{rs} (\varphi\nabla_{i,j}\varphi + h_{ik}h^{k}_{j}\varphi^{2}) + 2\varphi^{ij}h_{ij}\varphi^{2} \right] \\
-&\quad + 2\varphi^{ij}h^{k}_{i} (2\varphi\nabla^2_{kj}\varphi + \nabla_k \varphi \nabla_j \varphi + (h^2)_{kj}\varphi^{2})
+&\quad + \varphi^{ij,kl} \alpha_{ij} \alpha_{kl} \\
+&\quad + 2\varphi^{ij} b^{kl} (2\varphi(h^2)_{il}\nabla^2_{kj}\varphi + \varphi(h^2)_{il}\varphi(h^2)_{kj}) + 2\varphi^{ij}h^{k}_{i}\nabla_k \varphi \nabla_j \varphi\\
+&\quad + KR_{\beta}
+\end{split}
+\]
+where
+\[
+\begin{split}
+R_{\beta} &= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij}.
 \end{split}
 \]
 \end{lemma}
@@ -338,42 +343,49 @@ into smaller pieces. First, we have lots of nice cancellation. Using the evoluti
 \label{eq:deltbeta1}
 \begin{split}
 \partial_{t}\Box\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) &= \Box\partial_t\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) + [\partial_t, \Box] \varphi \\
-&= \Box(\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) \\
-&\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
+&= \Box(\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\Phi) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) \\
+&\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
 &\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
-&= K\Box(\varphi\varphi^{ij}g_{ij}) \\
-&\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
-&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}
+&= K (\Phi \Box \varphi + \varphi \Box \Phi + 2 \varphi^{kl} \nabla_k \Phi \nabla_l \varphi) \\
+&\quad + \varphi^{ij,kl} \nabla^2_{ij} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
+&\quad + 2\varphi^{ij}b^{kl} \varphi (h^2)_{il} \nabla^2_{kj} \varphi + 2\varphi^{ij}h^{k}_{i} \nabla_k \varphi \nabla_j \varphi + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
+&= K \Phi \Box \varphi  \\
+&\quad + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
+&\quad + \varphi^{ij,kl} \nabla^2_{ij} \varphi \alpha_{kl} \\
+&\quad + 2\varphi^{ij}b^{kl} \varphi (h^2)_{il} \nabla^2_{kj} \varphi + 2\varphi^{ij}h^{k}_{i} \nabla_k \varphi \nabla_j \varphi \\
+&\quad + K(\varphi \Box \Phi + 2 \varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl} g_{kl} \nabla^2_{ij} \varphi)
 \end{split}
 \end{equation}
+using, in the third equality, the product rule for \(\Box\) \cref{eq:productbox} and \(h^k_i = h^m_i b^{kl}h_{ml} = b^{kl} (h^2)_{il}\) since \(b\) is the inverse of \(A\).
 
 Next from \cref{eq:deltBox} and \cref{lem:evolution}, \cref{eq:delt_squaredsff} we obtain
 \[
 \begin{split}
 \partial_{t} (\varphi^{ij}(h^2)_{ij}) &= \partial_{t}(\varphi^{ij}) (h^2)_{ij} + \varphi^{ij} \partial_t (h^2)_{ij} \\
-&= \left(\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) (h^2)_{ij} \\
+&= \left(\varphi^{ij,kl} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) (h^2)_{ij} \\
 &\quad + \varphi^{ij} \left(h^k_j \nabla^2_{i,k} \varphi + h^k_i \nabla^2_{j,k} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}\right) \\
-&= \varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right)(h^2)_{ij} + 2\varphi\varphi^{jk}h^{i}_{k} (h^2)_{ij} \\
-&\quad + 2 \varphi^{ij} h^k_i \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}.
+&= \varphi^{ij,kl} (h^2)_{ij} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk} b^{il} (h^2)_{lk} (h^2)_{ij} \\
+&\quad + 2 \varphi^{ij} b^{kl} (h^2)_{il} \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}
 \end{split}
 \]
+again using \(h^k_i = b^{kl} (h^2)_{il}\) in the last equality.
 
 The remaining term we need to compute is thus
 \begin{equation}
 \label{eq:deltbeta2}
 \begin{split}
 \partial_{t} (\varphi \varphi^{ij}(h^2)_{ij}) &= (\partial_{t} \varphi) \varphi^{ij}(h^2)_{ij} + \varphi \partial_t (\varphi^{ij} (h^2)^{ij}) \\
-&= (\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}) \varphi^{ij}(h^2)_{ij} \\
-&\quad + \varphi \left[\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right)(h^2)_{ij} + 2\varphi\varphi^{jk}h^{i}_{k} (h^2)_{ij} \right.\\
-&\quad \left. + 2 \varphi^{ij} h^k_i \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}\right].
+&= (\beta + K \varphi\Phi) \varphi^{ij}(h^2)_{ij} \\
+&\quad + \varphi \left[\varphi^{ij,kl} (h^2)_{ij} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk} b^{il} (h^2)_{lk} (h^2)_{ij} \right.\\
+&\quad \left. + 2 \varphi^{ij} b^{kl} (h^2)_{il} \nabla^2_{jk} \varphi  + 2K\varphi\varphi^{ij}h_{ij}\right]. \\
+&= (\beta + K \varphi\Phi) \varphi^{ij}(h^2)_{ij} \\
+&\quad + \varphi^{ij,kl} \varphi (h^2)_{ij} \alpha_{kl}  \\
+&\quad + 2 \varphi\varphi^{ij} b^{kl} (h^2)_{il} \nabla^2_{jk} \varphi + 2\varphi^{jk} b^{il} \varphi (h^2)_{lk} \varphi (h^2)_{ij} \\
+&\quad + K \left[\varphi \varphi^{ij,kl} g_{kl} \varphi (h^2)_{ij} + 2K\varphi^2\varphi^{ij}h_{ij}\right]
 \end{split}
 \end{equation}
 
-Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2} together. Keeping track of all the terms, using the product rule for \(\Box\) \cref{eq:productbox} to obtain
-\[
-\Box(\varphi \varphi^{ij} g_{ij}) = \varphi^{ij} g_{ij} \Box \varphi + \varphi \Box (\varphi^{ij} g_{ij}) + 2 \varphi^{kl} \nabla_k (\varphi^{ij} g_{ij}) \nabla_l \varphi,
-\]
-and using the definition, \(\beta = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}\) to collect some terms completes the proof.
+Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2} together line by line to complete the proof.
 \end{proof}
 
 \begin{lemma}
