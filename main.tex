@@ -96,9 +96,13 @@ From this point of view, for the first and second partial derivatives, let us wr
 \[
 \varphi^{ij} = \frac{\partial\varphi}{\partial h_{ij}}, \quad \varphi^{ij,kl} = \fr{\partial^2\varphi}{\partial h_{kl} \partial h_{ij}}.
 \]
-and define the operator
+The trace of \(\varphi^{ij}\) with respect to the metric will be written
 \[
-\Box = \varphi^{ij} \nabla^2_{ij}.
+\Phi = g_{ij} \varphi^{ij}.
+\]
+Let us also define the operator
+\[
+\Box = \varphi^{ij} \nabla^2_{ij}
 \]
 This operator satisfies the product rule
 \begin{equation}
@@ -132,13 +136,37 @@ We will also need the mixed second derivatives,
 \end{equation}
 where we applied \cref{eq:delg} to \(\varphi^i_s\) in the first line.
 
+Covariant derivatives of \(\varphi\) satisfy
+\begin{equation}
+\label{eq:delphi}
+\nabla_k \varphi = \varphi^{ij} \nabla_k h_{ij}
+\end{equation}
+and the covariant derivative of the trace,
+\begin{equation}
+\label{eq:delPhi}
+\nabla_k \Phi = g_{ij} \varphi^{ij,rs} \nabla_k h_{rs}.
+\end{equation}
+
 \section{Evolution equations}
 
 Following \cite{MR1316556, MR1100812, MR1296393, MR1480081}, in this section, we aim to calculate the evolution of
 \[
-\chi =t(\partial_t \varphi - K \varphi \varphi^{ij} g_{ij} - b^{ij} \nabla_i \varphi \nabla_j \varphi) +\delta\varphi
+\chi =t(\partial_t \varphi - K \varphi \Phi - b^{ij} \nabla_i \varphi \nabla_j \varphi) +\delta\varphi
 \]
-where \(\delta \ne 0\) is an arbitrary, non-zero constant. We begin by recalling some standard evolution equations and commutators and then break the remaining calculation into several lemmas.
+where \(\delta \ne 0\) is an arbitrary, non-zero constant. Let us make a few definitions to keep the calculations more manageable. Let
+\[
+\alpha_{ij} = \nabla^2_{ij} \varphi + \varphi(h^2)_{ij}, \quad \gamma_{ij} = b^{kl} \nabla_k \varphi \nabla_l h_{ij}, \quad \eta_{ij} = \alpha_{ij} - \gamma_{ij}
+\]
+and define
+\[
+\beta = \varphi^{ij} \alpha_{ij} = \Box\varphi + \varphi \varphi^{ij}(h^2)_{ij}, \quad \theta =  b^{ij} \nabla_i \varphi \nabla_j \varphi
+\]
+so that from the evolution of \(\varphi\) below (\cref{lem:evolution}, \cref{eq:delt_speed}) we may write
+\[
+\chi = t(\beta - \theta) + \delta\varphi.
+\]
+
+We begin by recalling some standard evolution equations and commutators and then break the remaining calculation into several lemmas.
 
 The evolution equations in the following lemma are standard and can be found in many places \cite{MR892052, MR1316556, MR1100812, MR1296393, MR1480081}. The basic tools are commuting derivatives, using the definition of the curvature tensor for space forms, the Gauss equation, and the Codazzi equation as described in the previous section. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
 
@@ -150,7 +178,7 @@ The following evolution equations hold
 \item \label{eq:delt_inversemetric} $\partial_t g^{ij} = 2\varphi h^{ij}$
 \item \label{eq:delt_christoffel} $\partial_t {\G}^{k}_{ij} = -\varphi g^{kl} \nabla_l h_{ij} - h^k_i \nabla_j \varphi - h^k_j \nabla_i \varphi + g^{kl} h_{ij} \nabla_l \varphi$
 \item \label{eq:delt_sff} $\partial_t h_{ij} = \nabla^2_{ji} \varphi - \varphi(h^2)_{ij} + K \varphi g_{ij}$
-\item \label{eq:delt_weingarten} $\partial_t h_i^j = (\nabla^2)^j_i\varphi + \varphi(h^2)_i^j + K \varphi\delta_i^j$
+\item \label{eq:delt_weingarten} $\partial_t h_i^j = (\nabla^2)^j_i\varphi + \varphi(h^2)_i^j + K \varphi\delta_i^j = \alpha^j_i + K \varphi\delta_i^j$
 \item \label{eq:delt_sff_box} \begin{align*}
 \partial_t h_{ij} &= \Box h_{ij} + \varphi^{kl} (h^2)_{kl} h_{ij} - (\varphi^{kl}h_{kl} + \varphi) (h^2)_{ij} \\
 & \quad + \varphi^{kl,rs}\nabla_i h_{kl}\nabla_j h_{rs} \\
@@ -167,7 +195,7 @@ The following evolution equations hold
 & \quad - K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} + \varphi^{kl}g_{kl}b^{ij}\}
 \end{align*}
 \item \label{eq:delt_squaredsff} $\partial_t (h^2)_{ij} = h^k_j \nabla^2_{i,k} \varphi + h^k_i \nabla^2_{j,k} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}$
-\item \label{eq:delt_speed} $\partial_t \varphi = \Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij}$
+\item \label{eq:delt_speed} $\partial_t \varphi = \Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij} = \beta + K\varphi\Phi$
 \end{enumerate}
 \end{lemma}
 
