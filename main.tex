@@ -206,8 +206,8 @@ We require the commutators \([\nabla, \Box]\) and \([\partial_t, \Box]\). Withou
 For every smooth function $f$, the commutation relation
 \[
 \begin{split}
-([\nabla, \Box]f)_i &= \nabla_i \Box f - (\Box \nabla f)_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} f \\
-&\quad + K \varphi^{kl} \left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) \\
+([\nabla, \Box]f)_i &= \nabla_i \Box f - (\Box \nabla f)_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl} f \\
+&\quad + K \varphi^{kl} g_{ki} \nabla_l f - K \Phi \nabla_i f \\
 &\quad + \varphi^{kl}\left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f
 \end{split}
 \]
@@ -217,7 +217,7 @@ holds, where \(\nabla f = df\) is the covariant derivative of \(f\) and the subs
 \begin{proof}
 From the Ricci identities we obtain
 \[
-\nabla_i (\varphi^{kl} \nabla^2_{k,l} f) - (\varphi^{kl}(\nabla^2_{k,l} \nabla f))_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+\nabla_i (\varphi^{kl} \nabla^2_{kl} f) - (\varphi^{kl}(\nabla^2_{kl} \nabla f))_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
 \]
 and from the Gauss equation we obtain
 \[
@@ -233,7 +233,7 @@ and from the Gauss equation we obtain
 The following commutation relation holds
 \[
 \begin{split}
-[\partial_t, \Box] \varphi &= (\partial_{t}\Box - \Box\partial_{t}) \varphi = \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\nabla^2_{k,l} \varphi + \varphi (h^2)_{kl} + K \varphi g_{kl}) \\
+[\partial_t, \Box] \varphi &= (\partial_{t}\Box - \Box\partial_{t}) \varphi = \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
 &\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}.
 \end{split}
 \]
@@ -245,8 +245,9 @@ First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove
 \label{eq:deltBox}
 \begin{split}
 \partial_{t} \varphi^{ij} &= \varphi^{ij,kl} \partial_t h_{kl} + \frac{\partial\varphi^{ij}}{\partial g_{kl}} \partial_t g_{kl} \\
-&= \varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi - \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi \varphi^{ij,kl} h_{lm}h^{m}_{k} + 2\varphi\varphi^{jk}g^{li}h_{kl} \\
-&=\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}.
+&= \varphi^{ij,kl} \left(\nabla^2_{kl} \varphi - \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi \varphi^{ij,kl} h_{lm}h^{m}_{k} + 2\varphi\varphi^{jk}g^{li}h_{kl} \\
+&= \varphi^{ij,kl} \left(\nabla^2_{kl} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k} \\
+&= \varphi^{ij,kl} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}.
 \end{split}
 \end{equation}
 
@@ -264,11 +265,14 @@ We obtain from \cref{eq:deltBox}, \cref{eq:deltnabla2}, and the evolution of the
 \[
 \begin{split}
 \left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi - \varphi^{ij}\nabla_k \varphi\partial_t \G^{k}_{ij} \\
-&= \left(\varphi^{ij,kl} \left(\nabla^2_{k,l} \varphi + \varphi(h^2)_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) \nabla^2_{i,j} \varphi \\
-&\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + h^k_i \nabla_j \varphi + h^k_j \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right)
+&= \left[\varphi^{ij,kl} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right] \nabla^2_{i,j} \varphi \\
+&\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + h^k_i \nabla_j \varphi + h^k_j \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right) \\
+&= \varphi^{ij,kl} \nabla^2_{i,j} \varphi \left(\alpha_{kl} + K \varphi g_{kl}\right) \\
+&\quad + 2\varphi^{jk}h^{i}_{k}\varphi \nabla^2_{i,j} \varphi + h^k_i \varphi^{ij} \nabla_k \varphi \nabla_j \varphi + h^k_j \varphi^{ij} \nabla_k \varphi \nabla_i \varphi \\
+&\quad + \varphi g^{kl}\nabla_k \varphi \varphi^{ij} \nabla_l h_{ij} - \varphi^{ij} h_{ij} g^{kl}\nabla_k \varphi \nabla_l \varphi.
 \end{split}
 \]
-The result now follows after rearranging and using \(|\nabla \varphi|^2 = g^{kl}\nabla_k \varphi \nabla_l \varphi\) and \(\nabla_l \varphi = \varphi^{ij} \nabla_l h_{ij}\) by the chain rule.
+The result now follows from \(|\nabla \varphi|^2 = g^{kl}\nabla_k \varphi \nabla_l \varphi\) and \(\nabla_l \varphi = \varphi^{ij} \nabla_l h_{ij}\) by the chain rule.
 \end{proof}
 
 The next ingredient is the evolution of the covariant derivative, \(\nabla \varphi = d\varphi\).
@@ -279,34 +283,31 @@ There holds
 \[
 \begin{split}
 \left((\partial_{t}-\Box)\nabla\varphi\right)_{i} &= \nabla_i \left(\varphi^{kl} (h^2)_{kl}\varphi\right) + K\varphi^{kl}g_{ki} \nabla_l \varphi + K\varphi^{kl,rs} g_{kl}\varphi \nabla_i h_{rs}  \\
-&\quad + \varphi^{kl,rs}\nabla_i h_{rs}\nabla^2_{k,l} \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi.
+&\quad + \varphi^{kl,rs}\nabla_i h_{rs}\nabla^2_{kl} \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi.
 \end{split}
 \]
 \end{lemma}
 
 \begin{proof}
-Using the evolution of \(\varphi\) \cref{lem:evolution}, \cref{eq:delt_speed} and the commutator \([\nabla, \Box]\) from \cref{lem:gradBox}, we compute
+Using the evolution of \(\varphi\) \cref{lem:evolution}, \cref{eq:delt_speed}, the derivative of \(\Phi\) \cref{eq:delPhi}, and the commutator \([\nabla, \Box]\) from \cref{lem:gradBox}, we compute
 \[
 \begin{split}
 \partial_{t}\nabla_i \varphi - (\Box\nabla \varphi)_{i} &= \nabla_i \partial_t \varphi - \nabla_i \Box \varphi + ([\nabla, \Box] \varphi)_i \\
-&= \nabla_i \left(\Box\varphi + \varphi^{kl}(h^2)_{kl}\varphi + K \varphi^{kl}g_{kl}\varphi\right) - \nabla_i (\Box\varphi) \\
-&\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} \varphi + K\varphi^{kl}g_{ki} \nabla_l \varphi - K\varphi^{kl}g_{kl}\nabla_i \varphi \\
+&= \nabla_i \left(\Box\varphi + \varphi^{kl}(h^2)_{kl}\varphi + K \Phi\varphi\right) - \nabla_i (\Box\varphi) \\
+&\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl} \varphi + K\varphi^{kl}g_{ki} \nabla_l \varphi - K\Phi\nabla_i \varphi \\
 &\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
-&= \nabla_i (\varphi^{kl}(h^2)_{kl}\varphi) + K\varphi^{kl,rs}\nabla_i h_{rs}g_{kl}\varphi \\
-&\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{k,l} \varphi + K\varphi^{kl}g_{ki}\nabla_l \varphi \\
+&= \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + \varphi^{kl,rs}\nabla_i h_{rs} (h^2)_{kl}\varphi + \varphi\varphi^{kl}(h^s_l \nabla_i h_{ks} + h^r_k \nabla_i h_{rl}) + K \varphi\nabla_i\Phi \\
+&\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl} \varphi + K\varphi^{kl}g_{ki}\nabla_l \varphi \\
 &\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi.
 \end{split}
 \]
+where in the last line, we used
+\[
+\nabla_i (h^2)_{kl} = \nabla_i (g^{sr} h_{ks} h_{rl}) = h^s_l \nabla_i h_{ks} + h^r_k \nabla_i h_{rl}.
+\]
 \end{proof}
 
-Now we may proceed to the calculation of \(\partial_t \chi\). This we break into a series of lemmas. Define the quantities,
-\[
-\beta = \partial_t \varphi - K\varphi^{ij}g_{ij}\varphi, \quad \theta =  b^{ij} \nabla_i \varphi \nabla_j \varphi
-\]
-so that we may write
-\[
-\chi =t(\beta - \theta) + \delta\varphi.
-\]
+Now we may proceed to the calculation of \(\partial_t \chi\). But we will do this first by making the intermediate calculations of \(\partial_t \beta\) and \(\partial_t \theta\).
 
 \begin{lemma}
 \label{lem:evbeta}
