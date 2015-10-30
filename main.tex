@@ -282,8 +282,9 @@ The next ingredient is the evolution of the covariant derivative, \(\nabla \varp
 There holds
 \[
 \begin{split}
-\left((\partial_{t}-\Box)\nabla\varphi\right)_{i} &= \nabla_i \left(\varphi^{kl} (h^2)_{kl}\varphi\right) + K\varphi^{kl}g_{ki} \nabla_l \varphi + K\varphi^{kl,rs} g_{kl}\varphi \nabla_i h_{rs}  \\
-&\quad + \varphi^{kl,rs}\nabla_i h_{rs}\nabla^2_{kl} \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi.
+\left((\partial_{t}-\Box)\nabla\varphi\right)_{i} &= \varphi^{kl,rs}\nabla_i h_{rs} \left((h^2)_{kl}\varphi + \nabla^2_{kl} \varphi\right)  + 2 \varphi^{kl} b^{rs} \varphi(h^2)_{rl} \nabla_i h_{ks} \\
+&\quad + \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi\\
+&\quad + K\left(\varphi^{kl}g_{ki} \nabla_l \varphi + \varphi \nabla_i \Phi\right).
 \end{split}
 \]
 \end{lemma}
