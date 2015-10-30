@@ -319,17 +319,15 @@ satisfies
 \[
 \begin{split}
 (\partial_{t} - \Box)\beta &= \left(\varphi^{ij}(h^2)_{ij} + K\Phi \right)\beta \\
-&\quad + (\varphi - \varphi^{ij}h_{ij}) |\nabla\varphi|^{2} \\
+&\quad + (\varphi - \varphi^{ij}h_{ij}) |\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k \varphi \nabla_j \varphi \\
 &\quad + \varphi^{ij,kl} \alpha_{ij} \alpha_{kl} \\
-&\quad + 2\varphi^{ij} b^{kl} (2\varphi(h^2)_{il}\nabla^2_{kj}\varphi + \varphi(h^2)_{il}\varphi(h^2)_{kj}) + 2\varphi^{ij}h^{k}_{i}\nabla_k \varphi \nabla_j \varphi\\
+&\quad + 2b^{il}\varphi^{jk} (2\nabla^2_{ij}\varphi\varphi(h^2)_{kl} + \varphi(h^2)_{ij}\varphi(h^2)_{kl}) \\
 &\quad + KR_{\beta}
 \end{split}
 \]
 where
 \[
-\begin{split}
-R_{\beta} &= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij}.
-\end{split}
+R_{\beta} = \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij}.
 \]
 \end{lemma}
 
@@ -393,15 +391,18 @@ Now we add \cref{eq:deltbeta1} and \cref{eq:deltbeta2} together line by line to 
 The quantity $\theta = b^{ij}\nabla_i \varphi\nabla_j\varphi$ satisfies
 \[
 \begin{split}
-(\partial_{t} - \Box)\theta &= (\varphi^{rs}(h^2)_{rs} - K\varphi^{kl}g_{kl})\theta \\
-&\quad + (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} \\
-&\quad + 2b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi (\nabla^2_{k,l} \varphi + (h^2)_{kl}\varphi) - \varphi^{kl,pq}b^{ir}b^{js}\nabla_i \varphi\nabla_j\varphi \nabla_r h_{kl} \nabla_s h_{pq} \\
-&\quad + K\left[-(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi + 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi + 2 b^{ij}\varphi^{kl,rs}\nabla_i h_{rs}\nabla_j\varphi g_{kl}\varphi\right] \\
-&\quad - 2b^{lq}\varphi^{kp} b^{ir}b^{js}\nabla_i \varphi\nabla_j\varphi \nabla_r h_{kl} \nabla_s h_{pq} + 4b^{ij}\varphi^{kl}\nabla_i h_{rk}h^{r}_{l}\nabla_j \varphi\varphi + 2\varphi^{jl}h^{m}_{l}\nabla_m\varphi\nabla_j\varphi \\
-&\quad - 2b^{ij}\varphi^{rs}\nabla^2_{ir}\varphi\nabla^2_{js}\varphi + 4\varphi^{rs}b^{ip}b^{jq}\nabla_r h_{pq}\nabla^2_{i,s} \varphi \nabla_j\varphi.
+(\partial_{t} - \Box)\theta &= (\varphi^{ij}(h^2)_{ij} + K\Phi)\theta \\
+&\quad + (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k\varphi\nabla_j\varphi \\
+&\quad - \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) \\
+&\quad - 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\nabla^2_{ij} \varphi  \gamma_{kl} + 2 \varphi \gamma_{ij}(h^2)_{kl}  - \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) \\
+&\quad + KR_{\theta}.
 \end{split}
 \]
 \end{lemma}
+where
+\[
+R_{\theta} = -(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi + 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi + 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl}.
+\]
 
 \begin{proof}
 Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry \(b^{ij} = b^{ji}\), we have
@@ -481,7 +482,7 @@ Let $\delta \neq 0.$ The quantity
 satisfies
 \[
 \begin{split}
-\partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h)^2_{ij} + K\varphi^{ij}g_{ij}\right)\chi \\
+\partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h)^2_{ij} + K\Phi\right)\chi \\
 & \quad + t\left(\varphi^{ij,kl} + 2b^{il}\varphi^{jk} - \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi}\right)\eta_{ij}\eta_{kl} + tK R,
 \end{split}
 \]
@@ -492,9 +493,9 @@ where
 and
 \[
 \begin{split}
-R &= 2\varphi^{rs} \nabla_r(\varphi^{ij}g_{ij})\nabla_s\varphi + \Box(\varphi^{ij}g_{ij})\varphi \\
-&\quad + \varphi^{kl,rs}g_{rs}\left(\nabla^2_{k,l}\varphi\varphi + (h^2)_{kl}\varphi^{2} - 2b^{ij}\nabla_i h_{kl}\nabla_j\varphi\varphi\right) + 2\varphi^{ij}h_{ij}\varphi^{2} \\
-&\quad + (\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i\varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi.
+R &= R_{\beta} + R_{\theta} \\
+&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij} \\
+&\quad -(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi + 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi + 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl}.
 \end{split}
 \]
 \end{theorem}
