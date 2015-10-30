@@ -282,7 +282,7 @@ The next ingredient is the evolution of the covariant derivative, \(\nabla \varp
 There holds
 \[
 \begin{split}
-\left((\partial_{t}-\Box)\nabla\varphi\right)_{i} &= \varphi^{kl,rs}\nabla_i h_{rs} \left((h^2)_{kl}\varphi + \nabla^2_{kl} \varphi\right)  + 2 \varphi^{kl} b^{rs} \varphi(h^2)_{rl} \nabla_i h_{ks} \\
+\left((\partial_{t}-\Box)\nabla\varphi\right)_{i} &= \varphi^{kl,rs}\nabla_i h_{rs} \alpha_{kl} + 2 \varphi^{kl} b^{rs} \varphi(h^2)_{rl} \nabla_i h_{ks} \\
 &\quad + \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi\\
 &\quad + K\left(\varphi^{kl}g_{ki} \nabla_l \varphi + \varphi \nabla_i \Phi\right).
 \end{split}
@@ -299,12 +299,19 @@ Using the evolution of \(\varphi\) \cref{lem:evolution}, \cref{eq:delt_speed}, t
 &\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
 &= \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + \varphi^{kl,rs}\nabla_i h_{rs} (h^2)_{kl}\varphi + \varphi\varphi^{kl}(h^s_l \nabla_i h_{ks} + h^r_k \nabla_i h_{rl}) + K \varphi\nabla_i\Phi \\
 &\quad + \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl} \varphi + K\varphi^{kl}g_{ki}\nabla_l \varphi \\
-&\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi.
+&\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
+&= \varphi^{kl,rs}\nabla_i h_{rs} \left((h^2)_{kl}\varphi + \nabla^2_{kl} \varphi\right) + 2 \varphi\varphi^{kl} h^s_l \nabla_i h_{ks} \\
+&\quad + \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
+&\quad + K \left(\varphi\nabla_i\Phi + \varphi^{kl}g_{ki}\nabla_l \varphi\right).
 \end{split}
 \]
-where in the last line, we used
+where in the third equality, we used
 \[
-\nabla_i (h^2)_{kl} = \nabla_i (g^{sr} h_{ks} h_{rl}) = h^s_l \nabla_i h_{ks} + h^r_k \nabla_i h_{rl}.
+\nabla_i (h^2)_{kl} = \nabla_i (g^{sr} h_{ks} h_{rl}) = h^s_l \nabla_i h_{ks} + h^r_k \nabla_i h_{rl}
+\]
+and in the last equality we used
+\[
+b^{rs} (h^2)_{rl} = b^{rs} h_{rm} h^m_l = \delta^s_m h^m_l = h^s_l.
 \]
 \end{proof}
 
