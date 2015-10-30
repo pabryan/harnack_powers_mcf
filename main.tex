@@ -414,20 +414,27 @@ Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry
 &\quad - 2 \varphi^{kl} \nabla_k b^{ij} \nabla_l (\nabla \varphi \otimes \nabla\varphi)_{ij} \\
 &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi \\
 &\quad - 4 \varphi^{kl} \nabla_k b^{ij} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
+&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\
+&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}b^{jq} \nabla_k h_{pq} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
 &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\ 
-&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi - 4 \varphi^{kl} b^{ip}b^{jq} \nabla_k h_{pq} \nabla^2_{i,l} \varphi \nabla_j\varphi 
+&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{i,l} \varphi
 \end{split}
 \end{equation}
-The final line appears verbatim as the final line in the statement of the lemma, so we must deal with the first two terms. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
+where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The terms in final line appear on the second to last line of the statement of the lemma (with indices relabelled), so we must deal with the first two terms. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
 \begin{equation}
 \label{eq:delt_theta1}
 \begin{split}
 (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi &= \nabla_i \varphi \nabla_j \varphi\left[-\varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi^{kl}h_{kl} + \varphi) g^{ij} \right. \\
 & \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
-& \quad - \left. K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} + \varphi^{kl}g_{kl}b^{ij}\}\right] \\
-&= - \left(K\varphi^{kl}g_{kl} + \varphi^{rs}(h)^2_{rs}\right) \theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq}) b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
+& \quad - \left. K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} + \Phi b^{ij}\}\right] \\
+&= - \left(K\Phi + \varphi^{rs}(h)^2_{rs}\right) \theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq}) b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
 &\quad + (\varphi^{kl}h_{kl} + \varphi)|\nabla\varphi|^{2} \\
-&\quad - K(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi 
+&\quad - K(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi \\
+&= - \left(K\Phi + \varphi^{rs}(h)^2_{rs}\right) \theta \\
+&\quad + (\varphi^{kl}h_{kl} + \varphi)|\nabla\varphi|^{2} \\
+&\quad - \varphi^{kl,pq} \gamma_{kl} \gamma_{pq} \\
+&\quad - 2b^{lq}\varphi^{kp} \gamma_{kl} \gamma_{pq} \\
+&\quad - K(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi
 \end{split}
 \end{equation}
 For the second term we have
