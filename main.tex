@@ -402,7 +402,7 @@ The quantity $\theta = b^{ij}\nabla_i \varphi\nabla_j\varphi$ satisfies
 (\partial_{t} - \Box)\theta &= (\varphi^{ij}(h^2)_{ij} + K\Phi)\theta \\
 &\quad + (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k\varphi\nabla_j\varphi \\
 &\quad - \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) \\
-&\quad - 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\gamma_{kl} \nabla^2_{ij} \varphi + 2 \gamma_{ij}\varphi(h^2)_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) \\
+&\quad - 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\alpha_{ij} \gamma_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) \\
 &\quad + KR_{\theta}.
 \end{split}
 \]
@@ -427,7 +427,7 @@ Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry
 &\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{i,l} \varphi
 \end{split}
 \end{equation}
-where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The terms in final line appear on the second to last line of the statement of the lemma (with indices relabelled), so we must deal with the first two terms. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
+where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The first term in final line appears on the second to last line of the statement of the lemma (with indices relabelled). The second term is part of \(4 b^{il}\varphi^{jk} \alpha_{ij} \gamma_{kl}\) in the second to last line. So we must deal with the first two terms and show they add to the remainder of the statement. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
 \begin{equation}
 \label{eq:delt_theta1}
 \begin{split}
