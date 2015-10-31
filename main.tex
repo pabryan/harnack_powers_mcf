@@ -192,7 +192,7 @@ The following evolution equations hold
 \item \label{eq:delt_inversesff} \begin{align*}
 \partial_t b^{ij} &= \Box b^{ij} - \varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi^{kl}h_{kl} + \varphi) g^{ij} \\  
 & \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
-& \quad - K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} + \Phi b^{ij}\}
+& \quad - K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} - \Phi b^{ij}\}
 \end{align*}
 \item \label{eq:delt_squaredsff} $\partial_t (h^2)_{ij} = h^k_j \nabla^2_{i,k} \varphi + h^k_i \nabla^2_{j,k} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}$
 \item \label{eq:delt_speed} $\partial_t \varphi = \Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij} = \beta + K\varphi\Phi$
@@ -433,11 +433,11 @@ where in the second to last equality we used the formula for the derivative of t
 \begin{split}
 (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi &= \nabla_i \varphi \nabla_j \varphi\left[-\varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi^{kl}h_{kl} + \varphi) g^{ij} \right. \\
 & \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
-& \quad - \left. K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} + \Phi b^{ij}\}\right] \\
-&= - \left(K\Phi + \varphi^{rs}(h)^2_{rs}\right) \theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq}) b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
+& \quad - \left. K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} - \Phi b^{ij}\}\right] \\
+&= \left(K\Phi - \varphi^{rs}(h)^2_{rs}\right) \theta - (2b^{lq}\varphi^{kp} + \varphi^{kl,pq}) b^{ir}b^{js}\nabla_i\varphi\nabla_j\varphi\nabla_rh_{kl}\nabla_s h_{pq} \\
 &\quad + (\varphi^{kl}h_{kl} + \varphi)|\nabla\varphi|^{2} \\
 &\quad - K(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi \\
-&= - \left(K\Phi + \varphi^{rs}(h)^2_{rs}\right) \theta \\
+&= \left(K\Phi - \varphi^{rs}(h)^2_{rs}\right) \theta \\
 &\quad + (\varphi^{kl}h_{kl} + \varphi)|\nabla\varphi|^{2} \\
 &\quad - \varphi^{kl,pq} \gamma_{kl} \gamma_{pq} \\
 &\quad - 2b^{lq}\varphi^{kp} \gamma_{kl} \gamma_{pq} \\
@@ -451,16 +451,16 @@ For the second term, from the evolution of \(\nabla\varphi\) in \cref{lem:Evgrad
 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi &= 2 b^{ij} \nabla_j\varphi \left[\varphi^{kl,rs}\nabla_i h_{rs} \alpha_{kl}\varphi + 2 \varphi^{kl} b^{rs} \varphi(h^2)_{rl} \nabla_i h_{ks} \right. \\
 &\quad + \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + \left(\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}\right) \nabla_m \varphi\\
 &\quad \left. + K\left(\varphi^{kl}g_{ki} \nabla_l \varphi + \varphi \nabla_i \Phi\right)\right] \\
-&= 2 b^{ij} \nabla_j\varphi \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + 2 b^{ij} \nabla_j\varphi K \varphi^{kl}g_{ki} \nabla_l \varphi \\
+&= 2 b^{ij} \nabla_j\varphi \varphi^{kl}(h^2)_{kl}\nabla_i \varphi \\
 &\quad - 2 b^{ij} \nabla_j\varphi \varphi^{kl}h_{kl}h^{m}_{i} \nabla_m \varphi + 2 b^{ij} \nabla_j\varphi \varphi^{kl}h^{m}_{l}h_{ki} \nabla_m \varphi \\
 &\quad + 2 b^{ij} \nabla_j\varphi \varphi^{kl,rs}\nabla_i h_{rs} \alpha_{kl} \\
 &\quad + 4 b^{ij} \nabla_j\varphi \varphi^{kl} b^{rs} \varphi(h^2)_{rl} \nabla_i h_{ks} \\
-&\quad + 2 b^{ij} \nabla_j\varphi K \varphi \nabla_i \Phi \\
-&= 2 \varphi^{kl}(h^2)_{kl}\theta + 2 b^{ij} \nabla_j\varphi K \varphi^{kl}g_{ki} \nabla_l \varphi \\
+&\quad + K\left(2 b^{ij} \nabla_j\varphi \varphi^{kl}g_{ki} \nabla_l \varphi + 2 b^{ij} \nabla_j\varphi \varphi \nabla_i \Phi\right) \\
+&= 2 \varphi^{kl}(h^2)_{kl}\theta \\
 &\quad - 2 \varphi^{kl}h_{kl} |\nabla\varphi|^2 + 2 \varphi^{kl} h^{m}_{l} \nabla_k\varphi \nabla_m \varphi \\
 &\quad + 2 \varphi^{kl,rs} \gamma_{rs} \alpha_{kl} \\
 &\quad + 4 b^{rs} \varphi^{kl} \gamma_{ks} \varphi(h^2)_{rl} \\
-&\quad + 2 K \varphi b^{ij} \nabla_j\varphi \nabla_i \Phi
+&\quad + K\left(2 \varphi^{kl} b^j_k \nabla_j\varphi \nabla_l \varphi + 2 \varphi b^{ij} \nabla_j\varphi \nabla_i \Phi\right)
 \end{split}
 \end{equation}
 using the definitions of \(\theta, \alpha_{ij}\) and \(\gamma_{ij}\) as well as \(b^{ij}h_{ki} \nabla_j \varphi = \delta^j_k \nabla_j \varphi = \nabla_k \varphi\), and \(b^{ij} h^m_i = b^{ij} g^{mp}h_{pi} = \delta^j_p g^{mp} = g^{mj}\) in the last equality.
