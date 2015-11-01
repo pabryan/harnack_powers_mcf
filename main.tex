@@ -81,7 +81,7 @@ Rm_{ijkl} &= \overline{Rm}_{ijkl} + h_{ik}h_{jl} - h_{il}h_{jk} \\
 \]
 valid for space forms. We also make use of the Ricci identity,
 \[
-{R_{ijk}}^m  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
+{Rm^m}_{kij}  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
 \]
 
 We will need some notation for derivatives of the speed \(\varphi\). Let us write
@@ -215,14 +215,23 @@ holds, where \(\nabla f = df\) is the covariant derivative of \(f\) and the subs
 \end{lemma}
 
 \begin{proof}
-From the Ricci identities we obtain
+From the Ricci identities
 \[
-\nabla_i (\varphi^{kl} \nabla^2_{kl} f) - (\varphi^{kl}(\nabla^2_{kl} \nabla f))_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl}f + \varphi^{kl}{R^{m}}_{kli} \nabla_m f
+{Rm^m}_{kij}  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
 \]
-and from the Gauss equation we obtain
+we obtain that the $3$-tensor $\nabla^3_{kli}f-\nabla^3_{kil}f$
+is given by
+\[
+\nabla^3_{kli}f-\nabla^3_{kil}f={Rm^m}_{kli}\nabla_m f
+\]
+and thus we obtain
+\[
+\nabla_i (\varphi^{kl} \nabla^2_{kl} f) - (\varphi^{kl}(\nabla^2_{kl} \nabla f))_i = \varphi^{kl,rs} \nabla_i h_{rs} \nabla^2_{kl}f + \varphi^{kl}{Rm^{m}}_{kli} \nabla_m f.
+\]
+From the Gauss equation we obtain
 \[
 \begin{split}
-{R^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
+{Rm^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
 &= K\left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) + \left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f.
 \end{split}
 \]
