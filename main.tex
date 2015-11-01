@@ -231,7 +231,7 @@ and thus we obtain
 From the Gauss equation we obtain
 \[
 \begin{split}
-{Rm^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
+{Rm^{m}}_{kli} \nabla_m f &= \left(K\left(g^{pm}g_{ki}g_{pl}  - g^{pm}g_{pi}g_{kl}\right) + g^{pm} h_{pl}h_{ki} - g^{pm}h_{kl}h_{pi}\right) \nabla_m f \\
 &= K\left(g_{ki} \nabla_l f - g_{kl} \nabla_i f\right) + \left(h^{m}_{l}h_{ki} - h_{kl}h^{m}_{i}\right) \nabla_m f.
 \end{split}
 \]
@@ -558,6 +558,51 @@ Subtracting line by line, we have
 Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} gives the result.
 \end{proof}
 	
+\section{Curvature estimates and backwards convergence to an equator}
+For a convex $H^k$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily.
+
+\begin{lemma}\label{SpeedEst}
+On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a solution of the curvature flow equation
+\begin{equation}\label{eq:CurvFlow}
+\dot{x}=-\varphi\nu
+\end{equation}
+for some positive and strictly monotone curvature function $\varphi$ in a spaceform of nonnegative sectional curvature $K\geq 0.$
+Then 
+\[\tilde{\varphi}=\inf_{M_t}\varphi
+\]
+is increasing in time.
+\end{lemma}
+
+\begin{proof}
+$\tilde{\varphi}$ is Lipschitz continuous, differentiable almost everywhere and 
+\begin{equation}
+\dot{\tilde{\varphi}}=\fr{\del\varphi}{\del t}(t,x_t),
+\end{equation}
+where $x_t\in M_t$ is a point where the infimum is attained, compare \cite[Lemma 6.3.2]{Gerhardt:/2006}.
+By \eqref{eq:delt_speed} we obtain
+\eq{\dot{\tilde{\varphi}}\geq 0.}
+\end{proof}
+
+
+%%%%NOTE: For this corollary we should first transform our differential Harnack inequality into an actual estimate. I formulate the following as general as possible, also to cover other cases, e.g. in the Euclidean space. We might want to change this later. Whether the assumptions hold will depend on the specific curvature function. They certainly hold for our H^k flows.
+\begin{corollary}
+In the situation of Lemma \ref{SpeedEst} with a $k$-homogeneous curvature function $\p$ suppose the $M_t$ are convex and that $\p$ satisfies a Harnack inequality of the form
+\eq{\sup_{M_t}\varphi\leq c\inf_{M_{t}}\varphi,}
+with a time independent constant $c.$
+Furthermore suppose there holds an estimate of the form
+\eq{\k_n\leq c\p^{\fr 1k}.}
+Then the principal curvatures of the flow hypersurfaces $M_t,$
+\eq{\k_1\leq \dots\leq \k_n,}
+are uniformly bounded backwards in time, i.e. for all $T\in (a,b)$ there exists a constant $c=c(T)>0,$ such that 
+\eq{\k_n\leq c\quad\forall t\in (a,T).}
+In particular $c$ does not depend on $a.$
+\end{corollary}
+
+\begin{proof}
+By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time and by the Harnack inequality also its supremum is bounded backwards in time. Due to convexity and 
+\eq{\k_n\leq c\p^{\fr 1k}}
+we obtain the result.
+\end{proof}
 
 
 \bibliographystyle{amsplain}
