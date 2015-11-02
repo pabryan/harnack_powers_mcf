@@ -559,7 +559,7 @@ Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} give
 \end{proof}
 	
 \section{Curvature estimates and backwards convergence to an equator}
-For a convex $H^k$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. For a curvature function $\p$ let us call a hypersurface $M$ $\p$-convex, if at every point $x\in M$ we have
+For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. For a curvature function $\p$ let us call a hypersurface $M$ $\p$-convex, if at every point $x\in M$ we have
 \[\p(\k_1(x),\dots,\k_n(x))\geq 0.
 \]
 
@@ -606,8 +606,31 @@ By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time an
 we obtain the result.
 \end{proof}
 
+Let us investigate the behavior of geodesic spheres under the $f^{\a}$-flow in the sphere.
 
+\begin{lemma}
+Let $\p=f^{\a},$ $0<\a<1,$ where $f$ is a strictly monotone and $1$-homogeneous curvature function normalized to $f(1,\dots,1)=n.$ Consider \eqref{eq:CurvFlow} in the sphere, i.e. $K=1.$ Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$ with outward normal $\nu,$ then a strictly convex flow \eqref{eq:CurvFlow} with initial hypersurface $M_0=S_r$ exists at most on a finite time interval $(a,b).$ Here $b$ is the collapsing time and $a$ is the time where the backward flow hits the equator. 
+\end{lemma}
 
+\begin{proof}
+Starting point is again \eqref{eq:delt_speed}. Since $f$ is constant on a geodesic sphere, for a spherical flow the evolution equation for $\p$ yields
+\eq{\fr{d}{dt}f^{\a}\geq \a n f^{2\a-1},}
+where we used
+\eq{\p^{ij}=\p'f^{ij}}
+and 
+\eq{f^{ij}=g^{ij}}
+at umbilical points, where the latter holds due to the symmetry of $f.$
+This yields
+\eq{\fr{d}{dt}f\geq nf^{\a}.}
+Since the right hand side remains strictly positive under this ODE we obtain finite lifespan forward in time.
+Convexity and integration over some interval $(a,b)$ yield 
+\eq{0\leq f^{1-\a}(a)\leq f^{1-\a}(b)-(1-\a)n(b-a).}
+Letting $a\ra-\8$ gives finite existence backwards in time. 
+\end{proof}
+
+\begin{remark}
+Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations.   
+\end{remark}
 
 \bibliographystyle{amsplain}
 \bibliography{Bibliography.bib}
