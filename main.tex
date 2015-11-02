@@ -559,24 +559,26 @@ Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} give
 \end{proof}
 	
 \section{Curvature estimates and backwards convergence to an equator}
-For a convex $H^k$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily.
+For a convex $H^k$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. For a curvature function $\p$ let us call a hypersurface $M$ $\p$-convex, if at every point $x\in M$ we have
+\[\p(\k_1(x),\dots,\k_n(x))\geq 0.
+\]
 
 \begin{lemma}\label{SpeedEst}
-On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a solution of the curvature flow equation
+On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a $\p$-convex solution of the curvature flow equation
 \begin{equation}\label{eq:CurvFlow}
 \dot{x}=-\varphi\nu
 \end{equation}
-for some positive and strictly monotone curvature function $\varphi$ in a spaceform of nonnegative sectional curvature $K\geq 0.$
+for some strictly monotone curvature function $\varphi$ in a spaceform of nonnegative sectional curvature $K\geq 0.$
 Then 
 \[\tilde{\varphi}=\inf_{M_t}\varphi
 \]
-is increasing in time.
+is nondecreasing in time.
 \end{lemma}
 
 \begin{proof}
 $\tilde{\varphi}$ is Lipschitz continuous, differentiable almost everywhere and 
 \begin{equation}
-\dot{\tilde{\varphi}}=\fr{\del\varphi}{\del t}(t,x_t),
+\dot{\tilde{\varphi}}(t)=\fr{\del\varphi}{\del t}(t,x_t),
 \end{equation}
 where $x_t\in M_t$ is a point where the infimum is attained, compare \cite[Lemma 6.3.2]{Gerhardt:/2006}.
 By \eqref{eq:delt_speed} we obtain
@@ -603,6 +605,8 @@ By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time an
 \eq{\k_n\leq c\p^{\fr 1k}}
 we obtain the result.
 \end{proof}
+
+
 
 
 \bibliographystyle{amsplain}
