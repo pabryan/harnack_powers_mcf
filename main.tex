@@ -559,16 +559,13 @@ Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} give
 \end{proof}
 	
 \section{Curvature estimates and backwards convergence to an equator}
-For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. For a curvature function $\p$ let us call a hypersurface $M$ $\p$-convex, if at every point $x\in M$ we have
-\[\p(\k_1(x),\dots,\k_n(x))\geq 0.
-\]
+From now on we consider the spherical ambient space, $K=1,$ without mentioning that agina. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. 
 
 \begin{lemma}\label{SpeedEst}
-On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a $\p$-convex solution of the curvature flow equation
+Let $0<\a<1.$ On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a convex solution of the curvature flow equation
 \begin{equation}\label{eq:CurvFlow}
-\dot{x}=-\varphi\nu
+\dot{x}=-H^{\a}\nu.
 \end{equation}
-for some strictly monotone curvature function $\varphi$ in a spaceform of nonnegative sectional curvature $K\geq 0.$
 Then 
 \[\tilde{\varphi}=\inf_{M_t}\varphi
 \]
@@ -586,14 +583,9 @@ By \eqref{eq:delt_speed} we obtain
 \end{proof}
 
 
-%%%%NOTE: For this corollary we should first transform our differential Harnack inequality into an actual estimate. I formulate the following as general as possible, also to cover other cases, e.g. in the Euclidean space. We might want to change this later. Whether the assumptions hold will depend on the specific curvature function. They certainly hold for our H^k flows.
+%%%%NOTE: For this corollary we should first transform our differential Harnack inequality into an actual estimate. 
 \begin{corollary}
-In the situation of Lemma \ref{SpeedEst} with a $k$-homogeneous curvature function $\p$ suppose the $M_t$ are convex and that $\p$ satisfies a Harnack inequality of the form
-\eq{\sup_{M_t}\varphi\leq c\inf_{M_{t}}\varphi,}
-with a time independent constant $c.$
-Furthermore suppose there holds an estimate of the form
-\eq{\k_n\leq c\p^{\fr 1k}.}
-Then the principal curvatures of the flow hypersurfaces $M_t,$
+In the situation of Lemma \ref{SpeedEst} the principal curvatures of the flow hypersurfaces $M_t,$
 \eq{\k_1\leq \dots\leq \k_n,}
 are uniformly bounded backwards in time, i.e. for all $T\in (a,b)$ there exists a constant $c=c(T)>0,$ such that 
 \eq{\k_n\leq c\quad\forall t\in (a,T).}
@@ -601,36 +593,88 @@ In particular $c$ does not depend on $a.$
 \end{corollary}
 
 \begin{proof}
-By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time and by the Harnack inequality also its supremum is bounded backwards in time. Due to convexity and 
-\eq{\k_n\leq c\p^{\fr 1k}}
-we obtain the result.
+By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time and by the Harnack inequality also its supremum is bounded backwards in time. Due to convexity we obtain the result.
 \end{proof}
 
 Let us investigate the behavior of geodesic spheres under the $f^{\a}$-flow in the sphere.
 
 \begin{lemma}
-Let $\p=f^{\a},$ $0<\a<1,$ where $f$ is a strictly monotone and $1$-homogeneous curvature function normalized to $f(1,\dots,1)=n.$ Consider \eqref{eq:CurvFlow} in the sphere, i.e. $K=1.$ Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$ with outward normal $\nu,$ then a strictly convex flow \eqref{eq:CurvFlow} with initial hypersurface $M_0=S_r$ exists at most on a finite time interval $(a,b).$ Here $b$ is the collapsing time and $a$ is the time where the backward flow hits the equator. 
+ Consider \eqref{eq:CurvFlow}. Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$ with outward normal $\nu,$ then a strictly convex flow \eqref{eq:CurvFlow} with initial hypersurface $M_0=S_r$ exists at most on a finite time interval $(a,b).$ Here $b$ is the collapsing time and $a$ is the time where the backward flow hits the equator. 
 \end{lemma}
 
 \begin{proof}
-Starting point is again \eqref{eq:delt_speed}. Since $f$ is constant on a geodesic sphere, for a spherical flow the evolution equation for $\p$ yields
-\eq{\fr{d}{dt}f^{\a}\geq \a n f^{2\a-1},}
-where we used
-\eq{\p^{ij}=\p'f^{ij}}
-and 
-\eq{f^{ij}=g^{ij}}
-at umbilical points, where the latter holds due to the symmetry of $f.$
+Starting point is again \eqref{eq:delt_speed}. Since $H$ is constant on a geodesic sphere, for a spherical flow the evolution equation for $\p=H^{\a}$ yields
+\eq{\fr{d}{dt}H^{\a}\geq \a n H^{2\a-1}.}
 This yields
-\eq{\fr{d}{dt}f\geq nf^{\a}.}
+\eq{\fr{d}{dt}H\geq nH^{\a}.}
 Since the right hand side remains strictly positive under this ODE we obtain finite lifespan forward in time.
 Convexity and integration over some interval $(a,b)$ yield 
-\eq{0\leq f^{1-\a}(a)\leq f^{1-\a}(b)-(1-\a)n(b-a).}
+\eq{0\leq H^{1-\a}(a)\leq H^{1-\a}(b)-(1-\a)n(b-a).}
 Letting $a\ra-\8$ gives finite existence backwards in time. 
 \end{proof}
 
 \begin{remark}
-Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations.   
+Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations. 
+
+Thus we may look at \it{the} convex spherical solution of \eqref{eq:CurvFlow}, the lifespan of which we denote by $T_S$, i.e. the solution exists on the interval $(-T_S,0).$
 \end{remark}
+
+\begin{lemma}
+Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then 
+there holds
+\eq{T\leq T_S.}
+\end{lemma}
+
+\pf{
+Suppose $T>T_S+\e$ for some $\e>0.$ Since $M=M_{-T_S-\fr{\e}{2}}$ is strictly contained in a open hemisphere and bounds a convex body $\hat{M},$ we find a geodesic sphere $S$ with $\hat{M}\sub\hat{S}.$
+By the avoidance principle the flow with initial hypersurface $M$ collapses before the spherical flow, a contradiction.
+}
+
+Due to this lemma the following definition is reasonable.
+
+\begin{definition}
+A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is called \it{quasi-ancient}, if $T=T_S.$
+\end{definition}
+
+The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} there backwards limit of the flow hypersurfaces $M_t$ is an equator for $t\ra T.$ We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore we only need some more small observations.
+
+\begin{lemma}
+Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
+
+(i)~For all $t_0<0$ there exists a uniform radius $R>0,$ such that the enclosed convex bodies $\hat{M}_t,$ $-T<t\leq t_0,$ of the flow hypersurfaces $M_t$ satisfy a uniform interior sphere condition with radius $R.$\\
+
+(ii)~For every $y_0\in\mrm{int}~\hat{M}_{t_0}$ the hypersurfaces $M_t,$ $-T<t\leq t_0$ can be written as a graph in geodesic polar coordinates around $y_0$ and the corresponding graph functions satisfy uniform $C^2$-estimates.
+\end{lemma}
+
+\pf{
+Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a convex contracting $H^{\a}$ flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
+\eq{\hat{M}_t\sub\mc{H}(x_0).}
+In our situation all hypersurfaces $M_t,$ $T<t\leq t_0,$ satisfy 
+\eq{B_{\e}(y_0)\sub \mrm{int}~\hat{M}_t}
+and
+\eq{B_{\e}(\hat{y}_0)\sub \hat{M}_t^c}
+with a uniform $\e,$ where $\hat{y}_0$ denotes the antipodal point of $y_0.$
+Now we prove the two claims.\\
+
+(i)~Consider the stereographic projection with $y_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in the Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
+
+(ii)~
+Write the $M_t$ as graphs in geodesic polar coordinates around $y_0,$
+\eq{M_t=\{(r,x^i)\cn r=u(t,x^i)\},}
+where $r$ describes the geodesic distance to $y_0.$ In these coordinates the spherical metric takes the form
+\eq{d\-s^2=dr^2+\sin^{2}r\s_{ij}dx^idx^j,}
+where $(\s_{ij})$ is the round metric of $\S^n.$
+
+Hence on the set in which the $M_t$ range, the metrics $\-g_{ij}=\sin^2r\s_{ij}$ and $\s_{ij}$ are equivalent.
+Due to \cite[Thm.~2.7.10]{Gerhardt:/2006} for all convex hypersurface $M_t$ the quantity
+\eq{v^2=1+\-g^{ij}\nabla_iu\nabla_ju}
+is uniformly bounded by a constant which only depends on $\e.$
+Hence by the equivalence of norms the $M_t$ are uniformly $C^1$-bounded in the sense that the corresponding functions $u(t,\cdot)$ are uniformly $C^1(\S^n)$-bounded.
+A straightforward computation yields the following representation of the Weingarten map in terms of the function $u,$ namely
+\eq{h^i_j=\fr{\vt'}{v\vt}\d^i_j+\fr{\vt'}{v^3\vt^3}\nabla^iu\nabla_ju-\fr{\~g^{ik}}{v\vt^2}\nabla^2_{kj}u,}
+where $\~g^{ij}$ is the inverse of $\~g_{ij}=\vt^{-2}g_{ij},$ $\vt(r)=\sin r$ and covariant derivatives as well as index raising is performed with respect to $\s_{ij},$ compare for example \cite[(3.82)]{Scheuer:05/2015}. Due to the curvature estimates we obtain uniform $C^2(\S^n)$-estimates.
+
+}
 
 \bibliographystyle{amsplain}
 \bibliography{Bibliography.bib}
