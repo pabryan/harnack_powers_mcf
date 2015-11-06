@@ -24,9 +24,9 @@
 \section{Introduction}
 
 We consider the evolution of a hypersurface $M^n$ by
-\[
+\eq{\label{Flow}
 \partial_tx=-\varphi\nu,~ x:M^n\times[0,T)\to M_K,
-\]
+}
 where \(M_K\) is the simply connected space form of constant sectional curvature \(K\) and where $\varphi$ is a function on positive, symmetric linear transformations, evaluated at the Weingarten map,
 \[
 \varphi = \varphi(\mathcal{W}).
@@ -484,12 +484,10 @@ Let $\delta \neq 0.$ The quantity
 \chi = t(\beta - \theta) + \delta\varphi
 \]
 satisfies
-\[
-\begin{split}
+\eq{\label{thm:Evchi1}
 \partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h)^2_{ij} + K\Phi\right)\chi \\
 & \quad + t\left(\varphi^{ij,kl} + 2b^{il}\varphi^{jk} - \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi}\right)\eta_{ij}\eta_{kl} + tK R,
-\end{split}
-\]
+}
 where
 \[
 \eta_{ij} = \alpha_{ij} - \gamma_{ij} = \nabla^2_{i,j}\varphi + (h)^2_{ij}\varphi - b^{rs}\nabla_r h_{ij}\nabla_s \varphi
@@ -557,7 +555,46 @@ Subtracting line by line, we have
 
 Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} gives the result.
 \end{proof}
+
+In the Euclidean space we deduce differential Harnack ienqualities for various speeds:
+
+\begin{corollary}\label{EucHarnack}
+Let $x$ be a strictly convex solution of \eqref{Flow} in the Euclidean space, where $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous and inverse concave curvature function and where $\p\in C^{\8}(\R_+)$ and $\d\neq 0$ satisfy
+\eq{\p''+\fr{2\p'}{f}-\fr{1}{\d}\fr{\p'^2}{\p}\geq 0,\quad \d\p(0,\xi)>0.}
+Then non-negativity of the function
+\eq{\chi=t(\Box\p+\p\p^{ij}(h^2)_{ij}-b^{ij}\nabla_i\p\nabla_j\p)+\d\p}
+is preserved along \eqref{Flow}.
+\end{corollary}
+
+\pf{
+In \eqref{thm:Evchi1} all that has to be checked is non-negativity of the bracket involving the second derivative of $\p(f).$
+First note that the curvature function $f$ is inverse concave, i.e.
+\eq{\~f(\k_i)=\fr{1}{f(\k_i^{-1})}}
+is concave, if and only if
+\eq{\left(f^{ij,kl}+2f^{ik}b^{jl}-2\fr{f^{ij}f^{kl}}{f}\right)\eta_{ij}\eta_{kl}\geq0
+}
+for all symmetric $\eta.$
+We calculate
+\eq{
+\p^{ij,kl}+2b^{jl}\p^{ik}-\fr{\p^{ij}\p^{kl}}{\d\p}&=\p'f^{ij,kl}+\p''f^{ij}f^{kl}+2\p'f^{ik}b^{jl}-\fr{\p'^2}{\d\p}f^{ij}f^{kl}\\
+						&\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}f^{ij}f^{kl}\\
+                        &\geq 0
+}
+in the sense of a bilinear form on symmetric matrices.
+}
 	
+Easy calculations imply that the assumptions of Corollary \ref{EucHarnack} are satisfied in quite a wide range of interesting situation.
+
+\begin{corollary}
+Let $f$ satisfy the assumption of Corollary \ref{EucHarnack}. Then for contracting flows the pair
+\eq{\p(f)=f^{\a},\quad 0<\a<\8, \quad \d\geq \fr{\a}{\a+1},}
+and for expanding flows the pair
+\eq{\p(f)=-f^{-\b}, \quad 0<\b<2,\quad \d\leq \fr{\b}{\b-2},}
+satisfy the assumptions of Corollary \ref{EucHarnack}.
+\end{corollary}
+
+
+
 \section{Curvature estimates and backwards convergence to an equator}
 From now on we consider the spherical ambient space, $K=1,$ without further mention. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. 
 
@@ -583,7 +620,7 @@ By \eqref{eq:delt_speed} we obtain
 \end{proof}
 
 
-%%%%NOTE: For this corollary we should first transform our differential Harnack inequality into an actual estimate. 
+%%%%NOTE: For this corollary we should first transform our differential Harnack inequality into an actual estimate to make this rigorous
 \begin{corollary}
 In the situation of Lemma \ref{SpeedEst} the principal curvatures of the flow hypersurfaces $M_t,$
 \eq{\k_1\leq \dots\leq \k_n,}
