@@ -559,7 +559,7 @@ Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} give
 \end{proof}
 	
 \section{Curvature estimates and backwards convergence to an equator}
-From now on we consider the spherical ambient space, $K=1,$ without mentioning that agina. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. 
+From now on we consider the spherical ambient space, $K=1,$ without further mention. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. 
 
 \begin{lemma}\label{SpeedEst}
 Let $0<\a<1.$ On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a convex solution of the curvature flow equation
@@ -569,7 +569,7 @@ Let $0<\a<1.$ On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a convex 
 Then 
 \[\tilde{\varphi}=\inf_{M_t}\varphi
 \]
-is nondecreasing in time.
+is non-decreasing in time.
 \end{lemma}
 
 \begin{proof}
@@ -616,7 +616,7 @@ Letting $a\ra-\8$ gives finite existence backwards in time.
 \begin{remark}
 Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations. 
 
-Thus we may look at \it{the} convex spherical solution of \eqref{eq:CurvFlow}, the lifespan of which we denote by $T_S$, i.e. the solution exists on the interval $(-T_S,0).$
+Thus we may look at \it{the} convex spherical solution of \eqref{eq:CurvFlow}, the lifespan of which we denote by $T_S$, i.e., the solution exists on the interval $(-T_S,0).$
 \end{remark}
 
 \begin{lemma}
@@ -636,27 +636,27 @@ Due to this lemma the following definition is reasonable.
 A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is called \it{quasi-ancient}, if $T=T_S.$
 \end{definition}
 
-The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} there backwards limit of the flow hypersurfaces $M_t$ is an equator for $t\ra T.$ We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore we only need some more small observations.
+The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces $M_t$ is an equator for $t\ra -T_S.$ We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore we only need some more small observations.
 
-\begin{lemma}
+\begin{lemma}\label{ISC}
 Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
 
-(i)~For all $t_0<0$ there exists a uniform radius $R>0,$ such that the enclosed convex bodies $\hat{M}_t,$ $-T<t\leq t_0,$ of the flow hypersurfaces $M_t$ satisfy a uniform interior sphere condition with radius $R.$\\
+(i)~For all $t_0<0$ there exists a uniform radius $R>0,$ such that the enclosed convex bodies $\hat{M}_t,$ $-T_S<t\leq t_0,$ of the flow hypersurfaces $M_t$ satisfy a uniform interior sphere condition with radius $R.$\\
 
-(ii)~For every $y_0\in\mrm{int}~\hat{M}_{t_0}$ the hypersurfaces $M_t,$ $-T<t\leq t_0$ can be written as a graph in geodesic polar coordinates around $y_0$ and the corresponding graph functions satisfy uniform $C^2$-estimates.
+(ii)~For every $y_0\in\mrm{int}~\hat{M}_{t_0}$ the hypersurfaces $M_t,$ $-T_S<t\leq t_0$ can be written as a graph in geodesic polar coordinates around $y_0$ and the corresponding graph functions satisfy uniform $C^2$-estimates.
 \end{lemma}
 
 \pf{
 Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a convex contracting $H^{\a}$ flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
 \eq{\hat{M}_t\sub\mc{H}(x_0).}
-In our situation all hypersurfaces $M_t,$ $T<t\leq t_0,$ satisfy 
+In our situation all hypersurfaces $M_t,$ $-T_S<t\leq t_0,$ satisfy 
 \eq{B_{\e}(y_0)\sub \mrm{int}~\hat{M}_t}
 and
 \eq{B_{\e}(\hat{y}_0)\sub \hat{M}_t^c}
 with a uniform $\e,$ where $\hat{y}_0$ denotes the antipodal point of $y_0.$
 Now we prove the two claims.\\
 
-(i)~Consider the stereographic projection with $y_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in the Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
+(i)~Consider the stereographic projection with $\hat{y}_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in the Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
 
 (ii)~
 Write the $M_t$ as graphs in geodesic polar coordinates around $y_0,$
@@ -673,8 +673,33 @@ Hence by the equivalence of norms the $M_t$ are uniformly $C^1$-bounded in the s
 A straightforward computation yields the following representation of the Weingarten map in terms of the function $u,$ namely
 \eq{h^i_j=\fr{\vt'}{v\vt}\d^i_j+\fr{\vt'}{v^3\vt^3}\nabla^iu\nabla_ju-\fr{\~g^{ik}}{v\vt^2}\nabla^2_{kj}u,}
 where $\~g^{ij}$ is the inverse of $\~g_{ij}=\vt^{-2}g_{ij},$ $\vt(r)=\sin r$ and covariant derivatives as well as index raising is performed with respect to $\s_{ij},$ compare for example \cite[(3.82)]{Scheuer:05/2015}. Due to the curvature estimates we obtain uniform $C^2(\S^n)$-estimates.
-
 }
+
+\begin{corollary}\label{Backlimit}
+Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there exists a unique backwards limiting hypersurface $M_{-T_S}$ and the flow hypersurfaces $M_t$ converge to $M_{-T_S}$ in $C^{1,\b},$ $0<\b<1,$ in the sense that for a common graph representation as in Lemma \ref{ISC} there holds
+\eq{u(t,\cdot)\ra u(-T_S,\cdot)}
+in the norm of $C^{1,\b}(\S^n).$
+\end{corollary}
+
+\pf{
+Due to the pointwise monotonicity of $u(t,\cdot)$ backwards in time we obtain a pointwise limit. The $C^{1,\b}$-convergence follows from compactness.
+}
+
+\begin{theorem}
+In the situation of Corollary \ref{Backlimit} the hypersurface $M_{T_S}$ is an equator of $\S^{n+1}.$
+\end{theorem}
+
+\pf{
+Since the convex bodies $M_t$ are increasing backwards in time and due to the uniform convergence of $M_t$ to $M_{-T_S},$ the set
+\eq{\hat{M}_{-T_S}:=\overline{\bigcup_{t<0}\hat{M}_t}}
+is a compact body with
+\eq{\del \hat{M}_{-T_S}=M_{-T_S}.}
+Since $\mrm{int}(\hat{M}_{-T_S})$ is a strictly convex set, it is especially weakly convex in a hemisphere in the sense of \cite[Def.~3.2]{MakowskiScheuer:/2013}. Thus $\hat{M}_{-T_S}$ is a weakly convex body in a hemisphere. The proof of \cite[Lemma~6.1]{MakowskiScheuer:/2013} can literally be applied to show that $\hat{M}_{-T_S}$ satisfies a uniform interior sphere condition as well.
+We can apply \cite[Thm.~1.1]{MakowskiScheuer:/2013} and obtain that $\hat{M}_{-T_S}$ is either strictly contained in an open hemisphere or is equal to a closed hemisphere. The first alternative is not possible since the solution is quasi-ancient. We conclude that $\del \hat{M}_{-T_S}=M_{-T_S}$ is an equator of $\S^{n+1}.$
+}
+
+
+
 
 \bibliographystyle{amsplain}
 \bibliography{Bibliography.bib}
