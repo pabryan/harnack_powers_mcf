@@ -436,7 +436,7 @@ Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry
 &\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{i,l} \varphi,
 \end{split}
 \end{equation}
-where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The first term in final line appears on the second to last line of the statement of the lemma (with indices relabelled). The second term is part of \(4 b^{il}\varphi^{jk} \alpha_{ij} \gamma_{kl}\) in the second to last line. So we must deal with the first two terms and show they add to the remainder of the statement. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
+where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The first term in final line appears on the second to last line of the statement of the lemma (with indices relabeled). The second term is part of \(4 b^{il}\varphi^{jk} \alpha_{ij} \gamma_{kl}\) in the second to last line. So we must deal with the first two terms and show they add to the remainder of the statement. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
 \begin{equation}
 \label{eq:delt_theta1}
 \begin{split}
@@ -568,15 +568,15 @@ is preserved along \eqref{Flow}.
 \pf{
 In \eqref{thm:Evchi1} all that has to be checked is non-negativity of the bracket involving the second derivative of $\p(f).$
 First note that the curvature function $f$ is inverse concave, i.e.
-\eq{\label{eq: inverse concavity}\~f(\k_i)=\fr{1}{f(\k_i^{-1})}}
+\eq{\~f(\k_i)=\fr{1}{f(\k_i^{-1})}}
 is concave, if and only if
 \eq{\left(f^{ij,kl}+2f^{ik}b^{jl}-2\fr{f^{ij}f^{kl}}{f}\right)\eta_{ij}\eta_{kl}\geq0
 }
 for all symmetric $\eta.$
 We calculate
 \eq{
-\left(\p^{ij,kl}+2b^{jl}\p^{ik}-\fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}&=\left(\p'f^{ij,kl}+\p''f^{ij}f^{kl}+2\p'f^{ik}b^{jl}-\fr{\p'^2}{\d\p}\right)f^{ij}f^{kl}\eta_{ij}\eta_{kl}\\
-                        &\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}f^{ij}f^{kl}\eta_{ij}\eta_{kl}\\
+\p^{ij,kl}+2b^{jl}\p^{ik}-\fr{\p^{ij}\p^{kl}}{\d\p}&=\p'f^{ij,kl}+\p''f^{ij}f^{kl}+2\p'f^{ik}b^{jl}-\fr{\p'^2}{\d\p}f^{ij}f^{kl}\\
+                        &\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}f^{ij}f^{kl}\\
                         &\geq 0
 }
 in the sense of a bilinear form on symmetric matrices.
@@ -585,14 +585,11 @@ in the sense of a bilinear form on symmetric matrices.
 Easy calculations imply that the assumptions of Corollary \ref{EucHarnack} are satisfied in quite a wide range of interesting situation.
 
 \begin{corollary}
-Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous curvature function. If $f$ is inverse concave, then for contracting flows the pair
+Let $f$ satisfy the assumption of Corollary \ref{EucHarnack}. Then for contracting flows the pair
 \eq{\p(f)=f^{\a},\quad 0<\a<\8, \quad \d\geq \fr{\a}{\a+1},}
 and for expanding flows the pair
-\eq{\p(f)=-f^{-\b}, \quad 0<\b<1,\quad \d\leq \fr{\b}{\b-1}}
-satisfy $\chi>0$.
-%If $f$ is inverse convex (e.q., the inequality (\ref{eq: inverse concavity}) is reversed), then for expanding flows the pair
-%\eq{\p(f)=-f^{-\b}, \quad \b>1,\quad \d\geq \fr{\b}{\b-1}}
-%satisfy $\chi<0.$
+\eq{\p(f)=-f^{-\b}, \quad 0<\b<2,\quad \d\leq \fr{\b}{\b-2}}
+satisfy the assumptions of Corollary \ref{EucHarnack}.
 \end{corollary}
 
 In the sphere it is unlikely to obtain a such a variety of speeds, due to the complicated term $R.$ However, if the speed is a function of the mean curvature, we can simplify the evolution.
@@ -613,57 +610,255 @@ This computation is tedious but straightforward. The key point is to replace the
 As we will see, the middle term in \eqref{RSphere1} does not always have the favorable sign. In order to handle this, it might be useful to add an auxiliary function of the speed. Using Lemma \ref{RSphere}, it is straightforward to check the following evolution equation.
 
 \begin{lemma}
-Let $\zeta=\zeta(\p)$ be a function. Then the function
-\eq{\bar{\chi}=t(\b-\t+\zeta)+\d\p}
+Let $g=g(\p)$ be a function. Then the function
+\eq{\bar{\chi}=t(\b-\t+g)+\d\p}
 evolves according to
-\eq{\label{Evchibar1}
-\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi+\zeta \\
-&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\
-		&\hp{=}+t\Big[2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p\\
-        &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
-    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big],
+\eq{\label{thm:Evchibar1}
+\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + K\Phi\right)\chi+g \\
+&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\ 
+		&\hp{=}+t\Big(2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{g'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+g'\p^{ij}g_{ij}\p\\
+        &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-g''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
+    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big),
 }
+
 \end{lemma}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{proof of the main theorem}
+%\subsection{Shrinking flows}
+%Using the expression
+%\[\begin{split}
+%R&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij} \\
+%&\quad +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi - 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl},
+%\end{split}
+%\]
+%we calculate for $\varphi=H^{\alpha}$ that
+%\begin{align}\label{ie: 1-R for Hk}
+%R&=2n(\alpha-1)H^{\alpha-1}\frac{\chi-\delta\varphi}{t}+n(\alpha-1)(2\alpha-1)H^{\alpha-2}|\nabla H^{\alpha}|^2\\
+%&\quad +(\alpha+1)H^{\alpha}(b^2)^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha}-2\alpha H^{\alpha-1}b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha}\nonumber\\
+%&\quad +2\alpha H^{3\alpha}-n\alpha(\alpha-1)H^{3\alpha-2}|A|^2.\nonumber
+%\end{align}
+%Note that $H^\alpha(b^2)^{rs}\geq H^{\alpha-1}b^{rs}\geq H^{\alpha-2}g^{rs}.$ Therefore, for $\alpha\in(0,1)$, we obtain
+%\begin{align*}
+%R&\geq 2n(\alpha-1)H^{\alpha-1}\frac{\chi-\delta\varphi}{t}+(\alpha-1)(n(2\alpha-1)-1)H^{\alpha-2}|\nabla H^{\alpha}|^2+(3\alpha-\alpha^2)H^{3\alpha}.
+%\end{align*}
+%We consider two cases.
+%\begin{itemize}
+%  \item $(\alpha-1)(n(2\alpha-1)-1)\geq 0$: Take $\delta=\frac{\alpha}{\alpha+1}$ in (\ref{thm:Evchi}). $\chi$ is initially positive. At the first time that $\chi$ becomes zero, $R>0.$ This is a contradiction in view of the maximum principle applied to (\ref{thm:Evchi1}).
+%  \item $(\alpha-1)(n(2\alpha-1)-1)\leq 0$:
+%\end{itemize}
+%This is a contradiction in view of (\ref{thm:Evchi1}).
+%\subsection{Expanding flows}
+%For $\varphi=-H^{-\alpha}$ we obtain
+%\begin{align}\label{ie: 2-R for -Hk}
+%R&=2n(\alpha+1)H^{-\alpha-1}\frac{\chi-\delta\varphi}{t}-n(\alpha+1)(2\alpha+1)H^{-\alpha-2}|\nabla H^{-\alpha}|^2\\
+%&\quad +(\alpha-1)H^{-\alpha}(b^2)^{ij}\nabla_iH^{-\alpha}\nabla_jH^{-\alpha}-2\alpha H^{-\alpha-1}b^{ij}\nabla_iH^{-\alpha}\nabla_jH^{-\alpha}\nonumber\\
+%&\quad +2\alpha H^{-3\alpha}+n\alpha(\alpha+1)H^{-3\alpha-2}|A|^2.\nonumber
+%\end{align}
+%\subsubsection{Harnack inequality for inverse mean curvature flow}
+%Let $\alpha=1$ and $K=-1$. Since $n|A|^2\geq H^2$, we get
+%\[R\leq n(\alpha+1)H^{-\alpha-1}(\beta-\theta). \]
+%Take $\delta=-1$ in (\ref{thm:Evchi}). At the first time that $\chi$ becomes zero, $\beta-\theta$ must be negative; therefore, $R\leq 0.$
+%This is a contradiction in view of (\ref{thm:Evchi1}).
+%We consider two cases.
+%\begin{enumerate}
+ % \item $(\alpha-1)(n(2\alpha-1)-1)\geq 0$: In this case, $$R\geq 2n(\alpha-1)H^{\alpha-1}(\beta-\theta)=2n(\alpha-1)H^{\alpha-1}\frac{\chi-\delta\varphi}{t}.$$
+%Thus the evolution equation of $\chi$ in Theorem \ref{thm:Evchi} with $\delta=\frac{\alpha}{\alpha+1}$ implies that
+%\begin{align*}
+%\partial_t \chi -\Box\chi
+% &\ge \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi+2nK(\alpha-1)H^{\alpha-1}\right)\chi \\
+ %&\quad +  2nK\delta(1-\alpha)H^{2\alpha-1}\\
+ %&\ge \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi+2nK(\alpha-1)H^{\alpha-1}\right)\chi.
+%\end{align*}
+%An application of the maximum principle then proves that $\chi>0.$
+ % \item $(\alpha-1)(n(2\alpha-1)-1)\leq 0:$ In this case, we apply the maximum principle to the evolution equation of \[\bar{\chi}=t\left(\beta-\theta+ \frac{K {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}\right)+\frac{\alpha}{\alpha+1}\varphi.\]
+%  Note that
+%  \begin{align*}
+ % \partial_t H^{2\alpha-1}&=\Box H^{2\alpha-1}-\frac{(2\alpha-1)(\alpha-1)}{\alpha}H^{\alpha-2}|\nabla H^{\alpha}|^2\\
+ % &\quad+\frac{2\alpha-1}{\alpha}H^{2\alpha-1}(\varphi^{ij}(h^2)_{ij} + K\Phi).
+ % \end{align*}
+%Therefore, using the evolution equation of $\chi$ with $\delta=\frac{\alpha}{\alpha+1}$ we obtain
+%\begin{align*}
+%\partial_t \bar{\chi} -\Box\bar{\chi} &\geq \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\left(\bar{\chi}-\frac{tK {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}\right)\\
+%&\quad + tK (R-(\alpha-1)(n(2\alpha-1)-1)H^{\alpha-2}|\nabla H^{\alpha}|^2)\\
+%&\quad +tK(n(2\alpha-1)-1)H^{2\alpha-1}(\varphi^{ij}(h^2)_{ij} + K\Phi)\\
+%&\quad + \frac{K {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}.
+%\end{align*}
+%Inequality (\ref{ie: R for Hk}) then yields
+%\begin{align*}
+%\partial_t \bar{\chi} -\Box\bar{\chi} &\geq \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\left(\bar{\chi}-\frac{tK {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}\right)\\
+%&\quad + 2nKt(\alpha-1)H^{\alpha-1}(\beta-\theta)\\
+%&\quad +tK(n(2\alpha-1)-1)H^{2\alpha-1}(\varphi^{ij}(h^2)_{ij} + K\Phi).
+%\end{align*}
+%Note that at the first time that $\bar{\chi}=0$ we must have $\beta-\theta\leq 0;$ therefore at such a point
+%\begin{align*}
+%\partial_t \bar{\chi} -\Box\bar{\chi}> \left(tK(n(2\alpha-1)-1)\frac{\alpha-1}{2\alpha-1}\right)\left(\varphi^{ij}(h^2)_{ij} + K\Phi\right)H^{2\alpha-1}.
+%\end{align*}
+%Unfortunately, the right-hand side is negative.
+%\end{enumerate}
 
-In order to prove Theorem \ref{thm: main 1}, we need to show that for
-\eq{\p=H^{\a},\quad \d=\fr{\a}{\a+1},}
-the quantity $\bar{\chi}$ preserves its positivity at all $t>0.$ Here $\zeta$ is chosen to be
-\eq{\zeta(\p)=\begin{cases} 0, &0<\a\leq \fr{1}{2}+\fr{1}{2n}\\
-					\a\br{n-\fr{1}{2\a-1}}\p^{2-\fr{1}{\a}}, &\fr{1}{2}+\fr{1}{2n}<\a\leq 1.\end{cases}}
-However, to avoid confusion, we will keep the general form as long as possible.
 
-At time $t=0,$ $\bar\chi$ is positive.
-%%%%%%%%%%%% We need to impose strict mean convexity in the main theorem here!!!!!!! %%%%%%
-Thus suppose there exists a first time $t_0$ and a point $x_0$ in $M_{t_0},$ such that $\bar{\chi}(t_0,x_0)=0.$
-Then we also obtain
-\eq{\chi=-t\zeta,\quad \b-\t=-\fr{\d\p}{t}-\zeta.}
-Thus, using \eqref{Evchibar1}, we obtain at $(t_0,x_0):$
-\eq{0&\geq \del_t\bar\chi-\Box\bar\chi\\
-		&=2\zeta-2n\d\fr{\p''\p^2}{\p'}+t\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
-        &\hp{=}+t\Big[\fr{\zeta^2}{\d\p}-2n\fr{\p''\p}{\p'}\zeta+2\p^2\p'H+\br{\zeta'\p-\zeta}\p^{ij}g_{ij}	\\
-        &\hp{=+t} +\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\p^{ij}(h^2)_{ij}+\br{\p'H+\p}b^{ir}b^j_r\nabla_i\p\nabla_j\p\\
-        &\hp{=+t}-2\p'b^{ij}\nabla_i\p\nabla_j\p+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\Big]\\
-        &\geq2\zeta-2n\d\fr{\p''\p^2}{\p'}+t\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
-        &\hp{=}+t\Big[\fr{\zeta^2}{\d\p}+2\p^2\p'H-2n\fr{\p''\p}{\p'}\zeta+n\br{\zeta'\p-\zeta}\p'	\\
-        &\hp{=+t} +\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\p^{ij}(h^2)_{ij}\\
-        &\hp{=+t}+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''+\fr{\p}{\p'H^2}-\fr{1}{H}}\p^{ij}\nabla_{i}\p\nabla_j\p\Big],}
+\section{Curvature estimates and backwards convergence to an equator}
+From now on we consider the spherical ambient space, $K=1,$ without further mention. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily.
 
-where in the last inequality we used
-\eq{\p-\p'H=(1-\a)H^\a\geq 0}
+\begin{lemma}\label{SpeedEst}
+Let $0<\a<1.$ On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a convex solution of the curvature flow equation
+\begin{equation}\label{eq:CurvFlow}
+\dot{x}=-H^{\a}\nu.
+\end{equation}
+Then
+\[\tilde{\varphi}=\inf_{M_t}\varphi
+\]
+is non-decreasing in time.
+\end{lemma}
+
+\begin{proof}
+$\tilde{\varphi}$ is Lipschitz continuous, differentiable almost everywhere and
+\begin{equation}
+\dot{\tilde{\varphi}}(t)=\fr{\del\varphi}{\del t}(t,x_t),
+\end{equation}
+where $x_t\in M_t$ is a point where the infimum is attained, compare \cite[Lemma 6.3.2]{Gerhardt:/2006}.
+By \eqref{eq:delt_speed} we obtain
+\eq{\dot{\tilde{\varphi}}\geq 0.}
+\end{proof}
+
+
+%%%%NOTE: For this corollary we should first transform our differential Harnack inequality into an actual estimate to make this rigorous
+\begin{corollary}
+In the situation of Lemma \ref{SpeedEst} the principal curvatures of the flow hypersurfaces $M_t,$
+\eq{\k_1\leq \dots\leq \k_n,}
+are uniformly bounded backwards in time, i.e. for all $T\in (a,b)$ there exists a constant $c=c(T)>0,$ such that
+\eq{\k_n\leq c\quad\forall t\in (a,T).}
+In particular $c$ does not depend on $a.$
+\end{corollary}
+
+\begin{proof}
+By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time and by the Harnack inequality also its supremum is bounded backwards in time. Due to convexity we obtain the result.
+\end{proof}
+
+Let us investigate the behavior of geodesic spheres under the $f^{\a}$-flow in the sphere.
+
+\begin{lemma}
+ Consider \eqref{eq:CurvFlow}. Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$ with outward normal $\nu,$ then a strictly convex flow \eqref{eq:CurvFlow} with initial hypersurface $M_0=S_r$ exists at most on a finite time interval $(a,b).$ Here $b$ is the collapsing time and $a$ is the time where the backward flow hits the equator.
+\end{lemma}
+
+\begin{proof}
+Starting point is again \eqref{eq:delt_speed}. Since $H$ is constant on a geodesic sphere, for a spherical flow the evolution equation for $\p=H^{\a}$ yields
+\eq{\fr{d}{dt}H^{\a}\geq \a n H^{2\a-1}.}
+This yields
+\eq{\fr{d}{dt}H\geq nH^{\a}.}
+Since the right hand side remains strictly positive under this ODE we obtain finite lifespan forward in time.
+Convexity and integration over some interval $(a,b)$ yield
+\eq{0\leq H^{1-\a}(a)\leq H^{1-\a}(b)-(1-\a)n(b-a).}
+Letting $a\ra-\8$ gives finite existence backwards in time.
+\end{proof}
+
+\begin{remark}
+Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift, we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations.
+
+Thus we may look at \it{the} convex spherical solution of \eqref{eq:CurvFlow}, the lifespan of which we denote by $T_S$, i.e., the solution exists on the interval $(-T_S,0).$
+\end{remark}
+
+\begin{lemma}
+Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then
+there holds
+\eq{T\leq T_S.}
+\end{lemma}
+
+\pf{
+Suppose $T>T_S+\e$ for some $\e>0.$ Since $M=M_{-T_S-\fr{\e}{2}}$ is strictly contained in a open hemisphere and bounds a convex body $\hat{M},$ we find a geodesic sphere $S$ with $\hat{M}\sub\hat{S}.$
+By the avoidance principle the flow with initial hypersurface $M$ collapses before the spherical flow, a contradiction.
+}
+
+Due to this lemma the following definition is reasonable.
+
+\begin{definition}
+A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is called \it{quasi-ancient}, if $T=T_S.$
+\end{definition}
+
+The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces $M_t$ is an equator for $t\ra -T_S.$ We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore, we only need some more small observations.
+
+\begin{lemma}\label{ISC}
+Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
+
+(i)~For all $t_0<0$ there exists a uniform radius $R>0,$ such that the enclosed convex bodies $\hat{M}_t,$ $-T_S<t\leq t_0,$ of the flow hypersurfaces $M_t$ satisfy a uniform interior sphere condition with radius $R.$\\
+
+(ii)~For every $y_0\in\mrm{int}~\hat{M}_{t_0}$ the hypersurfaces $M_t,$ $-T_S<t\leq t_0$ can be written as a graph in geodesic polar coordinates around $y_0$ and the corresponding graph functions satisfy uniform $C^2$-estimates.
+\end{lemma}
+
+\pf{
+Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a convex contracting $H^{\a}$ flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
+\eq{\hat{M}_t\sub\mc{H}(x_0).}
+In our situation all hypersurfaces $M_t,$ $-T_S<t\leq t_0,$ satisfy
+\eq{B_{\e}(y_0)\sub \mrm{int}~\hat{M}_t}
 and
-\eq{Hb^{ij}\geq g^{ij}}
-in the sense of bilinear forms.
+\eq{B_{\e}(\hat{y}_0)\sub \hat{M}_t^c}
+with a uniform $\e,$ where $\hat{y}_0$ denotes the antipodal point of $y_0.$
+Now we prove the two claims.\\
 
-To finish the proof, we need to show that the right-hand side is positive. If $\zeta=0$, this is straightforward:
-\[\varphi''<0~\&~\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}+\fr{\p}{\p'H^2}-\fr{1}{H}}\geq 0.\]
-For the second case that $\zeta\neq 0$, note that
-$$2\zeta-2n\d\fr{\p''\p^2}{\p'}\geq 0~\mbox{for}~\alpha\geq \frac{n+1}{2n},$$ 
-$$\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq0~\mbox{for}~\delta=\frac{\alpha}{\alpha+1},$$
-$$\fr{\zeta^2}{\d\p}-2n\fr{\p''\p}{\p'}\zeta+n\br{\zeta'\p-\zeta}\p'\geq 0~\mbox{for}~\alpha\geq\frac{n+1}{2n}~\&~\delta=\frac{\alpha}{\alpha+1},$$
-$$\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\geq 0~\mbox{for}~\frac{n+1}{2n}\leq \alpha\leq 1,$$
-$$\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''+\fr{\p}{\p'H^2}-\fr{1}{H}}=0.$$
+(i)~Consider the stereographic projection with $\hat{y}_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in the Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
+
+(ii)~
+Write the $M_t$ as graphs in geodesic polar coordinates around $y_0,$
+\eq{M_t=\{(r,x^i)\cn r=u(t,x^i)\},}
+where $r$ describes the geodesic distance to $y_0.$ In these coordinates the spherical metric takes the form
+\eq{d\-s^2=dr^2+\sin^{2}r\s_{ij}dx^idx^j,}
+where $(\s_{ij})$ is the round metric of $\S^n.$
+
+Hence on the set in which the $M_t$ range, the metrics $\-g_{ij}=\sin^2r\s_{ij}$ and $\s_{ij}$ are equivalent.
+Due to \cite[Thm.~2.7.10]{Gerhardt:/2006} for all convex hypersurface $M_t$ the quantity
+\eq{v^2=1+\-g^{ij}\nabla_iu\nabla_ju}
+is uniformly bounded by a constant which only depends on $\e.$
+Hence by the equivalence of norms the $M_t$ are uniformly $C^1$-bounded in the sense that the corresponding functions $u(t,\cdot)$ are uniformly $C^1(\S^n)$-bounded.
+A straightforward computation yields the following representation of the Weingarten map in terms of the function $u,$ namely
+\eq{h^i_j=\fr{\vt'}{v\vt}\d^i_j+\fr{\vt'}{v^3\vt^3}\nabla^iu\nabla_ju-\fr{\~g^{ik}}{v\vt^2}\nabla^2_{kj}u,}
+where $\~g^{ij}$ is the inverse of $\~g_{ij}=\vt^{-2}g_{ij},$ $\vt(r)=\sin r$ and covariant derivatives as well as index raising is performed with respect to $\s_{ij},$ compare for example \cite[(3.82)]{Scheuer:05/2015}. Due to the curvature estimates we obtain uniform $C^2(\S^n)$-estimates.
+}
+
+\begin{corollary}\label{Backlimit}
+Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there exists a unique backwards limiting hypersurface $M_{-T_S}$ and the flow hypersurfaces $M_t$ converge to $M_{-T_S}$ in $C^{1,\b},$ $0<\b<1,$ in the sense that for a common graph representation as in Lemma \ref{ISC} there holds
+\eq{u(t,\cdot)\ra u(-T_S,\cdot)}
+in the norm of $C^{1,\b}(\S^n).$
+\end{corollary}
+
+\pf{
+Due to the point-wise monotonicity of $u(t,\cdot)$ backwards in time we obtain a point-wise limit. The $C^{1,\b}$-convergence follows from compactness.
+}
+
+\begin{theorem}
+In the situation of Corollary \ref{Backlimit} the hypersurface $M_{T_S}$ is an equator of $\S^{n+1}.$
+\end{theorem}
+
+\pf{
+Since the convex bodies $M_t$ are increasing backwards in time and due to the uniform convergence of $M_t$ to $M_{-T_S},$ the set
+\eq{\hat{M}_{-T_S}:=\overline{\bigcup_{t<0}\hat{M}_t}}
+is a compact body with
+\eq{\del \hat{M}_{-T_S}=M_{-T_S}.}
+Since $\mrm{int}(\hat{M}_{-T_S})$ is a strictly convex set, it is especially weakly convex in a hemisphere in the sense of \cite[Def.~3.2]{MakowskiScheuer:/2013}. Thus $\hat{M}_{-T_S}$ is a weakly convex body in a hemisphere. The proof of \cite[Lemma~6.1]{MakowskiScheuer:/2013} can literally be applied to show that $\hat{M}_{-T_S}$ satisfies a uniform interior sphere condition as well.
+We can apply \cite[Thm.~1.1]{MakowskiScheuer:/2013} and obtain that $\hat{M}_{-T_S}$ is either strictly contained in an open hemisphere or is equal to a closed hemisphere. The first alternative is not possible since the solution is quasi-ancient. We conclude that $\del \hat{M}_{-T_S}=M_{-T_S}$ is an equator of $\S^{n+1}.$
+}
 
 
 
