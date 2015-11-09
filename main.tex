@@ -16,7 +16,7 @@
 \keywords{}
 
 \begin{abstract}
-%We prove differential Harnack inequalities for weakly convex hypersurfaces on the unit sphere shrinking by positive powers of homogeneous degree one, inverse-concave functions of principal curvatures, $f^{\alpha}>0,~\alpha\geq 1$ . As an application, we prove that the only convex, ancient solutions of curvature flows with $f$ concave and inverse-concave velocities are shrinking geodesic spheres.
+%We prove differential Harnack inequalities for weakly convex hypersurfaces on the unit sphere shrinking by positive powers of homogeneous degree one, inverse-concave functions of principal curvatures, $f^{\alpha}>0,~\alpha\geq 1$. As an application, we prove that the only convex, ancient solutions of curvature flows with $f$ concave and inverse-concave velocities are shrinking geodesic spheres.
 \end{abstract}
 
 \maketitle
@@ -35,7 +35,7 @@ Equivalently, \(\varphi\) is a symmetric function on the eigenvalues of \(\mathc
 
 We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is homogeneous degree one, inverse concave (concave also?) and \(\alpha \in (0,1)\). Our principal result is a Harnack inequality for these flows, extending the inequality in \cite{2015arXiv150802821B, bryanlouie} and inspired by \cite{MR1296393, MR1100812, MR1316556, MR1480081}. Namely, we prove that if \(\varphi = H^{\alpha}\) for \(0 < \alpha \leq 1\) we have
 
-\begin{theorem}
+\begin{theorem}\label{thm: main 1}
 If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
 \[
 \partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
@@ -48,11 +48,11 @@ If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
 
 \section{Preliminaries}
 
-Let $\overline{g}$ and $\overline{Rm}$ denote, respectively, the metric and the curvature tensor of $M_K$. Define \(M_t := x(M^n,t)\), and let \(g = x_t^{\ast} \overline{g}\) denote the induced metric on \(M\) with $\nabla$ the corresponding Levi-Civita connection. Write $\nu$ for the outer unit normal to $M_t$ and let \(\{\partial_i\}_{i=1}^n\) be a local frame on \(M\) which extends to a frame \(\{\partial_0 = \nu, (x_t)_{\ast} \partial_1, \cdots, (x_t)_{\ast} \partial_n\}\) on \(M_K\) in a neighbourhood of \(M_t\). 
+Let $\overline{g}$ and $\overline{Rm}$ denote, respectively, the metric and the curvature tensor of $M_K$. Define \(M_t := x(M^n,t)\), and let \(g = x_t^{\ast} \overline{g}\) denote the induced metric on \(M\) with $\nabla$ the corresponding Levi-Civita connection. Write $\nu$ for the outer unit normal to $M_t$ and let \(\{\partial_i\}_{i=1}^n\) be a local frame on \(M\) which extends to a frame \(\{\partial_0 = \nu, (x_t)_{\ast} \partial_1, \cdots, (x_t)_{\ast} \partial_n\}\) on \(M_K\) in a neighborhood of \(M_t\).
 
-Let Greek indices range from \(0\) to \(n\) and Latin indices range from \(1\) to \(n\). The Riemann curvature tensor of \(M_K\) satisfies \(\bar{R}_{\alpha\beta\gamma\theta} = K(\bar{g}_{\alpha\gamma}\bar{g}_{\beta\delta} - \bar{g}_{\alpha\theta}\bar{g}_{\beta\gamma})\). We may write the metric $g = \{g_{ij}\}$, second fundamental form $A = \{h_{ij}\}$, the Weingarten map $\mathcal{W} = h^i_j = g^{mi} h_{jm}$ and the Riemann curvature tensor $Rm_{ijkl}$ with respect to the given frame. 
+Let Greek indices range from \(0\) to \(n\) and Latin indices range from \(1\) to \(n\). The Riemann curvature tensor of \(M_K\) satisfies \(\bar{R}_{\alpha\beta\gamma\theta} = K(\bar{g}_{\alpha\gamma}\bar{g}_{\beta\delta} - \bar{g}_{\alpha\theta}\bar{g}_{\beta\gamma})\). We may write the metric $g = \{g_{ij}\}$, second fundamental form $A = \{h_{ij}\}$, the Weingarten map $\mathcal{W} = h^i_j = g^{mi} h_{jm}$ and the Riemann curvature tensor $Rm_{ijkl}$ with respect to the given frame.
 
-We shall write \(\nabla_i\) for covariant derivatives and also use the notation \(\nabla^i = g^{ik} \nabla_k\). Second covariant derivatives will be written \(\nabla^2_{ij} = \nabla_i \nabla_j - \nabla_{\nabla_i \partial j}\) and \((\nabla^2)^i_j = g^{ik} \nabla^2_{kj}\). 
+We shall write \(\nabla_i\) for covariant derivatives and also use the notation \(\nabla^i = g^{ik} \nabla_k\). Second covariant derivatives will be written \(\nabla^2_{ij} = \nabla_i \nabla_j - \nabla_{\nabla_i \partial j}\) and \((\nabla^2)^i_j = g^{ik} \nabla^2_{kj}\).
 
 The mean curvature of $M^n$ is the trace of the Weingarten map (equivalently the trace of the second fundamental form with respect to $g$), $H = g^{ij}h_{ij} = h^i_i$. We also use the following standard notation
 \[
@@ -64,7 +64,7 @@ The mean curvature of $M^n$ is the trace of the Weingarten map (equivalently the
 \[
 |A|^2 = g^{ij}g^{kl}h_{ik}h_{lj} = h_{ij}h^{ij},
 \]
-Here, $\{g^{ij}\}$ is the inverse matrix of $\{g_{ij}\}.$ For a strictly convex hypersurface, \(A\) is strictly positive-definite and hence has a strictly positive-definite inverse, which we denote by 
+Here, $\{g^{ij}\}$ is the inverse matrix of $\{g_{ij}\}.$ For a strictly convex hypersurface, \(A\) is strictly positive-definite and hence has a strictly positive-definite inverse, which we denote by
 \[
 b = \{b^{ij}\}.
 \]
@@ -131,7 +131,7 @@ We will also need the mixed second derivatives,
 \begin{split}
 \frac{\partial \varphi^{ij}}{\partial g_{kl}} &= \frac{\partial}{\partial g_{kl}} \left(g^{sj} \varphi^{i}_{s} \right) = - g^{kj}g^{sl} \varphi^{i}_{s} - g^{sj} (\varphi^i_s)^{mk} h^l_m \\
 &= - g^{kj} \varphi^{il} - g^{sj} g_{ns} \varphi^{in,mk} h^l_m \\
-&= - g^{kj} \varphi^{il} - \varphi^{ij,mk} h^l_m
+&= - g^{kj} \varphi^{il} - \varphi^{ij,mk} h^l_m,
 \end{split}
 \end{equation}
 where we applied \cref{eq:delg} to \(\varphi^i_s\) in the first line.
@@ -168,7 +168,7 @@ so that from the evolution of \(\varphi\) below (\cref{lem:evolution}, \cref{eq:
 
 We begin by recalling some standard evolution equations and commutators and then break the remaining calculation into several lemmas.
 
-The evolution equations in the following lemma are standard and can be found in many places \cite{MR1296393,MR1100812, MR1316556,MR892052, MR1480081}. The basic tools are commuting derivatives, using the definition of the curvature tensor for space forms, the Gauss equation, and the Codazzi equation as described in the previous section. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
+The evolution equations in the following lemma are standard and can be found in many places \cite{MR1296393,MR1100812, MR1316556, MR892052, MR1480081}. The necessary tools are commuting derivatives, using the definition of the curvature tensor for space forms, the Gauss equation, and the Codazzi equation as described in the previous section. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
 
 \begin{lemma}
 \label{lem:evolution}
@@ -190,7 +190,7 @@ The following evolution equations hold
 & \quad + K \{(\varphi + \varphi^{kl}h_{kl}) \delta_i^j - \Phi h_i^j\}
 \end{align*}
 \item \label{eq:delt_inversesff} \begin{align*}
-\partial_t b^{ij} &= \Box b^{ij} - \varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi^{kl}h_{kl} + \varphi) g^{ij} \\  
+\partial_t b^{ij} &= \Box b^{ij} - \varphi^{rs} (h^2)_{rs} b^{ij} + (\varphi^{kl}h_{kl} + \varphi) g^{ij} \\
 & \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
 & \quad - K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} - \Phi b^{ij}\}
 \end{align*}
@@ -311,7 +311,7 @@ Using the evolution of \(\varphi\) \cref{lem:evolution}, \cref{eq:delt_speed}, t
 &\quad + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
 &= \varphi^{kl,rs}\nabla_i h_{rs} \left((h^2)_{kl}\varphi + \nabla^2_{kl} \varphi\right) + 2 \varphi\varphi^{kl} h^s_l \nabla_i h_{ks} \\
 &\quad + \varphi^{kl}(h^2)_{kl}\nabla_i \varphi + (\varphi^{kl}h^{m}_{l}h_{ki} - \varphi^{kl}h_{kl}h^{m}_{i}) \nabla_m \varphi \\
-&\quad + K \left(\varphi\nabla_i\Phi + \varphi^{kl}g_{ki}\nabla_l \varphi\right).
+&\quad + K \left(\varphi\nabla_i\Phi + \varphi^{kl}g_{ki}\nabla_l \varphi\right),
 \end{split}
 \]
 where in the third equality, we used
@@ -328,7 +328,7 @@ Now we may proceed to the calculation of \(\partial_t \chi\). But we will do thi
 
 \begin{lemma}
 \label{lem:evbeta}
-The quantity 
+The quantity
 \[
 \beta = \partial_t \varphi - K\Phi\varphi = \Box\varphi +  \varphi\varphi^{ij} (h^2)_{ij}
 \]
@@ -339,7 +339,7 @@ satisfies
 &\quad + (\varphi - \varphi^{ij}h_{ij}) |\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k \varphi \nabla_j \varphi \\
 &\quad + \varphi^{ij,kl} \alpha_{ij} \alpha_{kl} \\
 &\quad + 2b^{il}\varphi^{jk} (2\nabla^2_{ij}\varphi\varphi(h^2)_{kl} + \varphi(h^2)_{ij}\varphi(h^2)_{kl}) \\
-&\quad + KR_{\beta}
+&\quad + KR_{\beta},
 \end{split}
 \]
 where
@@ -396,7 +396,7 @@ The remaining term we need to compute is thus
 &= (\beta + K \varphi\Phi) \varphi^{ij}(h^2)_{ij} \\
 &\quad + \varphi^{ij,kl} \varphi (h^2)_{ij} \alpha_{kl}  \\
 &\quad + 2 \varphi\varphi^{ij} b^{kl} (h^2)_{il} \nabla^2_{jk} \varphi + 2\varphi^{jk} b^{il} \varphi (h^2)_{lk} \varphi (h^2)_{ij} \\
-&\quad + K \left[\varphi \varphi^{ij,kl} g_{kl} \varphi (h^2)_{ij} + 2K\varphi^2\varphi^{ij}h_{ij}\right]
+&\quad + K \left[\varphi \varphi^{ij,kl} g_{kl} \varphi (h^2)_{ij} + 2K\varphi^2\varphi^{ij}h_{ij}\right].
 \end{split}
 \end{equation}
 
@@ -412,7 +412,7 @@ The quantity $\theta = b^{ij}\nabla_i \varphi\nabla_j\varphi$ satisfies
 &\quad + (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k\varphi\nabla_j\varphi \\
 &\quad - \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) \\
 &\quad - 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\alpha_{ij} \gamma_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) \\
-&\quad + KR_{\theta}.
+&\quad + KR_{\theta},
 \end{split}
 \]
 \end{lemma}
@@ -432,11 +432,11 @@ Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry
 &\quad - 4 \varphi^{kl} \nabla_k b^{ij} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
 &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\
 &\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}b^{jq} \nabla_k h_{pq} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
-&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\ 
-&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{i,l} \varphi
+&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\
+&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{i,l} \varphi,
 \end{split}
 \end{equation}
-where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The first term in final line appears on the second to last line of the statement of the lemma (with indices relabelled). The second term is part of \(4 b^{il}\varphi^{jk} \alpha_{ij} \gamma_{kl}\) in the second to last line. So we must deal with the first two terms and show they add to the remainder of the statement. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
+where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The first term in final line appears on the second to last line of the statement of the lemma (with indices relabeled). The second term is part of \(4 b^{il}\varphi^{jk} \alpha_{ij} \gamma_{kl}\) in the second to last line. So we must deal with the first two terms and show they add to the remainder of the statement. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
 \begin{equation}
 \label{eq:delt_theta1}
 \begin{split}
@@ -450,7 +450,7 @@ where in the second to last equality we used the formula for the derivative of t
 &\quad + (\varphi^{kl}h_{kl} + \varphi)|\nabla\varphi|^{2} \\
 &\quad - \varphi^{kl,pq} \gamma_{kl} \gamma_{pq} \\
 &\quad - 2b^{lq}\varphi^{kp} \gamma_{kl} \gamma_{pq} \\
-&\quad - K(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi
+&\quad - K(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi.
 \end{split}
 \end{equation}
 For the second term, from the evolution of \(\nabla\varphi\) in \cref{lem:Evgradphi}, we have
@@ -479,30 +479,30 @@ The proof is now completed by adding \cref{eq:delt_theta1} and \cref{eq:delt_the
 
 \begin{theorem}
 \label{thm:Evchi}
-Let $\delta \neq 0.$ The quantity 
+Let $\delta \neq 0.$ The quantity
 \[
 \chi = t(\beta - \theta) + \delta\varphi
 \]
 satisfies
 \eq{\label{thm:Evchi1}
-\partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h)^2_{ij} + K\Phi\right)\chi \\
+\partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\chi \\
 & \quad + t\left(\varphi^{ij,kl} + 2b^{il}\varphi^{jk} - \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi}\right)\eta_{ij}\eta_{kl} + tK R,
 }
 where
 \[
-\eta_{ij} = \alpha_{ij} - \gamma_{ij} = \nabla^2_{i,j}\varphi + (h)^2_{ij}\varphi - b^{rs}\nabla_r h_{ij}\nabla_s \varphi
+\eta_{ij} = \alpha_{ij} - \gamma_{ij} = \nabla^2_{i,j}\varphi + (h^2)_{ij}\varphi - b^{rs}\nabla_r h_{ij}\nabla_s \varphi
 \]
 and
 \[
 \begin{split}
 R &= R_{\beta} - R_{\theta} \\
 &= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij} \\
-&\quad +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi - 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl}
+&\quad +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi - 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl}.
 \end{split}
 \]
 
 \end{theorem}
-	
+
 \begin{proof}
 We have
 \[
@@ -510,7 +510,7 @@ We have
 \]
 First of all, the evolution equation for \(\varphi\), \cref{lem:evolution}, \cref{eq:delt_speed} gives us
 \[
-\delta(\partial_t \varphi - \Box\varphi) = \left(\varphi^{ij}(h)^2_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi.
+\delta(\partial_t \varphi - \Box\varphi) = \left(\varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi.
 \]
 Next, we note that
 \[
@@ -520,8 +520,8 @@ since \(\nabla_r \varphi = \varphi^{ij} \nabla_r h_{ij}\). Putting the two equat
 \begin{equation}
 \label{eq:deltchi1}
 \begin{split}
-\beta - \theta + \delta(\partial_t \varphi - \Box\varphi) &= \left(\frac{\beta-\theta}{\delta\varphi} + \varphi^{ij}(h)^2_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi + t \frac{(\beta - \theta)^2}{\delta\varphi} - t \frac{\varphi^{ij}\eta_{ij} \varphi^{kl}\eta_{kl}}{\delta\varphi} \\
-&= \frac{\beta-\theta}{\delta\varphi} \chi + \left(\varphi^{ij}(h)^2_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi \\
+\beta - \theta + \delta(\partial_t \varphi - \Box\varphi) &= \left(\frac{\beta-\theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi + t \frac{(\beta - \theta)^2}{\delta\varphi} - t \frac{\varphi^{ij}\eta_{ij} \varphi^{kl}\eta_{kl}}{\delta\varphi} \\
+&= \frac{\beta-\theta}{\delta\varphi} \chi + \left(\varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi \\
 &\quad - t \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi} \eta_{ij}\eta_{kl}.
 \end{split}
 \end{equation}
@@ -550,13 +550,12 @@ Subtracting line by line, we have
 &\quad + 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\alpha_{ij} \gamma_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) \\
 &= 2b^{il}\varphi^{jk} \left(\nabla^2_{ij}\varphi\nabla^2_{kl}\varphi +2\nabla^2_{ij}\varphi\varphi(h^2)_{kl} + \varphi(h^2)_{ij}\varphi(h^2)_{kl} - 2 \alpha_{ij} \gamma_{kl} + \gamma_{ij} \gamma_{kl} \right) \\
 &= 2b^{il}\varphi^{jk} \left(\alpha_{ij}\alpha_{kl} - 2 \alpha_{ij} \gamma_{kl} + \gamma_{ij} \gamma_{kl} \right) = 2b^{il}\varphi^{jk} \eta_{ij} \eta_{kl} \\
-(E) - (E') &= K(R_{\beta} - R_{\theta}) = KR\\
+(E) - (E') &= K(R_{\beta} - R_{\theta}) = KR.\\
 \end{align*}
 
 Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} gives the result.
 \end{proof}
-
-In the Euclidean space we deduce differential Harnack ienqualities for various speeds:
+In the Euclidean space we deduce differential Harnack inequalities for various speeds:
 
 \begin{corollary}\label{EucHarnack}
 Let $x$ be a strictly convex solution of \eqref{Flow} in the Euclidean space, where $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous and inverse concave curvature function and where $\p\in C^{\8}(\R_+)$ and $\d\neq 0$ satisfy
@@ -577,40 +576,166 @@ for all symmetric $\eta.$
 We calculate
 \eq{
 \p^{ij,kl}+2b^{jl}\p^{ik}-\fr{\p^{ij}\p^{kl}}{\d\p}&=\p'f^{ij,kl}+\p''f^{ij}f^{kl}+2\p'f^{ik}b^{jl}-\fr{\p'^2}{\d\p}f^{ij}f^{kl}\\
-						&\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}f^{ij}f^{kl}\\
+                        &\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}f^{ij}f^{kl}\\
                         &\geq 0
 }
 in the sense of a bilinear form on symmetric matrices.
 }
-	
+
 Easy calculations imply that the assumptions of Corollary \ref{EucHarnack} are satisfied in quite a wide range of interesting situation.
 
 \begin{corollary}
 Let $f$ satisfy the assumption of Corollary \ref{EucHarnack}. Then for contracting flows the pair
 \eq{\p(f)=f^{\a},\quad 0<\a<\8, \quad \d\geq \fr{\a}{\a+1},}
 and for expanding flows the pair
-\eq{\p(f)=-f^{-\b}, \quad 0<\b<2,\quad \d\leq \fr{\b}{\b-2},}
+\eq{\p(f)=-f^{-\b}, \quad 0<\b<2,\quad \d\leq \fr{\b}{\b-2}}
 satisfy the assumptions of Corollary \ref{EucHarnack}.
 \end{corollary}
 
+In the sphere it is unlikely to obtain a such a variety of speeds, due to the complicated term $R.$ However, if the speed is a function of the mean curvature, we can simplify the evolution.
+
+\begin{lemma}\label{RSphere}
+Suppose that $\p=\p(H).$ Then the term $R$ in the evolution equation of $\chi$ takes the form
+\eq{\label{RSphere1}
+R&=2n\fr{\p''\p}{\p'}\br{\b-\t}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
+	&\hp{=}+n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}\p^{ij}\nabla_{i}\p\nabla_j\p\\
+    &\hp{=}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p.
+}
+\end{lemma}
+
+\pf{
+This computation is tedious but straightforward. The key point is to replace the terms containing second covariant derivatives of $\p,$ namely $\Box\Phi$ and $\a_{ij},$ by a term involving $\Box\p,$ which can then be replaced by $\b-\t$ and some curvature terms.
+}
+
+As we will see, the middle term in \eqref{RSphere1} does not always have the favorable sign. In order to handle this, it might be useful to add an auxiliary function of the speed. Using Lemma \ref{RSphere}, it is straightforward to check the following evolution equation.
+
+\begin{lemma}
+Let $g=g(\p)$ be a function. Then the function
+\eq{\bar{\chi}=t(\b-\t+g)+\d\p}
+evolves according to
+\eq{\label{thm:Evchibar1}
+\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + K\Phi\right)\chi+g \\
+&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\ 
+		&\hp{=}+t\Big(2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{g'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+g'\p^{ij}g_{ij}\p\\
+        &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-g''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
+    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big),
+}
+
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{proof of the main theorem}
+%\subsection{Shrinking flows}
+%Using the expression
+%\[\begin{split}
+%R&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij} \\
+%&\quad +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi - 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl},
+%\end{split}
+%\]
+%we calculate for $\varphi=H^{\alpha}$ that
+%\begin{align}\label{ie: 1-R for Hk}
+%R&=2n(\alpha-1)H^{\alpha-1}\frac{\chi-\delta\varphi}{t}+n(\alpha-1)(2\alpha-1)H^{\alpha-2}|\nabla H^{\alpha}|^2\\
+%&\quad +(\alpha+1)H^{\alpha}(b^2)^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha}-2\alpha H^{\alpha-1}b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha}\nonumber\\
+%&\quad +2\alpha H^{3\alpha}-n\alpha(\alpha-1)H^{3\alpha-2}|A|^2.\nonumber
+%\end{align}
+%Note that $H^\alpha(b^2)^{rs}\geq H^{\alpha-1}b^{rs}\geq H^{\alpha-2}g^{rs}.$ Therefore, for $\alpha\in(0,1)$, we obtain
+%\begin{align*}
+%R&\geq 2n(\alpha-1)H^{\alpha-1}\frac{\chi-\delta\varphi}{t}+(\alpha-1)(n(2\alpha-1)-1)H^{\alpha-2}|\nabla H^{\alpha}|^2+(3\alpha-\alpha^2)H^{3\alpha}.
+%\end{align*}
+%We consider two cases.
+%\begin{itemize}
+%  \item $(\alpha-1)(n(2\alpha-1)-1)\geq 0$: Take $\delta=\frac{\alpha}{\alpha+1}$ in (\ref{thm:Evchi}). $\chi$ is initially positive. At the first time that $\chi$ becomes zero, $R>0.$ This is a contradiction in view of the maximum principle applied to (\ref{thm:Evchi1}).
+%  \item $(\alpha-1)(n(2\alpha-1)-1)\leq 0$:
+%\end{itemize}
+%This is a contradiction in view of (\ref{thm:Evchi1}).
+%\subsection{Expanding flows}
+%For $\varphi=-H^{-\alpha}$ we obtain
+%\begin{align}\label{ie: 2-R for -Hk}
+%R&=2n(\alpha+1)H^{-\alpha-1}\frac{\chi-\delta\varphi}{t}-n(\alpha+1)(2\alpha+1)H^{-\alpha-2}|\nabla H^{-\alpha}|^2\\
+%&\quad +(\alpha-1)H^{-\alpha}(b^2)^{ij}\nabla_iH^{-\alpha}\nabla_jH^{-\alpha}-2\alpha H^{-\alpha-1}b^{ij}\nabla_iH^{-\alpha}\nabla_jH^{-\alpha}\nonumber\\
+%&\quad +2\alpha H^{-3\alpha}+n\alpha(\alpha+1)H^{-3\alpha-2}|A|^2.\nonumber
+%\end{align}
+%\subsubsection{Harnack inequality for inverse mean curvature flow}
+%Let $\alpha=1$ and $K=-1$. Since $n|A|^2\geq H^2$, we get
+%\[R\leq n(\alpha+1)H^{-\alpha-1}(\beta-\theta). \]
+%Take $\delta=-1$ in (\ref{thm:Evchi}). At the first time that $\chi$ becomes zero, $\beta-\theta$ must be negative; therefore, $R\leq 0.$
+%This is a contradiction in view of (\ref{thm:Evchi1}).
+%We consider two cases.
+%\begin{enumerate}
+ % \item $(\alpha-1)(n(2\alpha-1)-1)\geq 0$: In this case, $$R\geq 2n(\alpha-1)H^{\alpha-1}(\beta-\theta)=2n(\alpha-1)H^{\alpha-1}\frac{\chi-\delta\varphi}{t}.$$
+%Thus the evolution equation of $\chi$ in Theorem \ref{thm:Evchi} with $\delta=\frac{\alpha}{\alpha+1}$ implies that
+%\begin{align*}
+%\partial_t \chi -\Box\chi
+% &\ge \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi+2nK(\alpha-1)H^{\alpha-1}\right)\chi \\
+ %&\quad +  2nK\delta(1-\alpha)H^{2\alpha-1}\\
+ %&\ge \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi+2nK(\alpha-1)H^{\alpha-1}\right)\chi.
+%\end{align*}
+%An application of the maximum principle then proves that $\chi>0.$
+ % \item $(\alpha-1)(n(2\alpha-1)-1)\leq 0:$ In this case, we apply the maximum principle to the evolution equation of \[\bar{\chi}=t\left(\beta-\theta+ \frac{K {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}\right)+\frac{\alpha}{\alpha+1}\varphi.\]
+%  Note that
+%  \begin{align*}
+ % \partial_t H^{2\alpha-1}&=\Box H^{2\alpha-1}-\frac{(2\alpha-1)(\alpha-1)}{\alpha}H^{\alpha-2}|\nabla H^{\alpha}|^2\\
+ % &\quad+\frac{2\alpha-1}{\alpha}H^{2\alpha-1}(\varphi^{ij}(h^2)_{ij} + K\Phi).
+ % \end{align*}
+%Therefore, using the evolution equation of $\chi$ with $\delta=\frac{\alpha}{\alpha+1}$ we obtain
+%\begin{align*}
+%\partial_t \bar{\chi} -\Box\bar{\chi} &\geq \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\left(\bar{\chi}-\frac{tK {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}\right)\\
+%&\quad + tK (R-(\alpha-1)(n(2\alpha-1)-1)H^{\alpha-2}|\nabla H^{\alpha}|^2)\\
+%&\quad +tK(n(2\alpha-1)-1)H^{2\alpha-1}(\varphi^{ij}(h^2)_{ij} + K\Phi)\\
+%&\quad + \frac{K {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}.
+%\end{align*}
+%Inequality (\ref{ie: R for Hk}) then yields
+%\begin{align*}
+%\partial_t \bar{\chi} -\Box\bar{\chi} &\geq \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\left(\bar{\chi}-\frac{tK {\alpha}}{2{\alpha}-1}(n(2\alpha-1)-1)H^{2{\alpha}-1}\right)\\
+%&\quad + 2nKt(\alpha-1)H^{\alpha-1}(\beta-\theta)\\
+%&\quad +tK(n(2\alpha-1)-1)H^{2\alpha-1}(\varphi^{ij}(h^2)_{ij} + K\Phi).
+%\end{align*}
+%Note that at the first time that $\bar{\chi}=0$ we must have $\beta-\theta\leq 0;$ therefore at such a point
+%\begin{align*}
+%\partial_t \bar{\chi} -\Box\bar{\chi}> \left(tK(n(2\alpha-1)-1)\frac{\alpha-1}{2\alpha-1}\right)\left(\varphi^{ij}(h^2)_{ij} + K\Phi\right)H^{2\alpha-1}.
+%\end{align*}
+%Unfortunately, the right-hand side is negative.
+%\end{enumerate}
 
 
 \section{Curvature estimates and backwards convergence to an equator}
-From now on we consider the spherical ambient space, $K=1,$ without further mention. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily. 
+From now on we consider the spherical ambient space, $K=1,$ without further mention. For a convex $H^{\a}$-flow satisfying a Harnack inequality we obtain $C^2$-estimates easily.
 
 \begin{lemma}\label{SpeedEst}
 Let $0<\a<1.$ On some open interval $(a,b)$ let $M_t,$ $t\in(a,b),$ be a convex solution of the curvature flow equation
 \begin{equation}\label{eq:CurvFlow}
 \dot{x}=-H^{\a}\nu.
 \end{equation}
-Then 
+Then
 \[\tilde{\varphi}=\inf_{M_t}\varphi
 \]
 is non-decreasing in time.
 \end{lemma}
 
 \begin{proof}
-$\tilde{\varphi}$ is Lipschitz continuous, differentiable almost everywhere and 
+$\tilde{\varphi}$ is Lipschitz continuous, differentiable almost everywhere and
 \begin{equation}
 \dot{\tilde{\varphi}}(t)=\fr{\del\varphi}{\del t}(t,x_t),
 \end{equation}
@@ -624,7 +749,7 @@ By \eqref{eq:delt_speed} we obtain
 \begin{corollary}
 In the situation of Lemma \ref{SpeedEst} the principal curvatures of the flow hypersurfaces $M_t,$
 \eq{\k_1\leq \dots\leq \k_n,}
-are uniformly bounded backwards in time, i.e. for all $T\in (a,b)$ there exists a constant $c=c(T)>0,$ such that 
+are uniformly bounded backwards in time, i.e. for all $T\in (a,b)$ there exists a constant $c=c(T)>0,$ such that
 \eq{\k_n\leq c\quad\forall t\in (a,T).}
 In particular $c$ does not depend on $a.$
 \end{corollary}
@@ -636,7 +761,7 @@ By Lemma \ref{SpeedEst} the infimum of $\varphi$ is bounded backwards in time an
 Let us investigate the behavior of geodesic spheres under the $f^{\a}$-flow in the sphere.
 
 \begin{lemma}
- Consider \eqref{eq:CurvFlow}. Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$ with outward normal $\nu,$ then a strictly convex flow \eqref{eq:CurvFlow} with initial hypersurface $M_0=S_r$ exists at most on a finite time interval $(a,b).$ Here $b$ is the collapsing time and $a$ is the time where the backward flow hits the equator. 
+ Consider \eqref{eq:CurvFlow}. Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$ with outward normal $\nu,$ then a strictly convex flow \eqref{eq:CurvFlow} with initial hypersurface $M_0=S_r$ exists at most on a finite time interval $(a,b).$ Here $b$ is the collapsing time and $a$ is the time where the backward flow hits the equator.
 \end{lemma}
 
 \begin{proof}
@@ -645,19 +770,19 @@ Starting point is again \eqref{eq:delt_speed}. Since $H$ is constant on a geodes
 This yields
 \eq{\fr{d}{dt}H\geq nH^{\a}.}
 Since the right hand side remains strictly positive under this ODE we obtain finite lifespan forward in time.
-Convexity and integration over some interval $(a,b)$ yield 
+Convexity and integration over some interval $(a,b)$ yield
 \eq{0\leq H^{1-\a}(a)\leq H^{1-\a}(b)-(1-\a)n(b-a).}
-Letting $a\ra-\8$ gives finite existence backwards in time. 
+Letting $a\ra-\8$ gives finite existence backwards in time.
 \end{proof}
 
 \begin{remark}
-Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations. 
+Since a smooth convex hypersurface $M\sub\S^{n+1}$ is either an equator or strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}, by the avoidance principle any non-equatorial convex solution to \eqref{eq:CurvFlow} collapses in finite time. By a time shift, we may from now on suppose that all convex solutions collapse at time $0.$ We discard the trivial equatorial solutions from our investigations.
 
 Thus we may look at \it{the} convex spherical solution of \eqref{eq:CurvFlow}, the lifespan of which we denote by $T_S$, i.e., the solution exists on the interval $(-T_S,0).$
 \end{remark}
 
 \begin{lemma}
-Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then 
+Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then
 there holds
 \eq{T\leq T_S.}
 \end{lemma}
@@ -673,7 +798,7 @@ Due to this lemma the following definition is reasonable.
 A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is called \it{quasi-ancient}, if $T=T_S.$
 \end{definition}
 
-The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces $M_t$ is an equator for $t\ra -T_S.$ We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore we only need some more small observations.
+The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces $M_t$ is an equator for $t\ra -T_S.$ We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore, we only need some more small observations.
 
 \begin{lemma}\label{ISC}
 Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
@@ -686,7 +811,7 @@ Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
 \pf{
 Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a convex contracting $H^{\a}$ flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
 \eq{\hat{M}_t\sub\mc{H}(x_0).}
-In our situation all hypersurfaces $M_t,$ $-T_S<t\leq t_0,$ satisfy 
+In our situation all hypersurfaces $M_t,$ $-T_S<t\leq t_0,$ satisfy
 \eq{B_{\e}(y_0)\sub \mrm{int}~\hat{M}_t}
 and
 \eq{B_{\e}(\hat{y}_0)\sub \hat{M}_t^c}
@@ -719,7 +844,7 @@ in the norm of $C^{1,\b}(\S^n).$
 \end{corollary}
 
 \pf{
-Due to the pointwise monotonicity of $u(t,\cdot)$ backwards in time we obtain a pointwise limit. The $C^{1,\b}$-convergence follows from compactness.
+Due to the point-wise monotonicity of $u(t,\cdot)$ backwards in time we obtain a point-wise limit. The $C^{1,\b}$-convergence follows from compactness.
 }
 
 \begin{theorem}
