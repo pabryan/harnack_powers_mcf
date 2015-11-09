@@ -613,40 +613,73 @@ As we will see, the middle term in \eqref{RSphere1} does not always have the fav
 Let $g=g(\p)$ be a function. Then the function
 \eq{\bar{\chi}=t(\b-\t+g)+\d\p}
 evolves according to
-\eq{\label{thm:Evchibar1}
-\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + K\Phi\right)\chi+g \\
+\eq{\label{Evchibar1}
+\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi+g \\
 &\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\ 
 		&\hp{=}+t\Big(2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{g'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+g'\p^{ij}g_{ij}\p\\
         &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-g''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
     &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big),
 }
-
 \end{lemma}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{proof of the main theorem}
+
+In order to prove Theorem \ref{thm: main 1}, we need to show that for 
+\eq{\p=H^{\a},\quad \d=\fr{\a}{\a+1},}
+the quantity $\bar{\chi}$ preserves its positivity at all $t>0.$ Here $g$ is chosen to be 
+\eq{g(\p)=\begin{cases} 0, &0<\a\leq \fr{1}{2}+\fr{1}{2n}\\
+					\a\br{n-\fr{1}{2\a-1}}\p^{2-\fr{1}{\a}}, &\fr{1}{2}+\fr{1}{2n}<\a\leq 1.\end{cases}}
+However, to avoid confusion, we will keep the general form as long as possible.
+
+At time $t=0,$ $\bar\chi$ is positive.
+%%%%%%%%%%%% We need to impose strict mean convexity in the main theorem here!!!!!!! %%%%%%
+Thus suppose there exists a first time $t_0$ and a point $x_0$ in $M_{t_0},$ such that $\bar{\chi}(t_0,x_0)=0.$
+Then we also obtain
+\eq{\chi=-tg,\quad \b-\t=-\fr{\d\p}{t}-g.}
+Thus, using \eqref{Evchibar1}, we obtain at $(t_0,x_0):$
+\eq{0&\geq \del_t\bar\chi-\Box\bar\chi\\
+		&=2g-2n\d\fr{\p''\p^2}{\p'}+t\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
+        &\hp{=}+t\Big(\fr{g^2}{\d\p}-2n\fr{\p''\p}{\p'}g+2\p^2\p'H+\br{g'\p-g}\p^{ij}g_{ij}	\\
+        &\hp{=+t} +\br{g'\p-n\fr{\p''\p^2}{\p'}-g}\p^{ij}(h^2)_{ij}+\br{\p'H+\p}b^{ir}b^j_r\nabla_i\p\nabla_j\p\\
+        &\hp{=+t}-2\p'b^{ij}\nabla_i\p\nabla_j\p+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-g''}\p^{ij}\nabla_{i}\p\nabla_j\p\Big)\\
+        &\geq2g-2n\d\fr{\p''\p^2}{\p'}+t\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
+        &\hp{=}+t\Big(\fr{g^2}{\d\p}+2\p^2\p'H-2n\fr{\p''\p}{\p'}g+n\br{g'\p-g}\p'	\\
+        &\hp{=+t} +\br{g'\p-n\fr{\p''\p^2}{\p'}-g}\p^{ij}(h^2)_{ij}\\
+        &\hp{=+t}+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-g''+\fr{\p}{\p'H^2}-\fr{1}{H}}\p^{ij}\nabla_{i}\p\nabla_j\p\Big),}
+    
+where in the last inequality we used
+\eq{\p-\p'H=(1-\a)H^\a\geq 0}
+and 
+\eq{Hb^{ij}\geq g^{ij}}
+in the sense of bilinear forms.
+
+
+                    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %\subsection{Shrinking flows}
 %Using the expression
 %\[\begin{split}
