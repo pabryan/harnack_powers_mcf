@@ -33,18 +33,7 @@ where \(M_K\) is the simply connected space form of constant sectional curvature
 \]
 Equivalently, \(\varphi\) is a symmetric function on the eigenvalues of \(\mathcal{W}\) (principal curvatures) \(\kappa_1, \cdots, \kappa_n\).
 
-We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is homogeneous degree one, inverse concave (concave also?) and \(\alpha \in (0,1)\). Our principal result is a Harnack inequality for these flows, extending the inequality in \cite{2015arXiv150802821B, bryanlouie} and inspired by \cite{MR1296393, MR1100812, MR1316556, MR1480081}. Namely, we prove that if \(\varphi = H^{\alpha}\) for \(0 < \alpha \leq 1\) we have
-
-\begin{theorem}\label{thm: main 1}
-If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
-\[
-\partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
-\]
-If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
-\[
-\partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
-\]
-\end{theorem}
+We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is strictly monotone, homogeneous degree one, inverse concave and \(\alpha \in (0,1)\). Our principal result is a Harnack inequality for such flows in space forms. This result extends the inequality obtained in \cite{2015arXiv150802821B, bryanlouie} on the sphere and recovers many well known Harnack inequalities in Euclidean space \cite{MR1296393, MR1100812, MR1316556, MR1480081, MR2813400}.
 
 \section{Preliminaries}
 
@@ -555,7 +544,42 @@ Subtracting line by line, we have
 
 Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} gives the result.
 \end{proof}
-In the Euclidean space we deduce differential Harnack inequalities for various speeds:
+
+Due to the complicated term $R$, the evolution of \(\chi\) is difficult to work with when $K\ne 0$. However, if the speed is a function of the mean curvature, we can simplify the evolution.
+
+\begin{lemma}\label{RSphere}
+Suppose that $\p=\p(H).$ Then the term $R$ in the evolution equation of $\chi$ takes the form
+\eq{\label{RSphere1}
+R&=2n\fr{\p''\p}{\p'}\br{\b-\t}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
+	&\hp{=}+n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}\p^{ij}\nabla_{i}\p\nabla_j\p\\
+    &\hp{=}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p.
+}
+\end{lemma}
+
+\pf{
+This computation is tedious but straightforward. The key point is to replace the terms containing second covariant derivatives of $\p,$ namely $\Box\Phi$ and $\a_{ij},$ by a term involving $\Box\p,$ which can then be replaced by $\b-\t$ and some curvature terms.
+}
+
+The middle term in \cref{RSphere1} does not always have the favorable sign. In order to handle this, it is useful to add an auxiliary function of the speed. Using \cref{RSphere} and \cref{thm:Evchi}, it is straightforward to check the following evolution equation:
+
+\begin{lemma}
+Let $\zeta=\zeta(\p)$ be a function. Then the function
+\eq{\bar{\chi}=t(\b-\t+\zeta)+\d\p}
+evolves according to
+\eq{\label{Evchibar1}
+\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi+\zeta \\
+&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\
+		&\hp{=}+t\Big[2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p\\
+        &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
+    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big],
+}
+\end{lemma}
+
+\section{Harnack Inequalities}
+
+\subsection{Euclidean Space}
+
+In Euclidean space we deduce differential Harnack inequalities for various speeds, recovering well known Harnack inequalities \cite{MR1296393, MR1100812, MR1316556, MR1480081, MR2813400}.
 
 \begin{corollary}\label{EucHarnack}
 Let $x$ be a strictly convex solution of \eqref{Flow} in the Euclidean space, where $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous and inverse concave curvature function and where $\p\in C^{\8}(\R_+)$ and $\d\neq 0$ satisfy
@@ -595,38 +619,22 @@ satisfy $\chi>0$.
 %satisfy $\chi<0.$
 \end{corollary}
 
-In the sphere it is unlikely to obtain a such a variety of speeds, due to the complicated term $R.$ However, if the speed is a function of the mean curvature, we can simplify the evolution.
+\subsection{The Sphere}
 
-\begin{lemma}\label{RSphere}
-Suppose that $\p=\p(H).$ Then the term $R$ in the evolution equation of $\chi$ takes the form
-\eq{\label{RSphere1}
-R&=2n\fr{\p''\p}{\p'}\br{\b-\t}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
-	&\hp{=}+n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}\p^{ij}\nabla_{i}\p\nabla_j\p\\
-    &\hp{=}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p.
-}
-\end{lemma}
+In the case of the sphere, we are more restricted by term $R$ in \cref{thm:Evchi}. Making use of \cref{Evchibar1}, we can obtain a Harnack inequality for the speed \(\p = H^{\alpha}\) with \(\alpha \in (0,1)\).
 
-\pf{
-This computation is tedious but straightforward. The key point is to replace the terms containing second covariant derivatives of $\p,$ namely $\Box\Phi$ and $\a_{ij},$ by a term involving $\Box\p,$ which can then be replaced by $\b-\t$ and some curvature terms.
-}
+\begin{theorem}\label{thm: main 1}
+If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
+\[
+\partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
+\]
+If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
+\[
+\partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
+\]
+\end{theorem}
 
-As we will see, the middle term in \eqref{RSphere1} does not always have the favorable sign. In order to handle this, it might be useful to add an auxiliary function of the speed. Using Lemma \ref{RSphere}, it is straightforward to check the following evolution equation.
-
-\begin{lemma}
-Let $\zeta=\zeta(\p)$ be a function. Then the function
-\eq{\bar{\chi}=t(\b-\t+\zeta)+\d\p}
-evolves according to
-\eq{\label{Evchibar1}
-\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi+\zeta \\
-&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\
-		&\hp{=}+t\Big[2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p\\
-        &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
-    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big],
-}
-\end{lemma}
-
-\section{proof of the main theorem}
-
+\begin{proof}
 In order to prove Theorem \ref{thm: main 1}, we need to show that for
 \eq{\p=H^{\a},\quad \d=\fr{\a}{\a+1},}
 the quantity $\bar{\chi}$ preserves its positivity at all $t>0.$ Here $\zeta$ is chosen to be
@@ -664,8 +672,9 @@ $$\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq
 $$\fr{\zeta^2}{\d\p}-2n\fr{\p''\p}{\p'}\zeta+n\br{\zeta'\p-\zeta}\p'\geq 0~\mbox{for}~\alpha\geq\frac{n+1}{2n}~\&~\delta=\frac{\alpha}{\alpha+1},$$
 $$\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\geq 0~\mbox{for}~\frac{n+1}{2n}\leq \alpha\leq 1,$$
 $$\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''+\fr{\p}{\p'H^2}-\fr{1}{H}}=0.$$
+\end{proof}
 
-
+\subsection{Hyperbolic Space}
 
 
 \bibliographystyle{amsplain}
