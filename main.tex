@@ -485,8 +485,8 @@ and
 \[
 \begin{split}
 R &= R_{\beta} - R_{\theta} \\
-&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij} \\
-&\quad +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi - 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl}.
+&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi-\varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi \varphi^{ij,kl}g_{kl} \eta_{ij}  \\
+&\quad + 2\varphi^{2}\varphi^{ij}h_{ij} +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi.
 \end{split}
 \]
 
@@ -527,7 +527,7 @@ The remaining term \(t(\partial_{t} - \Box)(\beta - \theta)\) is now just bookke
 &\quad + (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k\varphi\nabla_j\varphi & (B') \\
 &\quad - \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) & (C') \\
 &\quad - 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\alpha_{ij} \gamma_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) & (D') \\
-&\quad + KR_{\theta} & (E').
+&\quad + KR_{\theta}. & (E')
 \end{align*}
 
 Subtracting line by line, we have
@@ -560,7 +560,7 @@ R&=2n\fr{\p''\p}{\p'}\br{\b-\t}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
 This computation is tedious but straightforward. The key point is to replace the terms containing second covariant derivatives of $\p,$ namely $\Box\Phi$ and $\a_{ij},$ by a term involving $\Box\p,$ which can then be replaced by $\b-\t$ and some curvature terms.
 }
 
-The middle term in \cref{RSphere1} does not always have the favorable sign. In order to handle this, it is useful to add an auxiliary function of the speed. Using \cref{RSphere} and \cref{thm:Evchi}, it is straightforward to check the following evolution equation:
+The middle term in \cref{RSphere1} does not always have the favorable positive sign. In order to handle this, it is useful to add an auxiliary function of the speed. Using \cref{RSphere} and Theorem \ref{thm:Evchi}, it is straightforward to check the following evolution equation:
 
 \begin{lemma}
 Let $\zeta=\zeta(\p)$ be a function. Then the function
@@ -571,7 +571,7 @@ evolves according to
 &\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\
 		&\hp{=}+t\Big[2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p\\
         &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
-    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big],
+    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big].
 }
 \end{lemma}
 
@@ -599,8 +599,8 @@ is concave, if and only if
 for all symmetric $\eta.$
 We calculate
 \eq{
-\left(\p^{ij,kl}+2b^{jl}\p^{ik}-\fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}&=\left(\p'f^{ij,kl}+\p''f^{ij}f^{kl}+2\p'f^{ik}b^{jl}-\fr{\p'^2}{\d\p}\right)f^{ij}f^{kl}\eta_{ij}\eta_{kl}\\
-                        &\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}f^{ij}f^{kl}\eta_{ij}\eta_{kl}\\
+\left(\p^{ij,kl}+2b^{jl}\p^{ik}-\fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}&=\left(\p'f^{ij,kl}+\p''f^{ij}f^{kl}+2\p'f^{ik}b^{jl}-\fr{\p'^2}{\d\p}\right)(f^{ij}\eta_{ij})^2\\
+                        &\geq \br{\p''+2\fr{\p'}{f}-\fr{\p'^2}{\d\p}}(f^{ij}\eta_{ij})^2\\
                         &\geq 0
 }
 in the sense of a bilinear form on symmetric matrices.
@@ -621,14 +621,15 @@ satisfy $\chi>0$.
 
 \subsection{The Sphere}
 
-In the case of the sphere, we are more restricted by term $R$ in \cref{thm:Evchi}. Making use of \cref{Evchibar1}, we can obtain a Harnack inequality for the speed \(\p = H^{\alpha}\) with \(\alpha \in (0,1)\).
+In the case of the sphere, we are more restricted by term $R$ in Theorem \ref{thm:Evchi}. Making use of \cref{Evchibar1}, we can obtain a Harnack inequality for the speed \(\p = H^{\alpha}\) with \(\alpha \in (0,1)\).
 
 \begin{theorem}\label{thm: main 1}
 If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
 \[
 \partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
 \]
-If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or ${\alpha}=1$, then
+If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or $\alpha=1$, then
+
 \[
 \partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
 \]
@@ -639,7 +640,7 @@ In order to prove Theorem \ref{thm: main 1}, we need to show that for
 \eq{\p=H^{\a},\quad \d=\fr{\a}{\a+1},}
 the quantity $\bar{\chi}$ preserves its positivity at all $t>0.$ Here $\zeta$ is chosen to be
 \eq{\zeta(\p)=\begin{cases} 0, &0<\a\leq \fr{1}{2}+\fr{1}{2n}\\
-					\a\br{n-\fr{1}{2\a-1}}\p^{2-\fr{1}{\a}}, &\fr{1}{2}+\fr{1}{2n}<\a\leq 1.\end{cases}}
+					\a\br{n-\fr{1}{2\a-1}}\p^{2-\fr{1}{\a}}, &\fr{1}{2}+\fr{1}{2n}<\a< 1.\end{cases}}
 However, to avoid confusion, we will keep the general form as long as possible.
 
 At time $t=0,$ $\bar\chi$ is positive.
@@ -674,7 +675,8 @@ $$\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\geq 0~\mbox{for}~\frac{n+1}{2n}\leq \a
 $$\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''+\fr{\p}{\p'H^2}-\fr{1}{H}}=0.$$
 \end{proof}
 
-\subsection{Hyperbolic Space}
+%\subsection{Hyperbolic Space}
+
 
 
 \bibliographystyle{amsplain}
