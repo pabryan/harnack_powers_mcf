@@ -485,8 +485,8 @@ and
 \[
 \begin{split}
 R &= R_{\beta} - R_{\theta} \\
-&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi^{2}\varphi^{ij}h_{ij} \\
-&\quad +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi - 2 \varphi\varphi^{ij,kl} g_{ij} \gamma_{kl}.
+&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi-\varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi \varphi^{ij,kl}g_{kl} \eta_{ij}  \\
+&\quad + 2\varphi^{2}\varphi^{ij}h_{ij} +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi.
 \end{split}
 \]
 
@@ -527,7 +527,7 @@ The remaining term \(t(\partial_{t} - \Box)(\beta - \theta)\) is now just bookke
 &\quad + (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k\varphi\nabla_j\varphi & (B') \\
 &\quad - \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) & (C') \\
 &\quad - 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\alpha_{ij} \gamma_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) & (D') \\
-&\quad + KR_{\theta} & (E').
+&\quad + KR_{\theta}. & (E')
 \end{align*}
 
 Subtracting line by line, we have
@@ -628,7 +628,7 @@ If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
 \[
 \partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - \frac{K {\alpha}}{2{\alpha}-1}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
 \]
-If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$, then
+If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or $\alpha=1$, then
 \[
 \partial_t H^{\alpha} - b^{ij}\nabla_iH^{\alpha}\nabla_jH^{\alpha} - K n{\alpha}H^{2{\alpha}-1} + \frac{{\alpha}}{{\alpha}+1} \frac{H^{\alpha}}{t} > 0.
 \]
