@@ -575,7 +575,43 @@ evolves according to
 }
 \end{lemma}
 
-\section{Harnack Inequalities}
+In the first place we defined 
+\eq{\b=\Box\p+\p\p^{ij}(h^2)_{ij}}
+in order to get a very strong version of the Harnack estimate, compare Section \ref{Harnack}, Theorem \ref{thm: main 1}. This will turn out to have the drawback that the class of curvature function fulfilling this estimate is very small. In order to cover more curvature functions, we consider the full time derivative $\del_t\p$ and define
+\eq{\~\chi=\chi+tK\p\Phi.}
+Let us calculate the evolution equation.
+
+\begin{lemma}\label{WeakHarnackEv}
+The quantity
+\eq{\~\chi=t(\del_t\p-\t)+\d\p}
+satisfies the evolution equation
+\eq{\label{WeakHarnackEv1}\del_t\~\chi-\Box\~\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+K\Phi}\~\chi-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p\\
+				&+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
+                &+tK\br{2\p^2\p^{ij}h_{ij}+\br{\p^{ij}h_{ij}+\p}b^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p-2b^j_k\p^{kl}\nabla_{l}\p\nabla_{j}\p}.
+}
+We may also rewrite
+$-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p=\fr{K\Phi}{\d}(-\tilde{\chi}+tK\p\Phi+2\d\p).$ 
+This in turn implies that $\~\chi$ satisfies the evolution equation
+\eq{\label{WeakHarnackEv12}\del_t\~\chi-\Box\~\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+K\Phi-\fr{K\Phi}{\d}}\~\chi+\fr{K\Phi\p}{\d}(tK\Phi+2\d)\\
+				&+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
+                &+tK\br{2\p^2\p^{ij}h_{ij}+\br{\p^{ij}h_{ij}+\p}b^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p-2b^j_k\p^{kl}\nabla_{l}\p\nabla_{j}\p}.
+}
+
+\end{lemma}
+
+\pf{
+We simply use the evolution of $\chi,$ cf.~\eqref{thm:Evchi1}, and add the evolution of $tK\Phi\p.$ This is
+\eq{\label{WeakHarnackEv2}\br{\del_t-\Box}\br{tK\Phi\p}&=tK\Big(\Phi\p\p^{ij}(h^2)_{ij}+K\Phi^2\p+\p\del_t\Phi\\
+					&\hp{-tk\Big(}-\p\Box\Phi-2\p^{ij}\nabla_{i}\p\nabla_{j}\Phi\Big)\\
+							&\hp{=}+K\Phi\p.
+                            }
+Noting that
+\eq{\del_t\Phi=\del_t\br{\p^{ij}g_{ij}}=\p^{ij,kl}\br{\a_{kl}+K\p g_{kl}}g_{ij}}
+and adding \eqref{WeakHarnackEv2} to the term $R$ in \eqref{thm:Evchi1}, we obtain the claim.
+}
+
+
+\section{Harnack Inequalities}\label{Harnack}
 
 \subsection{Euclidean Space}
 
