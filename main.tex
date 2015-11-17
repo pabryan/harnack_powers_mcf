@@ -5,7 +5,7 @@
 \begin{document}
 
 \title[]
- {Harnack estimates for curvature flow equations in space forms}
+ {Harnack estimates for curvature flows on the sphere}
 
 \curraddr{}
 \email{}
@@ -33,7 +33,7 @@ where \(M_K\) is the simply connected space form of constant sectional curvature
 \]
 Equivalently, \(\varphi\) is a symmetric function on the eigenvalues of \(\mathcal{W}\) (principal curvatures) \(\kappa_1, \cdots, \kappa_n\).
 
-We are particularly interested in the case \(\varphi = f^{\alpha}\) where \(f\) is strictly monotone, homogeneous degree one, inverse concave and \(\alpha \in (0,1)\). Our principal result is a Harnack inequality for such flows in space forms. This result extends the inequality obtained in \cite{2015arXiv150802821B, bryanlouie} on the sphere and recovers many well known Harnack inequalities in Euclidean space \cite{MR1296393, MR1100812, MR1316556, MR1480081, MR2813400}.
+We are particularly interested in the case \(\varphi = f^{\a}\) with $\a\in (0,1]$, where \(f\) is strictly monotone, 1-homogeneous function of principal curvatures. Our principal result is a Harnack inequality for flows on the sphere when the speed $\p$ is either convex or $\p=H^{\alpha},~ \a\in (0,1)$. This result extends the inequality obtained in \cite{2015arXiv150802821B, bryanlouie} on the sphere. Along the way, we obtain new and old Harnack inequalities in Euclidean space \cite{MR1296393, MR1100812, MR1316556, MR2813400, MR1480081}.
 
 \section{Preliminaries}
 
@@ -136,7 +136,7 @@ and the covariant derivative of the trace,
 \nabla_k \Phi = g_{ij} \varphi^{ij,rs} \nabla_k h_{rs}.
 \end{equation}
 
-\section{Evolution equations}
+\section{Basic Evolution equations}
 
 Following \cite{MR1296393, MR1100812, MR1316556, MR1480081}, in this section, we aim to calculate the evolution of
 \[
@@ -465,8 +465,8 @@ using the definitions of \(\theta, \alpha_{ij}\) and \(\gamma_{ij}\) as well as 
 
 The proof is now completed by adding \cref{eq:delt_theta1} and \cref{eq:delt_theta2} line by line and adding also the final line from \cref{eq:delt_theta}.
 \end{proof}
-
-\begin{theorem}
+\section{Main evolution equations}
+\begin{lemma}
 \label{thm:Evchi}
 Let $\delta \neq 0.$ The quantity
 \[
@@ -490,7 +490,7 @@ R &= R_{\beta} - R_{\theta} \\
 \end{split}
 \]
 
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
 We have
@@ -560,7 +560,7 @@ R&=2n\fr{\p''\p}{\p'}\br{\b-\t}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
 This computation is tedious but straightforward. The key point is to replace the terms containing second covariant derivatives of $\p,$ namely $\Box\Phi$ and $\a_{ij},$ by a term involving $\Box\p,$ which can then be replaced by $\b-\t$ and some curvature terms.
 }
 
-The middle term in \cref{RSphere1} does not always have the favorable positive sign. In order to handle this, it is useful to add an auxiliary function of the speed. Using \cref{RSphere} and Theorem \ref{thm:Evchi}, it is straightforward to check the following evolution equation:
+The middle term in \cref{RSphere1} does not always have the favorable positive sign. In order to handle this, it is useful to add an auxiliary function of the speed. Using \cref{RSphere} and  \cref{thm:Evchi}, it is straightforward to check the following evolution equation:
 
 \begin{lemma}
 Let $\zeta=\zeta(\p)$ be a function. Then the function
@@ -575,7 +575,7 @@ evolves according to
 }
 \end{lemma}
 
-In the first place we defined 
+In the first place we defined
 \eq{\b=\Box\p+\p\p^{ij}(h^2)_{ij}}
 in order to get a very strong version of the Harnack estimate, compare Section \ref{Harnack}, Theorem \ref{thm: main 1}. This will turn out to have the drawback that the class of curvature function fulfilling this estimate is very small. In order to cover more curvature functions, we consider the full time derivative $\del_t\p$ and define
 \eq{\~\chi=\chi+tK\p\Phi.}
@@ -590,11 +590,11 @@ satisfies the evolution equation
                 &+tK\br{2\p^2\p^{ij}h_{ij}+\br{\p^{ij}h_{ij}+\p}b^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p-2b^j_k\p^{kl}\nabla_{l}\p\nabla_{j}\p}.
 }
 We may also rewrite
-$-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p=\fr{K\Phi}{\d}(-\tilde{\chi}+tK\p\Phi+2\d\p).$ 
-This in turn implies that $\~\chi$ satisfies the evolution equation
-\eq{\label{WeakHarnackEv12}\del_t\~\chi-\Box\~\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+K\Phi-\fr{K\Phi}{\d}}\~\chi+\fr{K\Phi\p}{\d}(tK\Phi+2\d)\\
+$-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p=\fr{K\Phi}{\d}(-\tilde{\chi}+tK\p\Phi+2\d\p).$
+This in turn implies that  $\~\chi$ satisfies the evolution equation
+\eq{\label{WeakHarnackEv12}\del_t\~\chi-\Box\~\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+\left(1-\fr{1}{\d}\right)K\Phi}\~\chi+\fr{K\Phi\p}{\d}(tK\Phi+2\d)\\
 				&+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
-                &+tK\br{2\p^2\p^{ij}h_{ij}+\br{\p^{ij}h_{ij}+\p}b^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p-2b^j_k\p^{kl}\nabla_{l}\p\nabla_{j}\p}.
+ &+tK\left(2\p^2\p^{ij}h_{ij}+\left[\br{\p^{ij}h_{ij}+\p}b^{ir}-2\p^{ir}\right]b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\right).
 }
 
 \end{lemma}
@@ -615,7 +615,7 @@ and adding \eqref{WeakHarnackEv2} to the term $R$ in \eqref{thm:Evchi1}, we obta
 
 \subsection{Euclidean Space}
 
-In Euclidean space we deduce differential Harnack inequalities for various speeds, recovering well known Harnack inequalities \cite{MR1296393, MR1100812, MR1316556, MR1480081, MR2813400}.
+In Euclidean space we deduce differential Harnack inequalities for various speeds, recovering well known Harnack inequalities \cite{MR1296393, MR1100812, MR1316556, MR2813400, MR1480081}.
 
 \begin{corollary}\label{EucHarnack}
 Let $x$ be a strictly convex solution of \eqref{Flow} in the Euclidean space, where $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous and inverse concave curvature function and where $\p\in C^{\8}(\R_+)$ and $\d\neq 0$ satisfy
@@ -657,8 +657,34 @@ satisfy $\chi>0$.
 
 \subsection{The Sphere}
 
-In the case of the sphere, we are more restricted by term $R$ in Theorem \ref{thm:Evchi}. Making use of \cref{Evchibar1}, we can obtain a Harnack inequality for the speed \(\p = H^{\alpha}\) with \(\alpha \in (0,1)\).
-
+\begin{theorem}\label{thm: main A}
+Let $\a\in(0,1].$ Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous curvature function. If $\p=f^{\a}$ is convex, then for contracting flows
+$$\partial_t \p-b^{ij}\nabla_i\p\nabla_j\p+\frac{n\a}{2}\frac{\p}{t}>0.$$
+\end{theorem}
+\begin{proof}
+In view of the maximum principle and that $\tilde{\chi}$ is manifestly positive at $t=0$, it suffices to show that the right-hand side of (\ref{WeakHarnackEv12}) is positive whenever at some point in space-time $\tilde{\chi}=0$. By convexity of $\p$, the term with the coefficient $\p^{ij,kl}$ is positive. On the other hand, note that any $\alpha$-homogeneous curvature function $\p$ satisfies $\p b^{ij}\geq \frac{\p^{ij}}{\a}.$ Therefore
+$$\left(\br{\p^{ij}h_{ij}+\p}b^{ir}-2\p^{ir}\right)b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\ge \frac{1-\a}{\a}\p^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\ge 0.$$ Moreover
+$$\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq \br{\frac{2\p^{il}\p^{jk}}{\a\p}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq \left(\frac{2}{n\a}-\frac{1}{\delta}\right)\frac{(\p^{ij}\eta_{ij})^2}{\p}.$$
+\end{proof}
+\begin{remark}
+For power means $H_r=\left(\sum \kappa_i^r\right)^{\frac{1}{r}}$ and $r\geq 1,$ it is not difficult, using AM-GM inequality, to see that $\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq0$ with $\delta=\frac{1}{2};$ therefore, the contracting flow with speed $\p=H_r$ and $r\geq 1$ satisfies 
+$$\partial_t H_r-b^{ij}\nabla_iH_r\nabla_jH_r+\frac{H_r}{2t}>0.$$
+\end{remark}
+\begin{corollary}
+Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous convex curvature function. Then any convex ancient solution of the contracting flow with speed $\p(f)=f$ satisfies
+\[\partial_t \p-b^{ij}\nabla_i\p\nabla_j\p\geq 0.\]
+In particular, for all $t\le 0$ we have
+$H(\cdot,t)\leq c.$
+Here $c<\infty$ depends only on $M_0.$
+\end{corollary}
+\begin{proof}
+For any $t>s$, the  Harnack estimate of Theorem \ref{thm: main A} implies that
+$$\partial_t \p-b^{ij}\nabla_i\p\nabla_j\p+\frac{n\a}{2}\frac{\p}{t-s}>0.$$
+Allowing $s\to-\infty$ proves the first claim. For the second claim, observe that for any 1-homogeneous convex $f$ we have \[f\ge \frac{f(1,\cdots,1)}{n}H,\]
+see \cite[Chapter 2]{Gerhardt:/2006}. Therefore, ancient solutions satisfy
+\[H(\cdot,t)\leq \frac{n}{f(1,\cdots,1)}\p(\cdot,t)\leq \frac{n}{f(1,\cdots,1)}\p(\cdot,0). \]
+\end{proof}
+Employing the evolution \cref{Evchibar1}, we can obtain a stronger Harnack inequality for the speed \(\p = H^{\alpha}\) with \(\alpha \in (0,1)\); the case $\alpha=1$ was considered in \cite{2015arXiv150802821B}.
 \begin{theorem}\label{thm: main 1}
 If $\frac{1}{2}+\frac{1}{2n}\leq {\alpha}< 1,$ then
 \[
@@ -704,13 +730,12 @@ in the sense of bilinear forms.
 To finish the proof, we need to show that the right-hand side is positive. If $\zeta=0$, this is straightforward:
 \[\varphi''<0~\&~\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}+\fr{\p}{\p'H^2}-\fr{1}{H}}\geq 0.\]
 For the second case that $\zeta\neq 0$, note that
-$$2\zeta-2n\d\fr{\p''\p^2}{\p'}\geq 0~\mbox{for}~\alpha\geq \frac{n+1}{2n},$$ 
+$$2\zeta-2n\d\fr{\p''\p^2}{\p'}\geq 0~\mbox{for}~\alpha\geq \frac{n+1}{2n},$$
 $$\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq0~\mbox{for}~\delta=\frac{\alpha}{\alpha+1},$$
 $$\fr{\zeta^2}{\d\p}-2n\fr{\p''\p}{\p'}\zeta+n\br{\zeta'\p-\zeta}\p'\geq 0~\mbox{for}~\alpha\geq\frac{n+1}{2n}~\&~\delta=\frac{\alpha}{\alpha+1},$$
 $$\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\geq 0~\mbox{for}~\frac{n+1}{2n}\leq \alpha\leq 1,$$
 $$\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''+\fr{\p}{\p'H^2}-\fr{1}{H}}=0.$$
 \end{proof}
-
 %\subsection{Hyperbolic Space}
 
 
