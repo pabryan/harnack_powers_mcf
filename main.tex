@@ -671,6 +671,7 @@ For power means $H_r=\left(\sum \kappa_i^r\right)^{\frac{1}{r}}$ and $r\geq 1,$ 
 $$\partial_t H_r-b^{ij}\nabla_iH_r\nabla_jH_r+\frac{H_r}{2t}>0.$$
 \end{remark}
 \begin{corollary}
+\label{cor:boundedH}
 Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous convex curvature function. Then any convex ancient solution of the contracting flow with speed $\p(f)=f$ satisfies
 \[\partial_t \p-b^{ij}\nabla_i\p\nabla_j\p\geq 0.\]
 In particular, for all $t\le 0$ we have
@@ -736,8 +737,172 @@ $$\fr{\zeta^2}{\d\p}-2n\fr{\p''\p}{\p'}\zeta+n\br{\zeta'\p-\zeta}\p'\geq 0~\mbox
 $$\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\geq 0~\mbox{for}~\frac{n+1}{2n}\leq \alpha\leq 1,$$
 $$\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''+\fr{\p}{\p'H^2}-\fr{1}{H}}=0.$$
 \end{proof}
-%\subsection{Hyperbolic Space}
 
+\section{Ancient and Quasi Ancient Solutions}
+
+\subsection{Backwards Limit}
+
+From now on we consider the spherical ambient space, $K=1,$ without further mention, and we are interested in solutions with maximal possible lifetime. To understand this maximal time, we define $T_S$ to be the lifespan of \it{the} convex spherical solution of \eqref{eq:CurvFlow}. By the convex spherical solution we mean a family of geodesic spheres shrinking under the flow \eqref{eq:CurvFlow} collapsing to a point at time $t=0$ and existing on the maximal interval \(-T_S, 0\). For the Mean Curvature Flow, \(T_S = \infty\), but for other flows, \(T_S\) can be finite.
+
+\begin{lemma}
+ Consider \eqref{eq:CurvFlow} with speed \(\p = H^{\alpha}\) for \(\alpha \in (0,1)\). Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$. Then the flow exists only for a finite time interval \(-T_S,0\) with \(0 < T_S < \infty\), collapsing to a point at \(t=0\) and converging to an equator at \(t=T_S\).
+\end{lemma}
+
+\begin{proof}
+Since $H$ is constant on a geodesic sphere, for a spherical flow the evolution equation for $\p=H^{\a}$ yields
+\eq{\fr{d}{dt}H^{\a}\geq \a n H^{2\a-1}.}
+This yields
+\eq{\fr{d}{dt}H\geq nH^{\a}.}
+Since the right hand side remains strictly positive under this ODE we obtain finite lifespan forward in time.
+Convexity and integration over some interval $(a,b)$ yield
+\eq{0\leq H^{1-\a}(a)\leq H^{1-\a}(b)-(1-\a)n(b-a).}
+Letting $a\ra-\8$ gives finite existence backwards in time.
+\end{proof}
+
+\begin{lemma}
+Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then 
+there holds
+\eq{T\leq T_S.}
+\end{lemma}
+
+\begin{proof}
+Suppose $T>T_S+\e$ for some $\e>0$. Since $M=M_{-T_S-\fr{\e}{2}}$ bounds a convex body $\hat{M}$, it strictly contained in an open hemisphere due to the classical paper \cite{CarmoWarner:/1970}. Then there exists a geodesic sphere $S$ with $\hat{M}\sub\hat{S}.$ By the avoidance principle the flow with initial hypersurface $M$ collapses before the spherical flow contradicting $T>T_S$.
+\end{proof}
+
+Due to this lemma the following definition is reasonable.
+
+\begin{definition}
+A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is called \it{quasi-ancient}, if $T=T_S$.
+\end{definition}
+
+The term ancient is reserved for the situation when \(T_S=\infty\), and by the definition, ancient solutions are also quasi-ancient.
+
+The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces \it{with bounded Mean Curvature}, $M_t$ is an equator for $t\ra -T_S$. For strictly monotone, 1-homogeneous convex speeds, \cref{cor:boundedH} gives a bound on Mean Curvature for ancient solutions. For quasi-ancient solutions, the Harnack inequality does not in gernal give such a bound, since we cannot send \(t \to -\infty\) whenever \(T_S\) is finite. One can envisage backwards limits as convex polyhedra and hence with unbounded \(H\), but it is not clear that these can arise as limits of quasi-ancient solutions. Thus at this stage we must make the additional assumption that \(H\) is bounded for quasi-ancient solutions.
+
+We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore we only need some more small observations.
+
+\begin{lemma}\label{ISC}
+Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
+
+(i)~For all $t_0<0$ there exists a uniform radius $R>0,$ such that the enclosed convex bodies $\hat{M}_t,$ $-T_S<t\leq t_0,$ of the flow hypersurfaces $M_t$ satisfy a uniform interior sphere condition with radius $R.$\\
+
+(ii)~For every $y_0\in\mrm{int}~\hat{M}_{t_0}$ the hypersurfaces $M_t,$ $-T_S<t\leq t_0$ can be written as a graph in geodesic polar coordinates around $y_0$ and the corresponding graph functions satisfy uniform $C^2$-estimates.
+\end{lemma}
+
+\pf{
+Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a convex contracting $H^{\a}$ flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
+\eq{\hat{M}_t\sub\mc{H}(x_0).}
+In our situation all hypersurfaces $M_t,$ $-T_S<t\leq t_0,$ satisfy
+\eq{B_{\e}(y_0)\sub \mrm{int}~\hat{M}_t}
+and
+\eq{B_{\e}(\hat{y}_0)\sub \hat{M}_t^c}
+with a uniform $\e,$ where $\hat{y}_0$ denotes the antipodal point of $y_0.$
+Now we prove the two claims.\\
+
+(i)~Consider the stereographic projection with $\hat{y}_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in the Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
+
+(ii)~
+Write the $M_t$ as graphs in geodesic polar coordinates around $y_0,$
+\eq{M_t=\{(r,x^i)\cn r=u(t,x^i)\},}
+where $r$ describes the geodesic distance to $y_0.$ In these coordinates the spherical metric takes the form
+\eq{d\-s^2=dr^2+\sin^{2}r\s_{ij}dx^idx^j,}
+where $(\s_{ij})$ is the round metric of $\S^n.$
+
+Hence on the set in which the $M_t$ range, the metrics $\-g_{ij}=\sin^2r\s_{ij}$ and $\s_{ij}$ are equivalent.
+Due to \cite[Thm.~2.7.10]{Gerhardt:/2006} for all convex hypersurface $M_t$ the quantity
+\eq{v^2=1+\-g^{ij}\nabla_iu\nabla_ju}
+is uniformly bounded by a constant which only depends on $\e.$
+Hence by the equivalence of norms the $M_t$ are uniformly $C^1$-bounded in the sense that the corresponding functions $u(t,\cdot)$ are uniformly $C^1(\S^n)$-bounded.
+A straightforward computation yields the following representation of the Weingarten map in terms of the function $u,$ namely
+\eq{h^i_j=\fr{\vt'}{v\vt}\d^i_j+\fr{\vt'}{v^3\vt^3}\nabla^iu\nabla_ju-\fr{\~g^{ik}}{v\vt^2}\nabla^2_{kj}u,}
+where $\~g^{ij}$ is the inverse of $\~g_{ij}=\vt^{-2}g_{ij},$ $\vt(r)=\sin r$ and covariant derivatives as well as index raising is performed with respect to $\s_{ij},$ compare for example \cite[(3.82)]{Scheuer:05/2015}. Due to the curvature estimates we obtain uniform $C^2(\S^n)$-estimates.
+}
+
+\begin{corollary}\label{Backlimit}
+Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there exists a unique backwards limiting hypersurface $M_{-T_S}$ and the flow hypersurfaces $M_t$ converge to $M_{-T_S}$ in $C^{1,\b},$ $0<\b<1,$ in the sense that for a common graph representation as in Lemma \ref{ISC} there holds
+\eq{u(t,\cdot)\ra u(-T_S,\cdot)}
+in the norm of $C^{1,\b}(\S^n).$
+\end{corollary}
+
+\pf{
+Due to the pointwise monotonicity of $u(t,\cdot)$ backwards in time we obtain a pointwise limit. The $C^{1,\b}$-convergence follows from compactness.
+}
+
+\begin{theorem}
+In the situation of Corollary \ref{Backlimit} the hypersurface $M_{T_S}$ is an equator of $\S^{n+1}.$
+\end{theorem}
+
+\pf{
+Since the convex bodies $M_t$ are increasing backwards in time and due to the uniform convergence of $M_t$ to $M_{-T_S},$ the set
+\eq{\hat{M}_{-T_S}:=\overline{\bigcup_{t<0}\hat{M}_t}}
+is a compact body with
+\eq{\del \hat{M}_{-T_S}=M_{-T_S}.}
+Since $\mrm{int}(\hat{M}_{-T_S})$ is a strictly convex set, it is especially weakly convex in a hemisphere in the sense of \cite[Def.~3.2]{MakowskiScheuer:/2013}. Thus $\hat{M}_{-T_S}$ is a weakly convex body in a hemisphere. The proof of \cite[Lemma~6.1]{MakowskiScheuer:/2013} can literally be applied to show that $\hat{M}_{-T_S}$ satisfies a uniform interior sphere condition as well.
+We can apply \cite[Thm.~1.1]{MakowskiScheuer:/2013} and obtain that $\hat{M}_{-T_S}$ is either strictly contained in an open hemisphere or is equal to a closed hemisphere. The first alternative is not possible since the solution is quasi-ancient. We conclude that $\del \hat{M}_{-T_S}=M_{-T_S}$ is an equator of $\S^{n+1}.$
+}
+
+\subsection{Aleksandrov Reflection}
+
+In this section, we use Theorem \ref{thm8} to classify convex, embedded ancient solution of the mean curvature flow on \(\S^{n+1}\). The proof uses the Aleksandrov reflection as in \cite{bryanlouie}.
+
+We begin with some preliminaries of the Aleksandrov reflection on \(\S^{n+1}\). First, we will work relative to the limiting equator obtained in Theorem \ref{thm8}. Let \(E\) be an equator that bounds the \emph{open} hemispheres \(H^{\pm}\) with centers \(\pm \basepoint\), and let \(\vertvec = \overrightarrow{\origin\basepoint}\) be the unit vector in \(\R^{n+2}\) that points from the origin \(\origin\) to \(\basepoint\). Let \(\radialdistance(x) = d_{\S^{n+1}} (\basepoint, x)\) denote the spherical distance from \(\basepoint\) to \(x \in \S^{n+1}\). The radial projection onto \(E\) is the map \(x \in \S^{n+1} \mapsto \radialprojection(x) \in E\), where \(\radialprojection\) is the nearest point on \(E\) to \(x\). If \(x \ne \pm \basepoint\), then \(\radialprojection(x)\) is a single point. If \(x = \pm \basepoint\), then \(\radialprojection(x) = E\). In any event, given \(y \in \radialprojection(x)\), there is a unique length minimizing geodesic joining \(x\) to \(y\) and this geodesic must pass through \(\pm \basepoint\).
+
+It is convenient to make use of the ambient \(\R^{n+2}\) and define the height function \(\height(x) = \ip{x}{\vertvec}\). The radial distance is related to the height function via
+\[
+\height(x) = \cos(\radialdistance(x))
+\]
+which is monotonically decreasing in \(\radialdistance\).
+
+Now for the Aleksandrov reflection, let \(\reflectionvector \in \R^{n+2}\) be any unit vector that \(\ip{\reflectionvector}{\vertvec} < 0\). Let \(\reflectionplane = \reflectionvector^{\perp}\) be the hyperplane through the origin with the normal vector \(\reflectionvector\). Let \(\reflectionhalfspace^{\pm} = \{\pm \ip{x}{\reflectionvector} > 0\}\) denote the halfspaces with the boundary \(\reflectionplane\). For any subset \(S \subset \S^{n+1}\), write \(\reflectionset{S}^{\pm} = S \intersect \reflectionhalfspace^{\pm}\). Lastly, let \(\delta > 0\) denote the angle \(\reflectionvector\) makes with \(E\); therefore, \(\sin \delta = \ip{\reflectionvector}{-\vertvec}\).
+
+\begin{definition}
+The Aleksandrov reflection across \(\reflectionplane\) is the map defined by
+\[
+\reflectionmap: x \in \R^{n+1} \mapsto x - 2\ip{x}{\reflectionvector} \reflectionvector.
+\]
+\end{definition}
+
+This map is an (orientation reversing) isometry of \(\R^{n+2}\) fixing \(\reflectionplane\) and in particular fixing the origin. Therefore, it induces an isometry of \(\S^{n+1}\). For \(x \in E\), we have \(\ip{x}{\vertvec} = 0\) and
+\[
+\height(\reflectionmap(x)) = \ip{\vertvec}{x - 2 \ip{x}{\reflectionvector} \reflectionvector} = 2 \sin\delta \ip{x}{\reflectionvector}.
+\]
+In the case \(x \in E^+\), \(\height(\reflectionmap(x)) > 0\), and in the case \(x \in E \intersect \reflectionplane\), \(\height(\reflectionmap(x)) = 0\).
+
+In geodesic polar coordinates, \((\radialdistance, \sigma) \in (0, \pi) \times E \simeq \S^{n+1}\backslash \{\pm \basepoint\}\), a smooth, closed hypersurface \(M \subset \reflectionhalfspace^+\) that bounds a region in \(\reflectionhalfspace\) is a smooth graph \((f(\sigma), \sigma)\) over \(E\) if and only if its (outer) normal \(\nor\) satisfies \(\ip{\nor}{\vertvec} < 0\) (e.q. \(M\) has no vertical tangents). In particular, for all \(\epsilon>0\) there is a \(\xi>0\) such that if \(M\) is a graph with \(\ip{\nor}{\vertvec} < -\xi\) and \(N\) is \(\epsilon\)-close to \(M\) in \(C^{\infty}\), then \(N\) is a graph over \(E\).
+
+\begin{theorem}
+Let \(M_t\) be a convex, embedded ancient solution of the mean curvature flow on \(\S^{n+1}\). Then \(M_t\) is a family of shrinking geodesic spheres emanating from an equator at \(t=-\infty\).
+\end{theorem}
+
+\begin{proof}
+Let \(E = M_{-\infty} \simeq \S^n\) be the limiting equator \(\lim\limits_{t\to-\infty} M_t\).
+
+Since \(M_t\) smoothly converges to \(E\) as \(t\to-\infty\), we may write \(M_t\) as the graph of a smooth positive function over \(E\) in the geodesic polar coordinates, \(M_t = \{(f_t(\sigma), \sigma) \in (0,\pi) \times E\)\}. We have \(f_t \to \pi/2\) smoothly and uniformly in \(C^{\infty}\) as \(t \to -\infty\). Moreover, for \(\delta \in (0,\pi/4)\), \(\reflectionmap(E) = \{(g_{-\infty}(\sigma), \sigma)\)\} is a graph over \(E\).
+
+We want to send \(\delta \to 0\) eventually. Let us fix a \(\delta_0 \in (0,\pi/4)\) to give us a little room because \(\reflectionmap(E)\) is not a graph when \(\delta = \pi/4\) (it is an equator perpendicular to \(E\)). Explicitly, given any \(\delta \in (0,\delta_0)\), if \(f_t\) is sufficiently close (independently of \(t\)) in the \(C^{\infty}\) topology to the equator, then \(\reflectionmap(M_t)\) may written as graph over the equator. Consequently, since \(f_t \to \pi/2\) smoothly, there is a \(T_{\delta} < 0\) such that for every \(t \leq T_{\delta}\), \(\reflectionmap(M_t) =\{ (g_t(\sigma), \sigma)\)\} is a graph.
+
+As noted above, \(\height(\reflectionmap(x)) > 0\) on \(E^+\) and \(\height(x) = \cos(\radialdistance(x))\). Thus, continuity implies that for \(\epsilon > 0\) there exits an \(\eta>0\) such that \(\radialdistance(\reflectionmap(x)) < \pi/2 - \epsilon\) provided \(x \in E_{\eta} = \{x \in E: d(x, E \intersect \reflectionplane) > \eta\}\). By making \(T_{\delta}\) smaller, since \(M_t \to_{C^{\infty}} E\), we can arrange that \(d(M_t, E) < \epsilon/2\) for all \(t < T_{\delta}\); that is, \(\radialdistance (x) > \pi/2 - \epsilon/2\) for all \(x \in M_t\). Now for \(x \in M_t^+ \intersect \radialprojection^{-1} E_{\eta}\), since \(\reflectionmap\) is an isometry, we have \(d(\reflectionmap(x), \reflectionmap(\radialprojection(x))) < \epsilon/2\); therefore, \(\radialdistance(\reflectionmap(x)) < \pi/2 - \epsilon/2\). Consequently, away from the strip \(\{x \in E: d(x, E \intersect \reflectionplane) \leq \eta\}\), we have \(\radialdistance(\reflectionmap(\reflectionset{(M_t)}^+)) < \pi/2 - \epsilon/2\) and \(\radialdistance(M_t^-) > \pi/2 - \epsilon/2\). That is, away from the strip, we have \(\reflectionmap(\reflectionset{(M_t)}^+) > \reflectionset{(M_t)}^-\).
+
+Now let \(C\subset E\) be any great circle and consider \(f_t|_C\). Using the Backwards Approximate Symmetry Lemma \cite[Lemma 5.1]{bryanlouie} (which applies whenever \(f_t\) converges smoothly to \(C\)), we find that (possibly by decreasing \(T_{\delta}\)) over \(C\)
+\[
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
+\]
+on the strip \(\{x \in E: d(x, E \intersect \reflectionplane) \leq \eta\}\). Here, \(T_{\delta}\) depends only on \(\|f_t - \pi/2\|_{C^{\infty}}\) and \(\delta\); therefore, \(T_{\delta} > - \infty\) is independent of \(C\). Thus we find that
+\begin{equation}
+\label{eq:backwards_approximate_symmetry}
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
+\end{equation}
+everywhere for all \(t \in (-\infty, T_{\delta})\).
+
+Let us now define \(T_{\delta}\) so that \((-\infty, T_{\delta})\) is the largest interval on which the relation \eqref{eq:backwards_approximate_symmetry} holds. Also define \(T = \inf\limits_{\delta \in (0,\delta_0)} T_{\delta}\). We want to show that \(T > -\infty\), and hence that the relation \eqref{eq:backwards_approximate_symmetry} holds on the non-empty, open interval \((-\infty, T)\). To show $T>-\infty$, we apply the maximum principle as in \cite[Lemma 5.2]{bryanlouie}: We know that \(\reflectionset{(M_t)}^-\) and \(\reflectionmap(\reflectionset{(M_t)}^+)\) lie in the interior of \(\reflectionhalfspace^-\) with the common boundary lying in \(\reflectionplane \intersect \S^{n+1}\). We also know that in a neighborhood of \(\reflectionplane \intersect \S^{n+1}\), the hypersurfaces \(\reflectionset{M_t}^-\) and \(\reflectionmap(\reflectionset{(M_t)}^+)\) are disjoint for \(t\) sufficiently negative (depending on \(\delta\)) because \(\reflectionset{M_t}^-\) is \(C^1\)-close to the equator, while \(\reflectionmap(\reflectionset{(M_t)}^+)\) is \(C^1\)-close to the reflected equator. The strong maximum principle, using a parabolic version of the Hopf boundary point lemma (similar to \cite[Theorem 2.2]{MR1483984}), ensures that the  relation \(\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-\) is preserved along the flow as long as both \(\reflectionset{M_t}^-\) and \(\reflectionmap(\reflectionset{(M_t)}^+)\) are non-empty and intersect \(\reflectionplane\) transversely, and these latter conditions are true on an open interval \((-\infty, S)\) with \(S>-\infty\) independent of \(\delta\) (see \cite[Lemma 5.2]{bryanlouie}). In summary, since the relation \eqref{eq:backwards_approximate_symmetry} is true on \((-\infty, \min\{T_{\delta},S\})\), the maximum principle applied in the time interval $[\min\{T_{\delta},S\}/2,S)$ ensures that
+\begin{equation*}
+\label{eq:longtime_approximate_symmetry}
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
+\end{equation*}
+for all \(t \in (-\infty, S)\) and any \(\delta \in (0,\delta_0)\). Hence $T\ge S.$
+
+To complete the proof, we use \cite[Proposition 5.3]{bryanlouie} (which applies in any dimension) to conclude that \(M_t\) is a geodesic sphere for all \(t \in (-\infty, T)\) and thus for all negative times by the uniqueness of solutions.
+\end{proof}
 
 
 \bibliographystyle{amsplain}

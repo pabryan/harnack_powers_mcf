@@ -104,6 +104,23 @@
 \newcommand{\hra}{\hookrightarrow}
 \newcommand{\mt}{\mapsto}
 
+% Aleksandrov Reflection Macros
+\DeclareMathOperator{\reflectionvector}{\vec{V}}
+\newcommand{\reflectionplane}[1][\reflectionvector]{\ensuremath{P_{#1}}}
+\newcommand{\reflectionmap}[1][\reflectionvector]{\ensuremath{R_{#1}}}
+\newcommand{\reflectionset}[2][\reflectionvector]{\ensuremath{{#2}_{#1}}}
+\newcommand{\reflectionhalfspace}[1][\reflectionvector]{\ensuremath{\reflectionset[{#1}]{H}}}
+\newcommand{\vertvec}{e}
+\DeclareMathOperator{\origin}{O}
+\DeclareMathOperator{\radialprojection}{\pi}
+\DeclareMathOperator{\height}{h}
+\DeclareMathOperator{\equator}{E}
+\newcommand{\ip}[2]{\ensuremath{\langle{#1},{#2}\rangle}}
+\DeclareMathOperator{\intersect}{\cap}
+\DeclareMathOperator{\nor}{\nu}
+\DeclareMathOperator{\basepoint}{p_0}
+\DeclareMathOperator{\radialdistance}{\rho}
+
 %Fonts
 \newcommand{\mc}{\mathcal}
 \renewcommand{\it}{\textit}
