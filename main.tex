@@ -33,7 +33,7 @@ where \(M_K\) is the simply connected space form of constant sectional curvature
 \]
 Equivalently, \(\varphi\) is a symmetric function on the eigenvalues of \(\mathcal{W}\) (principal curvatures) \(\kappa_1, \cdots, \kappa_n\).
 
-We are particularly interested in the case \(\varphi = f^{\a}\) with $\a\in (0,1]$, where \(f\) is strictly monotone, 1-homogeneous function of principal curvatures. Our principal result is a Harnack inequality for flows on the sphere when the speed $\p$ is either convex or $\p=H^{\alpha},~ \a\in (0,1)$. This result extends the inequality obtained in \cite{2015arXiv150802821B, bryanlouie} on the sphere. Along the way, we obtain new and old Harnack inequalities in Euclidean space \cite{MR1296393, MR1100812, MR1316556, MR2813400, MR1480081}.
+We are particularly interested in the case \(\varphi = f^{\a}\) with $\a\in (0,1]$, where \(f\) is strictly monotone, 1-homogeneous function of principal curvatures. Our principal result is Harnack inequalities for flows on the sphere when the speed $\p$ is either convex or $\p=H^{\alpha},~ \a\in (0,1)$. This result extends the inequality obtained in \cite{2015arXiv150802821B, bryanlouie} on the sphere. Along the way, we obtain new and old Harnack inequalities in Euclidean space \cite{MR1296393, MR1100812, MR1316556, MR2813400, MR1480081}.
 
 \section{Preliminaries}
 
@@ -138,11 +138,17 @@ and the covariant derivative of the trace,
 
 \section{Basic Evolution equations}
 
-Following \cite{MR1296393, MR1100812, MR1316556, MR1480081}, in this section, we aim to calculate the evolution of
+Following \cite{MR1296393, MR1100812, MR1316556, MR1480081}, in this section, we collect basic evolution equations that are needed to calculate the evolution of the following quantities
 \[
-\chi =t(\partial_t \varphi - K \varphi \Phi - b^{ij} \nabla_i \varphi \nabla_j \varphi) +\delta\varphi
+\chi_1 =t(\partial_t \varphi- b^{ij} \nabla_i \varphi \nabla_j \varphi) +\delta\varphi
 \]
-where \(\delta \ne 0\) is an arbitrary, non-zero constant. Let us make a few definitions to keep the calculations more manageable. Let
+and
+\[
+\chi_2 =t(\partial_t \varphi - K \varphi \Phi - b^{ij} \nabla_i \varphi \nabla_j \varphi) +\delta\varphi
+\]
+where \(\delta \ne 0\) is an arbitrary, non-zero constant. The volution equation of $\chi_1$ will be used for obtaining Harnack estimates for convex 1-homogeneous curvature speeds $\p$, and the evolution equation of $\chi_2$ will be used for obtaining stronger Harnack estimates for flow by powers of the mean curvature $\p=H^{\alpha}$ with $\alpha\in(0,1).$ Note that in Euclidean space $\chi_1=\chi_2.$
+
+Let us make a few definitions to keep the calculations more manageable. Let
 \[
 \alpha_{ij} = \nabla^2_{ij} \varphi + \varphi(h^2)_{ij}, \quad \gamma_{ij} = b^{kl} \nabla_k \varphi \nabla_l h_{ij}, \quad \eta_{ij} = \alpha_{ij} - \gamma_{ij}
 \]
@@ -152,9 +158,12 @@ and define
 \]
 so that from the evolution of \(\varphi\) below (\cref{lem:evolution}, \cref{eq:delt_speed}) we may write
 \[
-\chi = t(\beta - \theta) + \delta\varphi.
+\chi_1 = t(\partial_t\p- \theta) + \delta\varphi
 \]
-
+and
+\[
+\chi_2 = t(\beta - \theta) + \delta\varphi.
+\]
 We begin by recalling some standard evolution equations and commutators and then break the remaining calculation into several lemmas.
 
 The evolution equations in the following lemma are standard and can be found in many places \cite{MR1296393,MR1100812, MR1316556, MR892052, MR1480081}. The necessary tools are commuting derivatives, using the definition of the curvature tensor for space forms, the Gauss equation, and the Codazzi equation as described in the previous section. Compare also \cite[p.~94-95]{Gerhardt:/2006} and the formula \cite[eq.~(6.17)]{Gerhardt:01/1996}.
@@ -312,9 +321,7 @@ and in the last equality we used
 b^{rs} (h^2)_{rl} = b^{rs} h_{rm} h^m_l = \delta^s_m h^m_l = h^s_l.
 \]
 \end{proof}
-
-Now we may proceed to the calculation of \(\partial_t \chi\). But we will do this first by making the intermediate calculations of \(\partial_t \beta\) and \(\partial_t \theta\).
-
+Now we may proceed to the calculations of \(\partial_t \beta\) and \(\partial_t \theta\).
 \begin{lemma}
 \label{lem:evbeta}
 The quantity
@@ -470,11 +477,11 @@ The proof is now completed by adding \cref{eq:delt_theta1} and \cref{eq:delt_the
 \label{thm:Evchi}
 Let $\delta \neq 0.$ The quantity
 \[
-\chi = t(\beta - \theta) + \delta\varphi
+\chi_2 = t(\beta - \theta) + \delta\varphi
 \]
 satisfies
 \eq{\label{thm:Evchi1}
-\partial_t \chi -\Box\chi &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\chi \\
+\partial_t \chi_2 -\Box\chi_2 &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\chi_2 \\
 & \quad + t\left(\varphi^{ij,kl} + 2b^{il}\varphi^{jk} - \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi}\right)\eta_{ij}\eta_{kl} + tK R,
 }
 where
@@ -495,7 +502,7 @@ R &= R_{\beta} - R_{\theta} \\
 \begin{proof}
 We have
 \[
-(\partial_t - \Box)\chi = \beta - \theta + t(\partial_{t} - \Box)(\beta - \theta) + \delta(\partial_t \varphi - \Box\varphi).
+(\partial_t - \Box)\chi_2 = \beta - \theta + t(\partial_{t} - \Box)(\beta - \theta) + \delta(\partial_t \varphi - \Box\varphi).
 \]
 First of all, the evolution equation for \(\varphi\), \cref{lem:evolution}, \cref{eq:delt_speed} gives us
 \[
@@ -510,7 +517,7 @@ since \(\nabla_r \varphi = \varphi^{ij} \nabla_r h_{ij}\). Putting the two equat
 \label{eq:deltchi1}
 \begin{split}
 \beta - \theta + \delta(\partial_t \varphi - \Box\varphi) &= \left(\frac{\beta-\theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi + t \frac{(\beta - \theta)^2}{\delta\varphi} - t \frac{\varphi^{ij}\eta_{ij} \varphi^{kl}\eta_{kl}}{\delta\varphi} \\
-&= \frac{\beta-\theta}{\delta\varphi} \chi + \left(\varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi \\
+&= \frac{\beta-\theta}{\delta\varphi} \chi_2 + \left(\varphi^{ij}(h^2)_{ij} + K\varphi^{ij}g_{ij}\right)\delta\varphi \\
 &\quad - t \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi} \eta_{ij}\eta_{kl}.
 \end{split}
 \end{equation}
@@ -545,7 +552,7 @@ Subtracting line by line, we have
 Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} gives the result.
 \end{proof}
 
-Due to the complicated term $R$, the evolution of \(\chi\) is difficult to work with when $K\ne 0$. However, if the speed is a function of the mean curvature, we can simplify the evolution.
+Due to the complicated term $R$, the evolution of \(\chi_2\) is difficult to work with when $K\ne 0$. However, if the speed is a function of the mean curvature, we can simplify the evolution.
 
 \begin{lemma}\label{RSphere}
 Suppose that $\p=\p(H).$ Then the term $R$ in the evolution equation of $\chi$ takes the form
@@ -564,10 +571,10 @@ The middle term in \cref{RSphere1} does not always have the favorable positive s
 
 \begin{lemma}
 Let $\zeta=\zeta(\p)$ be a function. Then the function
-\eq{\bar{\chi}=t(\b-\t+\zeta)+\d\p}
+\eq{\chi_3=\chi_2+t\zeta}
 evolves according to
 \eq{\label{Evchibar1}
-\del_t \bar\chi -\Box\bar\chi &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi+\zeta \\
+\del_t \chi_3 -\Box\chi_3 &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi_2+\zeta \\
 &\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\
 		&\hp{=}+t\Big[2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p\\
         &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
@@ -575,24 +582,23 @@ evolves according to
 }
 \end{lemma}
 
-In the first place we defined
-\eq{\b=\Box\p+\p\p^{ij}(h^2)_{ij}}
-in order to get a very strong version of the Harnack estimate, compare Section \ref{Harnack}, Theorem \ref{thm: main 1}. This will turn out to have the drawback that the class of curvature function fulfilling this estimate is very small. In order to cover more curvature functions, we consider the full time derivative $\del_t\p$ and define
-\eq{\~\chi=\chi+tK\p\Phi.}
+Quantities $\chi_2$ and $\chi_3$ were defined
+in order to get a very strong version of the Harnack estimate, compare Section \ref{Harnack}, Theorem \ref{thm: main 1}. This will turn out to have the drawback that the class of curvature function fulfilling this estimate is very small. In order to cover more curvature functions, we consider
+\eq{\chi_1=\chi_2+tK\p\Phi.}
 Let us calculate the evolution equation.
 
 \begin{lemma}\label{WeakHarnackEv}
 The quantity
-\eq{\~\chi=t(\del_t\p-\t)+\d\p}
+\eq{\chi_1=t(\del_t\p-\t)+\d\p}
 satisfies the evolution equation
-\eq{\label{WeakHarnackEv1}\del_t\~\chi-\Box\~\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+K\Phi}\~\chi-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p\\
+\eq{\label{WeakHarnackEv1}\del_t\chi_1-\Box\chi_1&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+K\Phi}\chi_1-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p\\
 				&+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
                 &+tK\br{2\p^2\p^{ij}h_{ij}+\br{\p^{ij}h_{ij}+\p}b^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p-2b^j_k\p^{kl}\nabla_{l}\p\nabla_{j}\p}.
 }
 We may also rewrite
-$-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p=\fr{K\Phi}{\d}(-\tilde{\chi}+tK\p\Phi+2\d\p).$
-This in turn implies that  $\~\chi$ satisfies the evolution equation
-\eq{\label{WeakHarnackEv12}\del_t\~\chi-\Box\~\chi&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+\left(1-\fr{1}{\d}\right)K\Phi}\~\chi+\fr{K\Phi\p}{\d}(tK\Phi+2\d)\\
+$-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p=\fr{K\Phi}{\d}(-\chi_1+tK\p\Phi+2\d\p).$
+This in turn implies that  $\chi_1$ satisfies the evolution equation
+\eq{\label{WeakHarnackEv12}\del_t\chi_1-\Box\chi_1&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+\left(1-\fr{1}{\d}\right)K\Phi}\chi_1+\fr{K\Phi\p}{\d}(tK\Phi+2\d)\\
 				&+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
  &+tK\left(2\p^2\p^{ij}h_{ij}+\left[\br{\p^{ij}h_{ij}+\p}b^{ir}-2\p^{ir}\right]b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\right).
 }
@@ -600,7 +606,7 @@ This in turn implies that  $\~\chi$ satisfies the evolution equation
 \end{lemma}
 
 \pf{
-We simply use the evolution of $\chi,$ cf.~\eqref{thm:Evchi1}, and add the evolution of $tK\Phi\p.$ This is
+We simply use the evolution of $\chi_2,$ cf.~\eqref{thm:Evchi1}, and add the evolution of $tK\Phi\p.$ This is
 \eq{\label{WeakHarnackEv2}\br{\del_t-\Box}\br{tK\Phi\p}&=tK\Big(\Phi\p\p^{ij}(h^2)_{ij}+K\Phi^2\p+\p\del_t\Phi\\
 					&\hp{-tk\Big(}-\p\Box\Phi-2\p^{ij}\nabla_{i}\p\nabla_{j}\Phi\Big)\\
 							&\hp{=}+K\Phi\p.
@@ -621,7 +627,7 @@ In Euclidean space we deduce differential Harnack inequalities for various speed
 Let $x$ be a strictly convex solution of \eqref{Flow} in the Euclidean space, where $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous and inverse concave curvature function and where $\p\in C^{\8}(\R_+)$ and $\d\neq 0$ satisfy
 \eq{\p''+\fr{2\p'}{f}-\fr{1}{\d}\fr{\p'^2}{\p}\geq 0,\quad \d\p(0,\xi)>0.}
 Then non-negativity of the function
-\eq{\chi=t(\Box\p+\p\p^{ij}(h^2)_{ij}-b^{ij}\nabla_i\p\nabla_j\p)+\d\p}
+\eq{\chi_2=t(\Box\p+\p\p^{ij}(h^2)_{ij}-b^{ij}\nabla_i\p\nabla_j\p)+\d\p}
 is preserved along \eqref{Flow}.
 \end{corollary}
 
@@ -649,7 +655,7 @@ Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous curvature func
 \eq{\p(f)=f^{\a},\quad 0<\a<\8, \quad \d\geq \fr{\a}{\a+1},}
 and for expanding flows the pair
 \eq{\p(f)=-f^{-\b}, \quad 0<\b<1,\quad \d\leq \fr{\b}{\b-1}}
-satisfy $\chi>0$.
+satisfy $\chi_2>0$.
 %If $f$ is inverse convex (e.q., the inequality (\ref{eq: inverse concavity}) is reversed), then for expanding flows the pair
 %\eq{\p(f)=-f^{-\b}, \quad \b>1,\quad \d\geq \fr{\b}{\b-1}}
 %satisfy $\chi<0.$
@@ -662,12 +668,12 @@ Let $\a\in(0,1].$ Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogene
 $$\partial_t \p-b^{ij}\nabla_i\p\nabla_j\p+\frac{n\a}{2}\frac{\p}{t}>0.$$
 \end{theorem}
 \begin{proof}
-In view of the maximum principle and that $\tilde{\chi}$ is manifestly positive at $t=0$, it suffices to show that the right-hand side of (\ref{WeakHarnackEv12}) is positive whenever at some point in space-time $\tilde{\chi}=0$. By convexity of $\p$, the term with the coefficient $\p^{ij,kl}$ is positive. On the other hand, note that any $\alpha$-homogeneous curvature function $\p$ satisfies $\p b^{ij}\geq \frac{\p^{ij}}{\a}.$ Therefore
+In view of the maximum principle and that $\chi_1$ is manifestly positive at $t=0$, it suffices to show that the right-hand side of (\ref{WeakHarnackEv12}) is positive whenever at some point in space-time $\chi_1=0$. By convexity of $\p$, the term with the coefficient $\p^{ij,kl}$ is positive. On the other hand, note that any $\alpha$-homogeneous curvature function $\p$ satisfies $\p b^{ij}\geq \frac{\p^{ij}}{\a}.$ Therefore
 $$\left(\br{\p^{ij}h_{ij}+\p}b^{ir}-2\p^{ir}\right)b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\ge \frac{1-\a}{\a}\p^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\ge 0.$$ Moreover
 $$\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq \br{\frac{2\p^{il}\p^{jk}}{\a\p}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq \left(\frac{2}{n\a}-\frac{1}{\delta}\right)\frac{(\p^{ij}\eta_{ij})^2}{\p}.$$
 \end{proof}
 \begin{remark}
-For power means $H_r=\left(\sum \kappa_i^r\right)^{\frac{1}{r}}$ and $r\geq 1,$ it is not difficult, using AM-GM inequality, to see that $\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq0$ with $\delta=\frac{1}{2};$ therefore, the contracting flow with speed $\p=H_r$ and $r\geq 1$ satisfies 
+For power means $H_r=\left(\sum \kappa_i^r\right)^{\frac{1}{r}}$ and $r\geq 1,$ it is not difficult, using AM-GM inequality, to see that $\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\geq0$ with $\delta=\frac{1}{2};$ therefore, the contracting flow with speed $\p=H_r$ and $r\geq 1$ satisfies
 $$\partial_t H_r-b^{ij}\nabla_iH_r\nabla_jH_r+\frac{H_r}{2t}>0.$$
 \end{remark}
 \begin{corollary}
@@ -701,18 +707,18 @@ If $0<{\alpha}\leq \frac{1}{2} + \frac{1}{2n}$ or $\alpha=1$, then
 \begin{proof}
 In order to prove Theorem \ref{thm: main 1}, we need to show that for
 \eq{\p=H^{\a},\quad \d=\fr{\a}{\a+1},}
-the quantity $\bar{\chi}$ preserves its positivity at all $t>0.$ Here $\zeta$ is chosen to be
+the quantity $\chi_3$ preserves its positivity at all $t>0.$ Here $\zeta$ is chosen to be
 \eq{\zeta(\p)=\begin{cases} 0, &0<\a\leq \fr{1}{2}+\fr{1}{2n}\\
 					\a\br{n-\fr{1}{2\a-1}}\p^{2-\fr{1}{\a}}, &\fr{1}{2}+\fr{1}{2n}<\a< 1.\end{cases}}
 However, to avoid confusion, we will keep the general form as long as possible.
 
-At time $t=0,$ $\bar\chi$ is positive.
+At time $t=0,$ $\chi_3$ is positive.
 %%%%%%%%%%%% We need to impose strict mean convexity in the main theorem here!!!!!!! %%%%%%
-Thus suppose there exists a first time $t_0$ and a point $x_0$ in $M_{t_0},$ such that $\bar{\chi}(t_0,x_0)=0.$
+Thus suppose there exists a first time $t_0$ and a point $x_0$ in $M_{t_0},$ such that $\chi_3(t_0,x_0)=0.$
 Then we also obtain
-\eq{\chi=-t\zeta,\quad \b-\t=-\fr{\d\p}{t}-\zeta.}
+\eq{\chi_2=-t\zeta,\quad \b-\t=-\fr{\d\p}{t}-\zeta.}
 Thus, using \eqref{Evchibar1}, we obtain at $(t_0,x_0):$
-\eq{0&\geq \del_t\bar\chi-\Box\bar\chi\\
+\eq{0&\geq \del_t\chi_3-\Box\chi_3\\
 		&=2\zeta-2n\d\fr{\p''\p^2}{\p'}+t\br{\p^{ij,kl}+2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
         &\hp{=}+t\Big[\fr{\zeta^2}{\d\p}-2n\fr{\p''\p}{\p'}\zeta+2\p^2\p'H+\br{\zeta'\p-\zeta}\p^{ij}g_{ij}	\\
         &\hp{=+t} +\br{\zeta'\p-n\fr{\p''\p^2}{\p'}-\zeta}\p^{ij}(h^2)_{ij}+\br{\p'H+\p}b^{ir}b^j_r\nabla_i\p\nabla_j\p\\
@@ -741,8 +747,7 @@ $$\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta
 \section{Ancient and Quasi Ancient Solutions}
 
 \subsection{Backwards Limit}
-
-From now on we consider the spherical ambient space, $K=1,$ without further mention, and we are interested in solutions with maximal possible lifetime. To understand this maximal time, we define $T_S$ to be the lifespan of \it{the} convex spherical solution of \eqref{eq:CurvFlow}. By the convex spherical solution we mean a family of geodesic spheres shrinking under the flow \eqref{eq:CurvFlow} collapsing to a point at time $t=0$ and existing on the maximal interval \(-T_S, 0\). For the Mean Curvature Flow, \(T_S = \infty\), but for other flows, \(T_S\) can be finite.
+We consider the spherical ambient space, $K=1,$ without further mention, and we are interested in solutions with maximal possible lifetime. To understand this maximal time, we define $T_S$ to be the lifespan of \it{the} convex spherical solution of \eqref{eq:CurvFlow}. By the convex spherical solution we mean a family of geodesic spheres shrinking under the flow \eqref{eq:CurvFlow} collapsing to a point at time $t=0$ and existing on the maximal interval \((-T_S, 0)\). For 1-homogenous $\p$, \(T_S = \infty\), but for $\alpha$-homogenous $\p$ with $\alpha<1$, \(T_S\) is finite.
 
 \begin{lemma}
  Consider \eqref{eq:CurvFlow} with speed \(\p = H^{\alpha}\) for \(\alpha \in (0,1)\). Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$. Then the flow exists only for a finite time interval \(-T_S,0\) with \(0 < T_S < \infty\), collapsing to a point at \(t=0\) and converging to an equator at \(t=T_S\).
@@ -760,7 +765,7 @@ Letting $a\ra-\8$ gives finite existence backwards in time.
 \end{proof}
 
 \begin{lemma}
-Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then 
+Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then
 there holds
 \eq{T\leq T_S.}
 \end{lemma}
@@ -777,7 +782,7 @@ A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is call
 
 The term ancient is reserved for the situation when \(T_S=\infty\), and by the definition, ancient solutions are also quasi-ancient.
 
-The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces \it{with bounded Mean Curvature}, $M_t$ is an equator for $t\ra -T_S$. For strictly monotone, 1-homogeneous convex speeds, \cref{cor:boundedH} gives a bound on Mean Curvature for ancient solutions. For quasi-ancient solutions, the Harnack inequality does not in gernal give such a bound, since we cannot send \(t \to -\infty\) whenever \(T_S\) is finite. One can envisage backwards limits as convex polyhedra and hence with unbounded \(H\), but it is not clear that these can arise as limits of quasi-ancient solutions. Thus at this stage we must make the additional assumption that \(H\) is bounded for quasi-ancient solutions.
+The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces \it{with bounded mean curvature}, $M_t$ is an equator for $t\ra -T_S$. For strictly monotone, 1-homogeneous convex speeds, \cref{cor:boundedH} gives a bound on mean curvature for ancient solutions. For quasi-ancient solutions, the Harnack inequality does not in gernal give such a bound, since we cannot send \(t \to -\infty\) whenever \(T_S\) is finite. One can envisage backwards limits as convex polyhedra and hence with unbounded \(H\), but it is not clear that these can arise as limits of quasi-ancient solutions. Thus at this stage we must make the additional assumption that \(H\) is bounded for quasi-ancient solutions.
 
 We will use the method of \cite{MakowskiScheuer:/2013} to achieve this. Therefore we only need some more small observations.
 
