@@ -16,7 +16,7 @@
 \keywords{}
 
 \begin{abstract}
-We consider the evolution of hypersurfaces on the unit sphere $\mathbb{S}^{n+1}$ by 1-homogeneous, convex functions of principal curvatures. Our main result states that the only convex, ancient solutions of shrinking curvature flows with 1-homogeneous, convex speeds are shrinking geodesic spheres. The main tools are  differential Harnack inequalities, a rigidity result in the sphere, and an Aleksandrov reflection argument. We also obtain Harnack inequalities for flows by $\a$-power of the mean curvature with $0<\alpha<1$. The techniques presented here in fact allow us to prove any convex (quasi) ancient solution of a curvature flow which satisfies a uniform bound on the second fundamental form backwards in time must be shrinking geodesic spheres, as an example we treat (quasi) ancient solutions of $H^{\a}$-flow with $0<\a<1$. 
+We consider the evolution of hypersurfaces on the unit sphere $\mathbb{S}^{n+1}$ by 1-homogeneous, convex functions of principal curvatures. Our main result states that the only convex, ancient solutions of shrinking curvature flows with 1-homogeneous, convex speeds are shrinking geodesic spheres. The main tools are  differential Harnack inequalities, a rigidity result in the sphere, and an Aleksandrov reflection argument. We also obtain Harnack inequalities for flows by $\a$-power of the mean curvature with $0<\alpha<1$. The techniques presented here in fact allow us to prove any convex `quasi-ancient' solution of a curvature flow which satisfies a uniform bound on the second fundamental form backwards in time must be shrinking geodesic spheres, as an example we treat quasi-ancient solutions of $H^{\a}$-flow with $0<\a<1$.
 \end{abstract}
 
 \maketitle
@@ -151,7 +151,7 @@ and define
 \[
 \beta = \varphi^{ij} \alpha_{ij} = \Box\varphi + \varphi \varphi^{ij}(h^2)_{ij}, \quad \theta =  b^{ij} \nabla_i \varphi \nabla_j \varphi
 \]
-so that from the evolution of \(\varphi\) below (\cref{lem:evolution}, \cref{eq:delt_speed}) we may write our main Harnack expressions as
+so that from the evolution of \(\varphi\) below (\cref{lem:evolution}, \cref{eq:delt_speed}) we may write our main Harnack quantities as
 \[
 \chi_1 = t(\partial_t\p- \theta) + \delta\varphi
 \]
@@ -760,8 +760,8 @@ Hence
 
 \subsection{Flows in the Euclidean space}
 In Euclidean space the question of preserved convexity has been addressed more thoroughly. It is also known that there is a variety of examples where convexity is lost for contracting flows; see \cite{AndrewsMcCoyZheng:07/2013}. In this paper, the authors also discuss necessary and sufficient conditions to conclude preserved convexity. In other special situations preserved convexity was proved, e.g., see \cite{Andrews:/1994b}, \cite{Andrews:/2007}, \cite{Andrews:04/2010} and \cite{Schulze:/2005}.
-It does not seem possible to obtain preserved convexity in the generality in which we can prove a Harnack inequality, cf. Corollary \ref{HarnackEucCor}. In the following proposition, we provide a large class of flows, for which convexity is preserved. Some of these cases seem not to be covered in the existing literature.
-%%%%%%%We have to find out which ones those are!%%%%%%
+It does not seem possible to obtain preserved convexity in the generality in which we can prove a Harnack inequality, cf. Corollary \ref{HarnackEucCor}. For completeness, in the following proposition we provide simple proofs for a large class of flows that convexity is preserved.
+These results are not completely optimal. We refer to \cite{AndrewsMcCoyZheng:07/2013} for an exhaustive discussion of the contracting case.
 
 \begin{proposition}
 Let $M_{0}$ be a closed and strictly convex initial hypersurface for the curvature flow equation
@@ -785,7 +785,7 @@ Since $\a\leq 1,$ all other terms are negative as well and we deduce that in any
 
 (ii)~If $\a>1$ and $f$ is convex, we use the same proof as in the spherical case to show that the tensor
 \eq{S_{ij}=h_{ij}-\e g_{ij}}
-remains non-negative. Equation \eqref{PresConv} was already formulated in a generality which allows to consider this new situation. At a first point in spacetime where we have a null-eigenvector of $S_{ij}$ we deduce, also using $S_{ij}\geq 0$ 
+remains non-negative. Equation \eqref{PresConv} was already formulated in a generality which allows to consider this new situation. At a first point in spacetime where we have a null-eigenvector of $S_{ij}$ we deduce, also using $S_{ij}\geq 0$
 \eq{N_{ij}\eta^i\eta^j\geq \e\p'f^{kl}(h^2)_{kl}-\e^2\p'f+\e^2\p\geq \e^2\p>0.}
 Here we also used the convexity of the composition $\p(f).$
 
@@ -804,17 +804,17 @@ and hence
 since $\|A\|^2\geq \tfrac{H^2}{n}.$ To deduce that also $\~N_{ij}\eta^i\eta^j\geq 0$ is true, we have to provide the modified null-eigenvector condition as defined in \cite[Thm.~3.2]{Andrews:/2007}, which holds for terms of the form $\~N_{ij},$ if $\p$ is a symmetric, strictly monotone, concave and inverse concave curvature function, compare \cite[Thm.~4.1]{Andrews:/2007}, where inverse concavity has to be understood as concavity of
 \eq{\hat{\p}(\k_i)=-\p(\k_i^{-1}).}
 $\p$ is obviously monotone and symmetric. It is concave as a composition of the concave function $x\mt -x^{-\b}$ and the concave curvature function $f.$ The speed $\p$ is also inverse concave, since
-\eq{-\p(\k_i^{-1})=f^{-\b}(\k_i^{-1})=\br{\fr{1}{f(\k_i^{-1})}}^{\b},}
-which is concave as the composition of concave functions, recall that $\b\leq 1.$
+\eq{\hat{\p}(\kappa_i)=f^{-\b}(\k_i^{-1})=\br{\fr{1}{f(\k_i^{-1})}}^{\b},}
+ is a concave function of $\kappa_i$; $\hat{\p}$ is the composition of concave functions $x^{\b}$ with $\b\leq 1$ and $\fr{1}{f(\k_i^{-1})}$.
 }
 
-\section{Ancient and Quasi Ancient Solutions}
+\section{Ancient and quasi-ancient Solutions}
 
 \subsection{Backwards Limit}
 We consider the spherical ambient space, $K=1,$ without further mention, and we are interested in solutions with maximal possible lifetime. To understand this maximal time, we define $T_S$ to be the lifespan of \it{the} convex spherical solution of \eqref{eq:CurvFlow}. By the convex spherical solution we mean a family of geodesic spheres shrinking under the flow \eqref{eq:CurvFlow} collapsing to a point at time $t=0$ and existing on the maximal interval \((-T_S, 0)\). For 1-homogeneous $\p$, \(T_S = \infty\), but for $\alpha$-homogeneous $\p$ with $\alpha<1$, \(T_S\) is finite.
 
 \begin{lemma}
- Consider \eqref{eq:CurvFlow} with speed \(\p = H^{\alpha}\) for \(\alpha \in (0,1)\). Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e. let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$. Then the flow exists only for a finite time interval \(-T_S,0\) with \(0 < T_S < \infty\), collapsing to a point at \(t=0\) and converging to an equator at \(t=T_S\).
+ Consider \eqref{eq:CurvFlow} with speed \(\p = H^{\alpha}\) for \(\alpha \in (0,1)\). Then a flow of strictly convex geodesic spheres has a finite lifespan, i.e., let $S_r(p)$ be a geodesic sphere in $\S^{n+1}$ around $p\in \S^{n+1}$. Then the flow exists only for a finite time interval \((-T_S,0)\) with \(0 < T_S < \infty\), collapsing to a point at \(t=0\) and converging to an equator at \(t=T_S\).
 \end{lemma}
 
 \begin{proof}
@@ -829,9 +829,7 @@ Letting $a\ra-\8$ gives finite existence backwards in time.
 \end{proof}
 
 \begin{lemma}
-Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time. Then
-there holds
-\eq{T\leq T_S.}
+Let $x$ be a convex solution of \eqref{eq:CurvFlow}, defined on the open interval $(-T,0),$ where $0$ is the collapsing time, then $T\leq T_S.$
 \end{lemma}
 
 \begin{proof}
@@ -846,14 +844,14 @@ A convex solution of \eqref{eq:CurvFlow} defined on an interval $(-T,0)$ is call
 The term ancient is reserved for the situation when \(T_S=\infty\), and by the definition, ancient solutions are also quasi-ancient.
 
 The aim of this section is to prove that for a quasi-ancient solution of \eqref{eq:CurvFlow} the backwards limit of the flow hypersurfaces \it{with bounded mean curvature}, $M_t$ is an equator for $t\ra -T_S$. We will use the method of \cite{MakowskiScheuer:/2013} to achieve this.
-For strictly monotone, 1-homogeneous convex speeds, \cref{cor:boundedH} gives a bound on mean curvature for ancient solutions. For quasi-ancient solutions, the Harnack inequality does not in general give such a bound, since we cannot send \(t \to -\infty\) whenever \(T_S\) is finite. One can envisage backwards limits as convex polyhedra and hence with unbounded \(H\), but it is not clear that these can arise as limits of quasi-ancient solutions. Thus at this stage we must make the additional assumption that \(H\) is bounded for quasi-ancient solutions.
+For 1-homogeneous, convex speeds, Proposition \ref{cor:boundedH} gives a bound on mean curvature for ancient solutions. For quasi-ancient solutions, the Harnack inequality does not in general give such a bound, since we cannot send \(t \to -\infty\) whenever \(T_S\) is finite. One can envisage backwards limits as convex polyhedra and hence with unbounded \(H\), but it is not clear that these can arise as backwards limits of quasi-ancient solutions. Thus at this stage we must make the additional assumption that \(H\) is bounded for quasi-ancient solutions.
 \begin{proposition}
 \label{cor:boundedH}
-Suppose $f\in C^{\8}(\G_+)$ is a strictly monotone, 1-homogeneous convex curvature function. Then any convex ancient solution of the contracting flow with speed $\p(f)=f$ satisfies
+Suppose $f$ is a convex curvature function. Then any convex ancient solution of the contracting flow with speed $\p(f)=f$ satisfies
 \[\partial_t \p-b^{ij}\nabla_i\p\nabla_j\p\geq 0.\]
-In particular, for all $t\le 0$ we have
+In particular, for all $t\le -1$ we have
 $H(\cdot,t)\leq c.$
-Here $c<\infty$ depends only on $M_0.$
+Here $c<\infty$ depends only on $M_{-1}.$
 \end{proposition}
 \begin{proof}
 For any $t>s$, the  Harnack estimate of Theorem \ref{thm: main A} implies that
@@ -872,7 +870,7 @@ Let $x$ be a quasi-ancient solution of \eqref{eq:CurvFlow}. Then there holds:\\
 \end{lemma}
 
 \pf{
-Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a convex contracting $H^{\a}$ flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
+Fix an interior point $y_0\in \mrm{int}~\hat{M}_{t_0}.$ Since for a contracting flow the enclosed convex bodies of the flow hypersurfaces are strictly decreasing, they are strictly increasing backwards in time. By \cite[Lemma~3.9]{MakowskiScheuer:/2013} there exists a closed hemisphere $\mc{H}(x_0),$ such that
 \eq{\hat{M}_t\sub\mc{H}(x_0).}
 In our situation all hypersurfaces $M_t,$ $-T_S<t\leq t_0,$ satisfy
 \eq{B_{\e}(y_0)\sub \mrm{int}~\hat{M}_t}
@@ -881,7 +879,7 @@ and
 with a uniform $\e,$ where $\hat{y}_0$ denotes the antipodal point of $y_0.$
 Now we prove the two claims.\\
 
-(i)~Consider the stereographic projection with $\hat{y}_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in the Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
+(i)~Consider the stereographic projection with $\hat{y}_0$ corresponding to infinity. The image hypersurfaces are then strictly convex hypersurfaces in Euclidean space with uniformly bounded second fundamental form. Blaschke's rolling theorem, cf.~\cite{Blaschke:/1956}, gives the interior sphere condition.\\
 
 (ii)~
 Write the $M_t$ as graphs in geodesic polar coordinates around $y_0,$
@@ -891,7 +889,7 @@ where $r$ describes the geodesic distance to $y_0.$ In these coordinates the sph
 where $(\s_{ij})$ is the round metric of $\S^n.$
 
 Hence on the set in which the $M_t$ range, the metrics $\-g_{ij}=\sin^2r\s_{ij}$ and $\s_{ij}$ are equivalent.
-Due to \cite[Thm.~2.7.10]{Gerhardt:/2006} for all convex hypersurface $M_t$ the quantity
+Due to \cite[Thm.~2.7.10]{Gerhardt:/2006} for all convex hypersurfaces $M_t$ the quantity
 \eq{v^2=1+\-g^{ij}\nabla_iu\nabla_ju}
 is uniformly bounded by a constant which only depends on $\e.$
 Hence by the equivalence of norms the $M_t$ are uniformly $C^1$-bounded in the sense that the corresponding functions $u(t,\cdot)$ are uniformly $C^1(\S^n)$-bounded.
@@ -911,11 +909,11 @@ Due to the pointwise monotonicity of $u(t,\cdot)$ backwards in time we obtain a 
 }
 
 \begin{theorem}
-In the situation of Corollary \ref{Backlimit} the hypersurface $M_{T_S}$ is an equator of $\S^{n+1}.$
+The hypersurface $M_{-T_S}$, defined in Corollary \ref{Backlimit}, is an equator.
 \end{theorem}
 
 \pf{
-Since the convex bodies $M_t$ are increasing backwards in time and due to the uniform convergence of $M_t$ to $M_{-T_S},$ the set
+Since the convex bodies $\hat{M_t}$ are increasing backwards in time and due to the uniform convergence of $M_t$ to $M_{-T_S},$ the set
 \eq{\hat{M}_{-T_S}:=\overline{\bigcup_{t<0}\hat{M}_t}}
 is a compact body with
 \eq{\del \hat{M}_{-T_S}=M_{-T_S}.}
