@@ -107,12 +107,13 @@
 \newcommand{\mt}{\mapsto}
 
 % Aleksandrov Reflection Macros
-\DeclareMathOperator{\reflectionvector}{\vec{V}}
+\DeclareMathOperator{\reflectionvector}{V}
+\DeclareMathOperator{\reflectionangle}{\delta}
 \newcommand{\reflectionplane}[1][\reflectionvector]{\ensuremath{P_{#1}}}
 \newcommand{\reflectionmap}[1][\reflectionvector]{\ensuremath{R_{#1}}}
 \newcommand{\reflectionset}[2][\reflectionvector]{\ensuremath{{#2}_{#1}}}
 \newcommand{\reflectionhalfspace}[1][\reflectionvector]{\ensuremath{\reflectionset[{#1}]{H}}}
-\newcommand{\vertvec}{e}
+\DeclareMathOperator{\vertvec}{e}
 \DeclareMathOperator{\origin}{O}
 \DeclareMathOperator{\radialprojection}{\pi}
 \DeclareMathOperator{\height}{h}
@@ -121,7 +122,7 @@
 \DeclareMathOperator{\intersect}{\cap}
 \DeclareMathOperator{\nor}{\nu}
 \DeclareMathOperator{\basepoint}{p_0}
-\DeclareMathOperator{\radialdistance}{\rho}
+\DeclareMathOperator{\radialdistance}{r}
 
 %Fonts
 \newcommand{\mc}{\mathcal}
