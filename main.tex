@@ -16,7 +16,7 @@
 \keywords{}
 
 \begin{abstract}
-We consider the evolution of hypersurfaces on the unit sphere $\mathbb{S}^{n+1}$ by 1-homogeneous, convex functions of principal curvatures. Our main result states that the only convex, ancient solutions of shrinking curvature flows with 1-homogeneous, convex speeds are shrinking geodesic spheres. The main tools are  differential Harnack inequalities, a rigidity result in the sphere, and an Aleksandrov reflection argument. We also obtain Harnack inequalities for flows by $\a$-power of the mean curvature with $0<\alpha<1$. The techniques presented here in fact allow us to prove any convex `quasi-ancient' solution of a curvature flow which satisfies a uniform bound on the second fundamental form backwards in time must be shrinking geodesic spheres, as an example we treat quasi-ancient solutions of $H^{\a}$-flow with $0<\a<1$.
+We consider the evolution of hypersurfaces on the unit sphere $\mathbb{S}^{n+1}$ by 1-homogeneous, convex functions of principal curvatures. Our main result states that the only convex, ancient solutions of shrinking curvature flows with 1-homogeneous, convex speeds are shrinking geodesic spheres. The main tools are  differential Harnack inequalities, a rigidity result in the sphere, and an Aleksandrov reflection argument. We also obtain Harnack inequalities for flows by $\a$-power of the mean curvature with $0<\alpha<1$. We introduce the notion of `quasi-ancient` solutions, which play a similar role to ancient solutions for flows that do not admit non-trivial ancient solutions. The techniques presented here in fact allow us to prove that any convex, quasi-ancient solution of a curvature flow which satisfies a uniform bound on the second fundamental form backwards in time must be a family of shrinking geodesic spheres. As an example we treat quasi-ancient solutions of $H^{\a}$-flow with $0<\a<1$.
 \end{abstract}
 
 \maketitle
@@ -32,11 +32,11 @@ where \(M_K\) is the simply connected space form of constant sectional curvature
 
 \section{Preliminaries}
 
-Let $\overline{g}$ and $\overline{Rm}$ denote, respectively, the metric and the curvature tensor of $M_K$. Define \(M_t := x(M^n,t)\), and let \(g = x_t^{\ast} \overline{g}\) denote the induced metric on \(M\) with $\nabla$ the corresponding Levi-Civita connection. Write $\nu$ for the outer unit normal to $M_t$ and let \(\{\partial_i\}_{i=1}^n\) be a local frame on \(M\) which extends to a frame \(\{\partial_0 = \nu, (x_t)_{\ast} \partial_1, \cdots, (x_t)_{\ast} \partial_n\}\) on \(M_K\) in a neighborhood of \(M_t\).
+Let $\overline{g}$ and $\overline{Rm}$ denote, respectively, the metric and the curvature tensor of $M_K$. Define \(M_t := x(M^n,t)\), and let \(g = x_t^{\ast} \overline{g}\) denote the induced metric on \(M\) with $\nabla$ the corresponding Levi-Civita connection. Write $\nu$ for the outer unit normal to $M_t$ and let \(\{\partial_i\}_{i=1}^n\) be a local coordinate frame on \(M\) which extends to a frame \(\{\partial_0 = \nu, (x_t)_{\ast} \partial_1, \cdots, (x_t)_{\ast} \partial_n\}\) on \(M_K\) in a neighborhood of \(M_t\).
 
 Let Greek indices range from \(0\) to \(n\) and Latin indices range from \(1\) to \(n\). The Riemann curvature tensor of \(M_K\) satisfies \(\bar{R}_{\alpha\beta\gamma\theta} = K(\bar{g}_{\alpha\gamma}\bar{g}_{\beta\delta} - \bar{g}_{\alpha\theta}\bar{g}_{\beta\gamma})\). We may write the metric $g = \{g_{ij}\}$, second fundamental form $A = \{h_{ij}\}$, the Weingarten map $\mathcal{W} = h^i_j = g^{mi} h_{jm}$ and the Riemann curvature tensor $Rm_{ijkl}$ with respect to the given frame.
 
-We shall write \(\nabla_i\) for covariant derivatives and also use the notation \(\nabla^i = g^{ik} \nabla_k\). Second covariant derivatives will be written \(\nabla^2_{ij} = \nabla_i \nabla_j - \nabla_{\nabla_i \partial j}\) and \((\nabla^2)^i_j = g^{ik} \nabla^2_{kj}\).
+We shall write \(\nabla_i\) for covariant derivatives and also use the notation \(\nabla^i = g^{ik} \nabla_k\). Second covariant derivatives will be written \(\nabla^2_{ij} = \nabla_{\partial_i} \nabla_{\partial_j} - \nabla_{\nabla_{\partial_i} \partial_j}\) and \((\nabla^2)^i_j = g^{ik} \nabla^2_{kj}\).
 
 The mean curvature of $M^n$ is the trace of the Weingarten map (equivalently the trace of the second fundamental form with respect to $g$), $H = g^{ij}h_{ij} = h^i_i$. We also use the following standard notation
 \[
@@ -65,7 +65,7 @@ Rm_{ijkl} &= \overline{Rm}_{ijkl} + h_{ik}h_{jl} - h_{il}h_{jk} \\
 \]
 valid for space forms. We also make use of the Ricci identity,
 \[
-{Rm^m}_{kij}  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
+{Rm^m}_{kij}  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{ji} \partial_k\right)^m
 \]
 
 We will need some notation for derivatives of the speed \(\varphi\). Let us write
@@ -187,7 +187,7 @@ The following evolution equations hold
 & \quad - \left(2b^{lq}\varphi^{kp} + \varphi^{kl,pq}\right) b^{ir}b^{js} \nabla_r h_{kl} \nabla_s h_{pq} \\
 & \quad - K \{(\varphi + \varphi^{kl}h_{kl}) b^{ir}b^{j}_{r} - \Phi b^{ij}\}
 \end{align*}
-\item \label{eq:delt_squaredsff} $\partial_t (h^2)_{ij} = h^k_j \nabla^2_{i,k} \varphi + h^k_i \nabla^2_{j,k} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}$
+\item \label{eq:delt_squaredsff} $\partial_t (h^2)_{ij} = h^k_j \nabla^2_{ik} \varphi + h^k_i \nabla^2_{jk} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}$
 \item \label{eq:delt_speed} $\partial_t \varphi = \Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\varphi^{ij}g_{ij} = \beta + K\varphi\Phi$
 \end{enumerate}
 \end{lemma}
@@ -210,7 +210,7 @@ holds, where \(\nabla f = df\) is the covariant derivative of \(f\) and the subs
 \begin{proof}
 From the Ricci identities
 \[
-{Rm^m}_{kij}  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{j,i} \partial_k\right)^m
+{Rm^m}_{kij}  = \left(\nabla^2_{i, j} \partial_k - \nabla^2_{ji} \partial_k\right)^m
 \]
 we obtain that the $3$-tensor $\nabla^3_{kli}f-\nabla^3_{kil}f$
 is given by
@@ -235,8 +235,9 @@ From the Gauss equation we obtain
 The following commutation relation holds
 \[
 \begin{split}
-[\partial_t, \Box] \varphi &= (\partial_{t}\Box - \Box\partial_{t}) \varphi = \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
-&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}.
+[\partial_t, \Box] \varphi &= (\partial_{t}\Box - \Box\partial_{t}) \varphi = \varphi^{ij,kl} \nabla^2_{ij} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
+&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k
+j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2}.
 \end{split}
 \]
 \end{lemma}
@@ -253,11 +254,11 @@ First, let us calculate the evolution of \(\varphi^{ij}\), which will also prove
 \end{split}
 \end{equation}
 
-Next, the commutator of \(\partial_t\) and \(\nabla^2_{i,j}\) is given by,
+Next, the commutator of \(\partial_t\) and \(\nabla^2_{ij}\) is given by,
 \begin{equation}
 \label{eq:deltnabla2}
 \begin{split}
-\left(\partial_{t}\nabla^2_{i,j} - \nabla^2_{i,j}\partial_{t}\right) \varphi &= \partial_t \left(\nabla_i \nabla_j \varphi - \nabla_{\nabla_i \partial_j} \varphi\right) - \nabla_i \nabla_j \partial_t \varphi + \nabla_{\nabla_i \partial_j} \partial_t \varphi \\
+\left(\partial_{t}\nabla^2_{ij} - \nabla^2_{ij}\partial_{t}\right) \varphi &= \partial_t \left(\nabla_i \nabla_j \varphi - \nabla_{\nabla_i \partial_j} \varphi\right) - \nabla_i \nabla_j \partial_t \varphi + \nabla_{\nabla_i \partial_j} \partial_t \varphi \\
 &= - \partial_t \left(\G_{ij}^k \nabla_{\partial_k} \varphi\right) + \G_{ij}^k \nabla_{\partial_k} \partial_t \varphi \\
 &= - \nabla_k \varphi \partial_t \G_{ij}^k.
 \end{split}
@@ -266,11 +267,11 @@ Next, the commutator of \(\partial_t\) and \(\nabla^2_{i,j}\) is given by,
 We obtain from \cref{eq:deltBox}, \cref{eq:deltnabla2}, and the evolution of the Christoffel symbols (\cref{lem:evolution}, \cref{eq:delt_christoffel}),
 \[
 \begin{split}
-\left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{i,j} \varphi - \varphi^{ij}\nabla_k \varphi\partial_t \G^{k}_{ij} \\
-&= \left[\varphi^{ij,kl} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right] \nabla^2_{i,j} \varphi \\
+\left(\partial_{t}\Box - \Box\partial_{t}\right) \varphi &= \left(\partial_{t}\varphi^{ij}\right) \nabla^2_{ij} \varphi - \varphi^{ij}\nabla_k \varphi\partial_t \G^{k}_{ij} \\
+&= \left[\varphi^{ij,kl} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right] \nabla^2_{ij} \varphi \\
 &\quad + \varphi^{ij} \nabla_k \varphi \left(\varphi g^{kl} \nabla_l h_{ij} + h^k_i \nabla_j \varphi + h^k_j \nabla_i \varphi - g^{kl} h_{ij} \nabla_l \varphi\right) \\
-&= \varphi^{ij,kl} \nabla^2_{i,j} \varphi \left(\alpha_{kl} + K \varphi g_{kl}\right) \\
-&\quad + 2\varphi^{jk}h^{i}_{k}\varphi \nabla^2_{i,j} \varphi + h^k_i \varphi^{ij} \nabla_k \varphi \nabla_j \varphi + h^k_j \varphi^{ij} \nabla_k \varphi \nabla_i \varphi \\
+&= \varphi^{ij,kl} \nabla^2_{ij} \varphi \left(\alpha_{kl} + K \varphi g_{kl}\right) \\
+&\quad + 2\varphi^{jk}h^{i}_{k}\varphi \nabla^2_{ij} \varphi + h^k_i \varphi^{ij} \nabla_k \varphi \nabla_j \varphi + h^k_j \varphi^{ij} \nabla_k \varphi \nabla_i \varphi \\
 &\quad + \varphi g^{kl}\nabla_k \varphi \varphi^{ij} \nabla_l h_{ij} - \varphi^{ij} h_{ij} g^{kl}\nabla_k \varphi \nabla_l \varphi.
 \end{split}
 \]
@@ -350,8 +351,8 @@ into smaller pieces. First, we have lots of nice cancellation. Using the evoluti
 \begin{split}
 \partial_{t}\Box\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) &= \Box\partial_t\varphi - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) + [\partial_t, \Box] \varphi \\
 &= \Box(\Box \varphi + \varphi\varphi^{ij}(h^2)_{ij} + K \varphi\Phi) - \Box\Box\varphi - \Box(\varphi\varphi^{ij} (h^2)_{ij}) \\
-&\quad + \varphi^{ij,kl} \nabla^2_{i,j} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
-&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{k,j} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
+&\quad + \varphi^{ij,kl} \nabla^2_{ij} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
+&\quad + 2\varphi^{ij}h^{k}_{i} (\varphi \nabla^2_{kj} \varphi + \nabla_k \varphi \nabla_j \varphi) + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
 &= K (\Phi \Box \varphi + \varphi \Box \Phi + 2 \varphi^{kl} \nabla_k \Phi \nabla_l \varphi) \\
 &\quad + \varphi^{ij,kl} \nabla^2_{ij} \varphi (\alpha_{kl} + K \varphi g_{kl}) \\
 &\quad + 2\varphi^{ij}b^{kl} \varphi (h^2)_{il} \nabla^2_{kj} \varphi + 2\varphi^{ij}h^{k}_{i} \nabla_k \varphi \nabla_j \varphi + (\varphi - \varphi^{ij}h_{ij})| \nabla\varphi|^{2} \\
@@ -369,9 +370,10 @@ Next from \cref{eq:deltBox} and \cref{lem:evolution}, \cref{eq:delt_squaredsff} 
 \begin{split}
 \partial_{t} (\varphi^{ij}(h^2)_{ij}) &= \partial_{t}(\varphi^{ij}) (h^2)_{ij} + \varphi^{ij} \partial_t (h^2)_{ij} \\
 &= \left(\varphi^{ij,kl} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk}h^{i}_{k}\right) (h^2)_{ij} \\
-&\quad + \varphi^{ij} \left(h^k_j \nabla^2_{i,k} \varphi + h^k_i \nabla^2_{j,k} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}\right) \\
+&\quad + \varphi^{ij} \left(h^k_j \nabla^2_{i
+k} \varphi + h^k_i \nabla^2_{jk} \varphi + h^k_j \varphi(h^2)_{ik} - h^k_i \varphi(h^2)_{jk} + 2K\varphi h_{ij}\right) \\
 &= \varphi^{ij,kl} (h^2)_{ij} \left(\alpha_{kl} + K \varphi g_{kl}\right) + 2\varphi\varphi^{jk} b^{il} (h^2)_{lk} (h^2)_{ij} \\
-&\quad + 2 \varphi^{ij} b^{kl} (h^2)_{il} \nabla^2_{j,k} \varphi  + 2K\varphi\varphi^{ij}h_{ij}
+&\quad + 2 \varphi^{ij} b^{kl} (h^2)_{il} \nabla^2_{jk} \varphi  + 2K\varphi\varphi^{ij}h_{ij}
 \end{split}
 \]
 again using \(h^k_i = b^{kl} (h^2)_{il}\) in the last equality.
@@ -419,12 +421,12 @@ Again using the product rule for \(\Box\), \cref{eq:productbox} and the symmetry
 \begin{split}
 (\partial_{t} - \Box)\theta &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + b^{ij} (\partial_{t} - \Box) (\nabla\varphi \otimes \nabla\varphi)_{ij} \\
 &\quad - 2 \varphi^{kl} \nabla_k b^{ij} \nabla_l (\nabla \varphi \otimes \nabla\varphi)_{ij} \\
-&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi \\
-&\quad - 4 \varphi^{kl} \nabla_k b^{ij} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
+&= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi - 2 b^{ij} \varphi^{kl} \nabla^2_{ik} \varphi \nabla^2_{lj} \varphi \\
+&\quad - 4 \varphi^{kl} \nabla_k b^{ij} \nabla^2_{il} \varphi \nabla_j\varphi \\
 &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\
-&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}b^{jq} \nabla_k h_{pq} \nabla^2_{i,l} \varphi \nabla_j\varphi \\
+&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{ik} \varphi \nabla^2_{lj} \varphi + 4 \varphi^{kl} b^{ip}b^{jq} \nabla_k h_{pq} \nabla^2_{il} \varphi \nabla_j\varphi \\
 &= (\partial_{t}b^{ij} - \Box b^{ij})\nabla_i \varphi\nabla_j\varphi + 2 b^{ij} (\partial_{t} - \Box) (\nabla\varphi)_i \nabla_j\varphi \\
-&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{i,k} \varphi \nabla^2_{l,j} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{i,l} \varphi,
+&\quad - 2 b^{ij} \varphi^{kl} \nabla^2_{ik} \varphi \nabla^2_{lj} \varphi + 4 \varphi^{kl} b^{ip}\gamma_{pk} \nabla^2_{il} \varphi,
 \end{split}
 \end{equation}
 where in the second to last equality we used the formula for the derivative of the inverse \(b^{ij}\) of \(h_{ij}\) and the Codazzi equation in the last line, producing \(b^{jq} \nabla_k h_{pq} \nabla_j \varphi = b^{jq} \nabla_q h_{pk} \nabla_j \varphi = \gamma_{pk}\). The first term in final line appears on the second to last line of the statement of the lemma (with indices relabelled). The second term is part of \(4 b^{il}\varphi^{jk} \alpha_{ij} \gamma_{kl}\) in the second to last line. So we must deal with the first two terms and show they add to the remainder of the statement. For the first term, we use the evolution of \(b^{ij}\) from \cref{lem:evolution}, \cref{eq:delt_inversesff} to calculate
