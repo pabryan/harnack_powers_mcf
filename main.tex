@@ -479,18 +479,18 @@ $
 $
 satisfies
 \eq{\label{thm:Evchi1}
-\partial_t \chi_2 -\Box\chi_2 &= \left(\frac{\beta - \theta}{\delta\varphi} + \varphi^{ij}(h^2)_{ij} + K\Phi\right)\chi_2 \\
+\partial_t \chi_2 -\Box\chi_2 &= \left(\frac{\Box\varphi  - b^{ij} \nabla_i \varphi \nabla_j \varphi}{\delta\varphi} + (1 + \d^{-1})\varphi^{ij}(h^2)_{ij} + K\p^{ij}g_{ij}\right)\chi_2 \\
 & \quad + t\left(\varphi^{ij,kl} + 2b^{il}\varphi^{jk} - \frac{\varphi^{ij}\varphi^{kl}}{\delta\varphi}\right)\eta_{ij}\eta_{kl} + tK R,
 }
 where
 \[
-\eta_{ij} = \alpha_{ij} - \gamma_{ij} = \nabla^2_{i,j}\varphi + (h^2)_{ij}\varphi - b^{rs}\nabla_r h_{ij}\nabla_s \varphi
+\eta_{ij} = \alpha_{ij} - \gamma_{ij} = \nabla^2_{ij}\varphi + (h^2)_{ij}\varphi - b^{rs}\nabla_r h_{ij}\nabla_s \varphi
 \]
 and
 \[
 \begin{split}
 R &= R_{\beta} - R_{\theta} \\
-&= \varphi \Box \Phi + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi-\varphi \varphi^{ij,kl}g_{kl} \alpha_{ij} + 2\varphi \varphi^{ij,kl}g_{kl} \eta_{ij}  \\
+&= \varphi g_{ij} \Box \p^{ij} + 2\varphi^{kl} \nabla_k \Phi \nabla_l \varphi + \varphi \varphi^{ij,kl}g_{kl} (\nabla^2_{ij} \varphi + \varphi(h^2)_{ij}) - 2\varphi \varphi^{ij,kl}g_{kl} b^{rs}\nabla_r h_{ij}\nabla_s \varphi \\
 &\quad + 2\varphi^{2}\varphi^{ij}h_{ij} +(\varphi^{kl}h_{kl} + \varphi)b^{ir}b^{j}_{r}\nabla_i \varphi\nabla_j\varphi - 2 b^{j}_{k}\varphi^{kl}\nabla_l\varphi\nabla_j\varphi.
 \end{split}
 \]
@@ -539,7 +539,8 @@ Subtracting line by line, we have
 \begin{align*}
 (A) - (A') &= \left(\varphi^{ij}(h^2)_{ij} + K\Phi \right)\beta - \left(\varphi^{ij}(h^2)_{ij} + K\Phi \right)\theta = \left(\varphi^{ij}(h^2)_{ij} + K\Phi \right)(\beta - \theta) \\
 (B) - (B') &= (\varphi - \varphi^{ij}h_{ij}) |\nabla\varphi|^{2} + 2\varphi^{ij}h^{k}_{i}\nabla_k \varphi \nabla_j \varphi - (\varphi - \varphi^{ij}h_{ij})|\nabla\varphi|^{2} - 2\varphi^{ij}h^{k}_{i}\nabla_k\varphi\nabla_j\varphi = 0 \\
-(C) - (C') &= \varphi^{ij,kl} \alpha_{ij} \alpha_{kl} + \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) = \varphi^{ij,kl} (\alpha_{ij} - \gamma_{ij}) (\alpha_{kl} - \gamma_{kl}) = \varphi^{ij,kl} \eta_{ij} \eta_{kl} \\
+(C) - (C') &= \varphi^{ij,kl} \alpha_{ij} \alpha_{kl} + \varphi^{kl,ij} (\gamma_{ij}\gamma_{kl}  - 2\alpha_{ij} \gamma_{kl}) = \varphi^{ij,kl} (\alpha_{ij} - \gamma_{ij}) (\alpha_{kl} - \gamma_{kl}) \\
+&= \varphi^{ij,kl} \eta_{ij} \eta_{kl} \\
 (D) - (D') &= 2b^{il}\varphi^{jk} (2\nabla^2_{ij}\varphi\varphi(h^2)_{kl} + \varphi(h^2)_{ij}\varphi(h^2)_{kl}) \\
 &\quad + 2b^{il} \varphi^{jk} \left(\gamma_{ij} \gamma_{kl} - 2\alpha_{ij} \gamma_{kl} + \nabla^2_{ij}\varphi\nabla^2_{kl}\varphi\right) \\
 &= 2b^{il}\varphi^{jk} \left(\nabla^2_{ij}\varphi\nabla^2_{kl}\varphi +2\nabla^2_{ij}\varphi\varphi(h^2)_{kl} + \varphi(h^2)_{ij}\varphi(h^2)_{kl} - 2 \alpha_{ij} \gamma_{kl} + \gamma_{ij} \gamma_{kl} \right) \\
@@ -547,7 +548,7 @@ Subtracting line by line, we have
 (E) - (E') &= K(R_{\beta} - R_{\theta}) = KR.\\
 \end{align*}
 
-Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} gives the result.
+Multiplying everything by \(t\) and adding the result to \cref{eq:deltchi1} and using the definitions of $\b$ and $\t$ gives the result.
 \end{proof}
 
 We need two more lemmas to obtain a Harnack inequality for $H^{\a}$-flow with $0<\a<1.$  We start by rewriting the term $R$ in the evolution of \(\chi_2\) when the speed is a function of the mean curvature.
@@ -555,7 +556,7 @@ We need two more lemmas to obtain a Harnack inequality for $H^{\a}$-flow with $0
 \begin{lemma}\label{RSphere}
 Suppose that $\p=\p(H).$ Then the term $R$ in the evolution equation of $\chi_2$ takes the form
 \eq{\label{RSphere1}
-R&=2n\fr{\p''\p}{\p'}\br{\b-\t}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
+R&=2n\fr{\p''\p}{\p'}\br{\Box\p + \p\p^{ij}(h^2)_{ij} - b^{ij}\nabla_i \p \nabla_j \p}-n\fr{\p''\p^2}{\p'}\p^{ij}(h^2)_{ij}+2\p^2\p'H\\
     &\hp{=}+n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}\p^{ij}\nabla_{i}\p\nabla_j\p\\
     &\hp{=}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p.
 }
@@ -572,11 +573,11 @@ The quantity
 \eq{\chi_3=\chi_2+t\zeta}
 evolves according to
 \eq{\label{Evchibar1}
-\del_t \chi_3 -\Box\chi_3 &= \left(\fr{\b - \t}{\d\p} + \p^{ij}(h^2)_{ij} + \p^{ij}g_{ij}\right)\chi_2+\zeta \\
-&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl}\\
-        &\hp{=}+t\Big[2n\fr{\p''\p}{\p'}\br{\b-\t}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p\\
-        &\hp{=+t}+2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p\\
-    &\hp{=+t}+\br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big].
+\del_t \chi_3 -\Box\chi_3 &= \left(\fr{\Box\varphi  - b^{ij} \nabla_i \varphi \nabla_j \varphi}{\d\p} + (1+\d^{-1})\p^{ij}(h^2)_{ij} + K\p^{ij}g_{ij}\right)\chi_2+\zeta \\
+&\hp{=} + t\left(\p^{ij,kl} + 2b^{il}\p^{jk} - \fr{\p^{ij}\p^{kl}}{\d\p}\right)\eta_{ij}\eta_{kl} \\
+&\hp{=} + t\Big[2n\fr{\p''\p}{\p'}\br{\Box\p + \p\p^{ij}(h^2)_{ij} - b^{ij}\nabla_i \p \nabla_j \p}+\br{\zeta'-n\fr{\p''\p}{\p'}}\p^{ij}(h^2)_{ij}\p+\zeta'\p^{ij}g_{ij}\p \\
+&\hp{=+t} + 2\p^2\p'H+\br{n\br{2\fr{\p''}{\p'}-\fr{\p''^{2}\p}{\p'^{3}}+\fr{\p'''\p}{\p'^{2}}}-\zeta''}\p^{ij}\nabla_{i}\p\nabla_j\p \\
+&\hp{=+t} + \br{\p'H+\p}b^{ir}b^{j}_{r}\nabla_i\p\nabla_j\p-2\p'b^{ij}\nabla_i\p\nabla_j\p\Big].
 }
 \end{lemma}
 Lemmas \ref{thm:Evchi}, \ref{RSphere}, and \ref{lemma : lem9} enable us to get a strong Harnack estimate for $H^{\a}$-flow; see Section \ref{Harnack} and Theorem \ref{thm: main 1}. Due to the presence of $\Box\Phi$ in $R$ given in \cref{thm:Evchi}, it is not clear to us whether $\chi_2$ would results in Harnack estimates for curvature flows other than $H^{\a}$-flow. As it will be shown, by weakening $\chi_2$ to $\chi_1=\chi_2+tK\p\Phi$,  we can obtain (weak) Harnack estimates for all 1-homogeneous convex speeds.
@@ -585,16 +586,9 @@ Lemmas \ref{thm:Evchi}, \ref{RSphere}, and \ref{lemma : lem9} enable us to get a
 The quantity
 \eq{\chi_1=t(\del_t\p-\t)+\d\p}
 satisfies the evolution equation
-\eq{\label{WeakHarnackEv1}\del_t\chi_1-\Box\chi_1&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+K\Phi}\chi_1-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p\\
-                &+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
-                &+tK\br{2\p^2\p^{ij}h_{ij}+\br{\p^{ij}h_{ij}+\p}b^{ir}b^{j}_{r}\nabla_{i}\p\nabla_{j}\p-2b^j_k\p^{kl}\nabla_{l}\p\nabla_{j}\p}.
-}
-We may also rewrite
-$-\fr{tK}{\d}\Phi(\b-\t)+K\Phi\p=\fr{K\Phi}{\d}(-\chi_1+tK\p\Phi+2\d\p).$
-This in turn implies that  $\chi_1$ satisfies the evolution equation
-\eq{\label{WeakHarnackEv12}\del_t\chi_1-\Box\chi_1&=\br{\fr{\b-\t}{\d\p}+\p^{ij}(h^2)_{ij}+\left(1-\fr{1}{\d}\right)K\Phi}\chi_1+\fr{K\Phi\p}{\d}(tK\Phi+2\d)\\
-                &+t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl}\\
- &+tK\left(2\p^2\p^{ij}h_{ij}+\left[\br{\p^{ij}h_{ij}+\p}b^{ir}-2\p^{ir}\right]b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\right).
+\eq{\label{WeakHarnackEv12}\del_t\chi_1-\Box\chi_1 &= \br{\frac{\Box\varphi  - b^{ij} \nabla_i \varphi \nabla_j \varphi}{\delta\varphi} + (1 + \d^{-1})\varphi^{ij}(h^2)_{ij} + (1-\d^{-1}) K\Phi}\chi_1+\fr{K\p^{ij}g_{ij}\p}{\d}(tK\p^{ij}g_{ij}+2\d) \\
+&+ t\p^{ij,kl}\br{\eta_{ij}+K\p g_{ij}}\br{\eta_{kl}+K\p g_{kl}}+t\br{2b^{il}\p^{jk}-\fr{\p^{ij}\p^{kl}}{\d\p}}\eta_{ij}\eta_{kl} \\
+&+ tK\left(2\p^2\p^{ij}h_{ij}+\left[\br{\p^{ij}h_{ij}+\p}b^{ir}-2\p^{ir}\right]b^{j}_{r}\nabla_{i}\p\nabla_{j}\p\right).
 }
 
 \end{lemma}
