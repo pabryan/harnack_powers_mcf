@@ -966,25 +966,55 @@ For any \(\reflectionangle \in (0,\reflectionangle_0)\) there exists a \(T_{\ref
 \end{lemma}
 
 \begin{proof}
-Since \(M_t\) converges in \(C^1\) to \(E\) as \(t\to-T_S\), we may write \(M_t\) as the graph of a \(C^1\), positive function over \(\equator\) in geodesic polar coordinates, \(M_t = \{(f_t(\sigma), \sigma) \in (0,\pi) \times \equator\)\} for all \(t \in (-T_S, T_{\reflectionangle})\) with \(T_{\reflectionangle}\) sufficiently close to \(T_S\). Moreover, for \(\reflectionangle \in (0,\reflectionangle_0)\), \(\reflectionmap(\equator) = \{(g_{-T_S}(\sigma), \sigma)\)\} is a graph over \(\equator\) with \(\ip{\nu}{\vertvec}\) uniformly bounded below where \(\nu\) is the unit normal to \(\reflectionmap(\equator)\). Since \(\reflectionmap\) is an isometry, \(\reflectionmap(M_t) \to \reflectionmap(\equator)\) in \(C^1\) as \(t \to -T_S\) and hence, increasing \(T_{\reflectionangle}\) if necessary, we also have that \(\reflectionmap(M_t) = \{(g_t(\sigma), \sigma) \in (0,\pi) \times \equator\)\} is also a graph for all \(t \in (-T_S, T_{\reflectionangle})\).
+Let \(C\subset \equator\) be any great circle and consider \(f_t|_C\). Using the Backwards Approximate Symmetry Lemma \cite[Lemma 5.1]{bryanlouie} (which applies whenever \(f_t|_C\) converges in \(C^1\) to \(C\) with a uniform \(C^2\) bound), we find that there is a \(T_{\reflectionangle} \in (0, T_S)\) such that
+\begin{equation}
+\label{eq:boundaryestimate}
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
+\end{equation}
+over any \(C\) and on a neighbourhood of \(\reflectionplane\) in \(\reflectionhalfspace\) for all \(t \in (-T_S, -T_{\reflectionangle})\).
 
-As noted above, \(\height(\reflectionmap(x)) > 0\) on \(\reflectionset{\equator}^+\) and \(\radialdistance = \arccos(\height(x)\). Thus, continuity implies that for \(\epsilon > 0\) there exits an \(\eta>0\) such that \(\radialdistance(\reflectionmap(x)) < \pi/2 - \epsilon\) provided \(x \in \reflectionset{\equator}^{+,\eta} = \{x \in \reflectionset{\equator}^+: d(x, \equator \intersect \reflectionplane) > \eta\}\). Possibly by making \(T_{\reflectionangle}\) smaller again, since \(M_t \to_{C^0} \equator\), we can arrange that \(d(M_t, \equator) < \epsilon/2\) for all \(t < T_{\reflectionangle}\); that is, \(\radialdistance (x) > \pi/2 - \epsilon/2\) for all \(x \in M_t\). Now for \(x \in M_t^+ \intersect \radialprojection^{-1} \equator_{\eta}\), since \(\reflectionmap\) is an isometry, we have \(d(\reflectionmap(x), \reflectionmap(\radialprojection(x))) < \epsilon/2\); therefore, \(\radialdistance(\reflectionmap(x)) < \pi/2 - \epsilon/2\). Consequently, on \(\reflectionset{\equator}^{+,\eta}\), we have \(\radialdistance(\reflectionmap(\reflectionset{(M_t)}^+)) < \pi/2 - \epsilon/2\) and \(\radialdistance(M_t^-) > \pi/2 - \epsilon/2\). That is,  on \(\reflectionset{\equator}^{+,\eta}\), we have \(\reflectionmap(\reflectionset{(M_t)}^+) > \reflectionset{(M_t)}^-\).
+Let us recall the proof, obtaining good estimates on the neighbourhood. This uses the Taylor expansions of \(f_t\), the graph of \(M_t\) and of \(g_t\) the graph of \(\reflectionmap(M_t)\). These two functions agree on the two points \(\reflectionplane \intersect M_t = \{x_1(t), x_2(t)\}\) over \(C\). We work near \(x_1(t)\) (the proof being the same near \(x_2\)).  For each \(t\), parametrise \(C\) with \(\theta\) such that \(\radialprojection(x_1(t)) = 0\) and \(\radialprojection^{-1}\{\theta>0\} \intersect M_t\) lies in \(\reflectionhalfspace^-\).
 
-Now let \(C\subset \equator\) be any great circle and consider \(f_t|_C\). Using the Backwards Approximate Symmetry Lemma \cite[Lemma 5.1]{bryanlouie} (which applies whenever \(f_t\) converges in \(C^1\) to \(C\)), we find that (possibly by decreasing \(T_{\reflectionangle}\)) again, over \(C\) we have
+Since \(M_t \to \equator\) in \(C^1\), as \(t\to -T_S\) we have that \(f_t' \to 0\) and \(g_t' \to \tan(2\reflectionangle)\), the latter being the slope of the reflected equator. The Taylor expansion is
+\[
+g_t(\theta) - f_t (\theta) = (g_t'(\theta_0) - f_t'(\theta_0)) \theta + R \theta^2
+\]
+where \(R\) is the remainder depending only on bounds for \(f_t''\). Possibly decreasing \(T_{\reflectionangle}\), we have \(g_t'(\theta_0) - f_t'(\theta_0)\) is arbitrarily close to the positive constant \(\tan(2\reflectionangle) > 0\) so the first order term is positive for all \(t \in (-T_S, T_{\reflectionangle})\). We can easily estimate the interval on which \(g_t(\theta) \geq f_t (\theta)\): The uniform bounds on \(f_t''\) imply that
+\[
+\eta = \inf_{t \in (-T_S, T_{\reflectionangle})} \frac{g_t'(\theta_0) - f_t'(\theta_0)}{|R|} > 0
+\]
+and thus \(g_t(\theta) \geq f_t (\theta)\) on the interval \([0, \eta)\) for any \(t\in (-T_S, T_{\reflectionangle})\).
+
+Now we can let \(C\) vary and observe that we can make \(g_t'(\theta_0) - f_t'(\theta_0) > 0\) and \(|R|\) bounded independently of \(C\) by the uniform \(C^1\) convergence and uniform \(C^2\) bound, thus obtaining \(\eta\) independent of \(C\). If \(\theta\) is the arc-length parametrisation of \(C\), then it measures the distance from a point on \(\equator\) to \(\reflectionplane \intersect \equator\). Hence
+\[
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^- \quad \text{ over } \{x \in \reflectionset{\equator}^+: d(x, \equator) \leq \eta\}.
+\]
+
+
+As noted above, \(\height(\reflectionmap(x)) > 0\) on \(\reflectionset{\equator}^+\) and \(\radialdistance = \arccos(\height(x))\). For any \(\eta > 0\), let
+\[
+\reflectionset{\equator}^{+,\eta} = \{x \in \reflectionset{\equator}^+: d(x, \equator \intersect \reflectionplane) > \eta\},
+\]
+and let
+\[
+G_{\eta} = \inf\{d(\reflectionmap(x), \equator) : x \in \reflectionset{\equator}^{+,\eta}\} > 0.
+\]
+Since \(M_t \to_{C^0} \equator\), we may choose \(T_{\reflectionangle} \in (0, T_S)\) such that \(d(M_t, \equator) < G_{\reflectionangle}/2\) for all \(t < -T_{\reflectionangle}\); that is, \(\radialdistance (x) > \pi/2 - G_{\reflectionangle}/2\) for all \(x \in M_t\) and \(t < -T_{\reflectionangle}\). Now for \(x \in M_t^+ \intersect \radialprojection^{-1} \equator_{\eta}\), since \(\reflectionmap\) is an isometry, we have \(d(\reflectionmap(x), \reflectionmap(\radialprojection(x))) < G_{\reflectionangle}/2\); therefore, \(\radialdistance(\reflectionmap(x)) < \pi/2 - G_{\reflectionangle}/2\). Consequently, on \(\reflectionset{\equator}^{+,\eta}\), we have \(\radialdistance(\reflectionmap(\reflectionset{(M_t)}^+)) < \pi/2 - G_{\reflectionangle}/2\) and \(\radialdistance(M_t^-) > \pi/2 - G_{\reflectionangle}/2\). That is, given any \(\eta>0\), there is a \(T_{\reflectionangle}\) such that for all \(t \in (-T_S,T_{\reflectionangle})\),  we have
+\begin{equation}
+\label{eq:interiorestimate}
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^- \quad \text{ over } \reflectionset{\equator}^{+,\eta}.
+\end{equation}
+
+Combining \cref{eq:interiorestimate} and \cref{eq:boundaryestimate}, completes the proof:
 \[
 \reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
 \]
-on the strip \(\{x \in \equator: d(x, \equator \intersect \reflectionplane) \leq \eta\}\). Here, \(T_{\reflectionangle}\) depends only on \(\|f_t - \pi/2\|_{C^1}\) and \(\reflectionangle\); therefore, \(T_{\reflectionangle} \in (0, T_S)\) is independent of \(C\). Thus we find that
-\begin{equation}
-\label{eq:backwards_approximate_symmetry}
-\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
-\end{equation}
 everywhere for all \(t \in (-T_S, -T_{\reflectionangle})\).
 \end{proof}
 
 \begin{lemma}
 \label{lem:approximate_symmetrypreserved}
-There exists a \(T\) independent of \(\reflectionangle\) such that for any \(\reflectionangle \in (0,\reflectionangle_0)\) we have \(\reflectionset(M_t^+) \geq M_t^-\) for all \(t \in (-T_S, -T)\).
+There exists a \(T\) independent of \(\reflectionangle\) such that for any \(\reflectionangle \in (0,\reflectionangle_0)\) we have \(\reflectionmap(\reflectionset{M_t^+}) \geq M_t^-\) for all \(t \in (-T_S, -T)\).
 \end{lemma}
 
 \begin{proof}
