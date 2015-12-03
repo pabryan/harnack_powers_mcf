@@ -1039,11 +1039,33 @@ Now we may apply the maximum principle on the parabolic domain \(\union_{t \in (
 
 \begin{theorem}
 \label{thm:classification}
-Let \(M_t\) be a convex, embedded (quasi-)ancient solution of any parabolic equation on \(\S^{n+1}\) such that \(M_t \to \equator\) in \(C^1\) as \(t \to -T_S\). Then \(M_t\) is a family of shrinking geodesic spheres emanating from the equator \(\equator\) at \(t=-T_S\).
+Let \(M_t\) be a convex, embedded (quasi-)ancient solution of any (uniform whenever on uniformly convex hypersurfaces) parabolic equation on \(\S^{n+1}\) such that \(M_t \to \equator\) in \(C^1\) as \(t \to -T_S\) with uniform \(C^2\) bounds. Then \(M_t\) is a family of shrinking geodesic spheres emanating from the equator \(\equator\) at \(t=-T_S\).
 \end{theorem}
 
 \begin{proof}
-Now we send \(\reflectionangle \to 0\) to complete the proof using \cite[Proposition 5.3]{bryanlouie} (which applies in any dimension) to conclude that \(M_t\) is a geodesic sphere for all \(t \in (-\infty, T)\) and thus for all negative times by the uniqueness of solutions.
+From \cref{lem:approximate_symmetrypreserved} we have \(\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-\) everywhere for all \(t \in (-T_S, -T)\) and any \(\reflectionangle \in (0,\reflectionangle_0)\). By continuity therefore, sending \(\reflectionangle \to 0\) we have \(\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-\) for all \(t \in (-T_S, -T)\)  and any \(\reflectionvector\) satisfying \(\ip{\reflectionvector}{\vertvec} = 0\).
+
+Now, we need some simple properties of $\reflectionmap[\reflectionvector_0]$ following from the fact that $\ip{\reflectionvector}{\vertvec} = 0$:
+\begin{itemize}
+\item $\reflectionmap^2 = \id$,
+\item $S \geq T \Rightarrow \reflectionmap(S) \geq  \reflectionmap(T)$,
+\item $\reflectionmap = \reflectionmap[-\reflectionvector]$, and
+\item $\reflectionset{S}^{\pm} = \reflectionset[-\reflectionvector]{S}^{\mp}$.
+\end{itemize}
+
+Thus we obtain,
+\begin{align*}
+\reflectionset{(M_t)}^+ &= \reflectionmap(\reflectionmap(\reflectionset{(M_t)}^+)) \geq \reflectionmap(\reflectionset{(M_t)}^-) \\
+&= \reflectionmap[-\reflectionvector](\reflectionset[-\reflectionvector]{(M_t)^+}) \geq \reflectionset[-\reflectionvector]{(M_t)}^-\\
+&= \reflectionset{(M_t)}^+.
+\end{align*}
+We must have equality all the way through and hence the middle line implies
+\[
+\reflectionmap[-\reflectionvector](\reflectionset[-\reflectionvector]{(M_t)^+}) = \reflectionset[-\reflectionvector]{(M_t)}^-
+\]
+for any $\reflectionvector$.
+
+Thus \(M_t\) is invariant under \(\reflectionmap\) for any \(\reflectionvector\) satisfying \(\ip{\reflectionvector}{\vertvec} = 0\) and hence is a geodesic sphere for every \(t \in (-T_S, T)\) and by uniqueness of solutions, is a geodesic sphere for every \(t \in (-T_S, 0)\).
 \end{proof}
 
 
