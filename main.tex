@@ -1001,23 +1001,23 @@ and all \(t \in (-T_S, T_{\reflectionangle})\).
 
 \emph{Interior Estmates}
 
-As noted above, \(\height(\reflectionmap(x)) > 0\) on \(\reflectionset{\equator}^+\) and \(\radialdistance = \arccos(\height(x))\). For any \(\eta > 0\), let
+As noted above, \(\height(\reflectionmap(x)) > 0\) on \(\reflectionset{\equator}^+\) and \(\radialdistance = \arcsin(\height(x))\). For any \(\mu > 0\), let
 \[
-\reflectionset{\equator}^{+,\eta} = \{x \in \reflectionset{\equator}^+: d(x, \equator \intersect \reflectionplane) > \eta\},
+\reflectionset{\equator}^{+,\mu} = \{x \in \reflectionset{\equator}^+: d(x, \equator \intersect \reflectionplane) > \mu\},
 \]
 and let
 \[
-G_{\eta} = \inf\{d(\reflectionmap(x), \equator) : x \in \reflectionset{\equator}^{+,\eta}\} > 0.
+G_{\mu} = \inf\{d(\reflectionmap(x), \equator) : x \in \reflectionset{\equator}^{+,\mu}\} > 0.
 \]
-Since \(M_t \to_{C^0} \equator\), we may choose \(T_{\reflectionangle} \in (0, T_S)\) such that \(d(M_t, \equator) < G_{\reflectionangle}/2\) for all \(t < -T_{\reflectionangle}\); that is, \(\radialdistance (x) > \pi/2 - G_{\reflectionangle}/2\) for all \(x \in M_t\) and \(t < -T_{\reflectionangle}\). Now for \(x \in M_t^+ \intersect \radialprojection^{-1} \equator_{\eta}\), since \(\reflectionmap\) is an isometry, we have \(d(\reflectionmap(x), \reflectionmap(\radialprojection(x))) < G_{\reflectionangle}/2\); therefore, \(\radialdistance(\reflectionmap(x)) < \pi/2 - G_{\reflectionangle}/2\). Consequently, on \(\reflectionset{\equator}^{+,\eta}\), we have \(\radialdistance(\reflectionmap(\reflectionset{(M_t)}^+)) < \pi/2 - G_{\reflectionangle}/2\) and \(\radialdistance(M_t^-) > \pi/2 - G_{\reflectionangle}/2\). That is, given any \(\eta>0\), there is a \(T_{\reflectionangle}\) such that for all \(t \in (-T_S,T_{\reflectionangle})\),  we have
+Since \(M_t \to_{C^0} \equator\), we may choose \(T_{\reflectionangle} \in (0, T_S)\) such that \(d(M_t, \equator) < G_{\reflectionangle}/2\) for all \(t < -T_{\reflectionangle}\); that is, \(\radialdistance (x) < G_{\reflectionangle}/2\) for all \(x \in M_t\) and \(t < -T_{\reflectionangle}\). Now for \(x \in M_t^+ \intersect \radialprojection^{-1} \equator_{\mu}\), since \(\reflectionmap\) is an isometry, we have \(d(\reflectionmap(x), \reflectionmap(\radialprojection(x))) < G_{\reflectionangle}/2\); therefore, \(\radialdistance(\reflectionmap(x)) > G_{\reflectionangle}/2\). Consequently, on \(\reflectionset{\equator}^{+,\mu}\), we have \(\radialdistance(\reflectionmap(\reflectionset{(M_t)}^+)) > G_{\reflectionangle}/2\) and \(\radialdistance(M_t^-) > G_{\reflectionangle}/2\). In other words, given any \(\mu>0\), there is a \(T_{\reflectionangle}\) such that for all \(t \in (-T_S,T_{\reflectionangle})\),  we have
 \begin{equation}
 \label{eq:interiorestimate}
-\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^- \quad \text{ over } \reflectionset{\equator}^{+,\eta}.
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^- \quad \text{ over } \reflectionset{\equator}^{+,\mu}.
 \end{equation}
 
 \emph{Combined Estmates}
 
-Combining \cref{eq:interiorestimate} and \cref{eq:boundaryestimate}, completes the proof:
+Choose \(T_{\reflectionangle}\) and \(\eta\) so that both the boundary estimate \cref{eq:boundaryestimate} holds. Now choose \(\mu\) so that \(\radialprojection(\reflectionmap(\reflectionset{\equator}^{+,\mu})) \union \{x \in \reflectionset{\equator}^- : d(x, \reflectionplane) = \reflectionset{\equator}^-\) which can be achieved since \(\reflectionmap\) is an isometry. Decreasing \(T_{\delta}\) if necessary ensures that the interior estimate \cref{eq:interiorestimate} also holds and hence,
 \[
 \reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
 \]
@@ -1030,12 +1030,11 @@ There exists a \(T\) independent of \(\reflectionangle\) such that for any \(\re
 \end{lemma}
 
 \begin{proof}
-Let us now define \(T_{\reflectionangle}\) so that \((-\infty, T_{\reflectionangle})\) is the largest interval on which the relation \eqref{eq:backwards_approximate_symmetry} holds. Also define \(T = \inf\limits_{\reflectionangle \in (0,\reflectionangle_0)} T_{\reflectionangle}\). We want to show that \(T > -\infty\), and hence that the relation \eqref{eq:backwards_approximate_symmetry} holds on the non-empty, open interval \((-\infty, T)\). To show $T>-\infty$, we apply the maximum principle as in \cite[Lemma 5.2]{bryanlouie}: We know that \(\reflectionset{(M_t)}^-\) and \(\reflectionmap(\reflectionset{(M_t)}^+)\) lie in the interior of \(\reflectionhalfspace^-\) with the common boundary lying in \(\reflectionplane \intersect \S^{n+1}\). We also know that in a neighborhood of \(\reflectionplane \intersect \S^{n+1}\), the hypersurfaces \(\reflectionset{M_t}^-\) and \(\reflectionmap(\reflectionset{(M_t)}^+)\) are disjoint for \(t\) sufficiently negative (depending on \(\reflectionangle\)) because \(\reflectionset{M_t}^-\) is \(C^1\)-close to the equator, while \(\reflectionmap(\reflectionset{(M_t)}^+)\) is \(C^1\)-close to the reflected equator. The strong maximum principle, using a parabolic version of the Hopf boundary point lemma (similar to \cite[Theorem 2.2]{MR1483984}), ensures that the  relation \(\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-\) is preserved along the flow as long as both \(\reflectionset{M_t}^-\) and \(\reflectionmap(\reflectionset{(M_t)}^+)\) are non-empty and intersect \(\reflectionplane\) transversely, and these latter conditions are true on an open interval \((-\infty, S)\) with \(S>-\infty\) independent of \(\reflectionangle\) (see \cite[Lemma 5.2]{bryanlouie}). In summary, since the relation \eqref{eq:backwards_approximate_symmetry} is true on \((-\infty, \min\{T_{\reflectionangle},S\})\), the maximum principle applied in the time interval $[\min\{T_{\reflectionangle},S\}/2,S)$ ensures that
-\begin{equation*}
-\label{eq:longtime_approximate_symmetry}
-\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-
-\end{equation*}
-for all \(t \in (-\infty, S)\) and any \(\reflectionangle \in (0,\reflectionangle_0)\). Hence $T\ge S.$
+As remarked above, there exists a \(T\) such that both \(M_t\) and \(\reflectionmap(M_t\) are graphs over the equator on \((-T_S, T)\). Moreover, since both the equator \(\equator\) and the reflected equator \(\reflectionmap(\equator)\) meet \(\reflectionplane\) transversely, be decreasing \(T\) if necessary, we may assume \(M_t\) and \(\reflectionmap(M_t\) also meet \(\reflectionplane\) transversely. As with the monotonicity of the graph property in \(\reflectionangle\) we have monotonicity in transerval meeting and so \(T\) is independent of \(\reflectionangle\)..
+
+Recall the assumption that \(M_t\) satsifies a uniformly parabolic equation wherever it is strictly convex. Since \(\reflectionmap\) is an isometry, \(\reflectionmap(M_t)\) also is strictly convex and satisfies the same equation. Therefore \(f_t,g_t\) satisfy a uniformly parabolic equation on \((-T_S + \epsilon_{\reflectionangle}, -T)\) where \(0 < epsilon_{\reflectionangle} < \min\{T_S-T, T_S-T_{\reflectionangle}\}\) is chosen so that we have a strict, positive lower bound on \(|A|\) from strict convexity and compactness and so that on \((-T_S + \epsilon_{\reflectionangle}, -T_{\reflectionangle})\) we have the condition \(\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-\). That is, \(g_t \geq f_t\). We also have the boundary condition \(f_t = g_t\) on \(\reflectionplane\).
+
+Now we may apply the maximum principle on the parabolic domain \(\union_{t \in (-T_S + \epsilon_{\reflectionangle}, -T)} \radialprojection(\reflectionset(M_t)^-) \subseteq \equator\) to conclude that \(g_t \geq f_t\) holds forwards in time on all of \((-T_S + \epsilon_{\reflectionangle}, -T)\) hence on all of \((-T_S, -T)\). Note that we use the maximum principle almost verbatim as stated in \cite[3.7, Theorem 12]{MR762825} except that this theorem is stated only for cylindrical domains \(\Omega \times (-T_S + \epsilon, -T)\) whereas our domain has a changing boundary. Nevertheless, a closer look at the proof reveals that it only relies on the maximum princple for the linearised equation \cite[3.3, Theorem 7, remark (ii)]{MR762825} which does hold on time dependent domains. Alternatively, one can rule out \(f_t\) touching \(g_t\) near the boundary by the parabolic Hopf boundary point lemma \cite[3.3, Theorem 6]{MR762825} (which holds for our domains since they satisfy the interior sphere condition and is only needed for the linearisation) and then rule out interior touching by the usual contradiction argument such as in \cite[3.2 Lemma]{MR837523}.
 \end{proof}
 
 \begin{theorem}
