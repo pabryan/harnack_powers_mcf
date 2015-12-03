@@ -984,17 +984,20 @@ Let \(C\subset \equator\) be any great circle and consider \(f_t|_C\), \(g_t|_C\
 \[
 g_t(\theta) - f_t (\theta) = (g_t'(0) - f_t'(0)) \theta + R \theta^2
 \]
-where \(R\) is bounded depending only on the uniform bounds for \(f_t''\). Since \(M_t \to \equator\) in \(C^1\), as \(t\to -T_S\) we have that \(f_t' \to 0\) and \(g_t' \to \tan(2\reflectionangle)\), the latter being the slope of the reflected equator. Thus there is a \(T_{\reflectionangle}\) such that \(g_t'(0) - f_t'(0)\) is arbitrarily close to the positive constant \(\tan(2\reflectionangle) > 0\) and hence the first order term is positive for all \(t \in (-T_S, T_{\reflectionangle})\). We can easily estimate the interval on which \(g_t(\theta) \geq f_t (\theta)\): The uniform bounds on \(f_t''\) imply that
+where \(R\) is bounded depending only on the uniform bounds for \(f_t''\) (note \(g_t'' = f_t''\)). Since \(M_t \to \equator\) in \(C^1\), as \(t\to -T_S\) we have that \(f_t' \to 0\) and \(g_t' \to \tan(2\reflectionangle)\), the latter being the slope of the reflected equator. Thus there is a \(T_{\reflectionangle}\) such that \(g_t'(0) - f_t'(0)\) is arbitrarily close to the positive constant \(\tan(2\reflectionangle) > 0\) and hence the first order term is positive for all \(t \in (-T_S, T_{\reflectionangle})\). We can easily estimate the interval on which \(g_t(\theta) \geq f_t (\theta)\): The uniform bounds on \(f_t''\) imply that
 \[
 \eta = \inf_{t \in (-T_S, T_{\reflectionangle})} \frac{g_t'(0) - f_t'(0)}{|R|} > 0
 \]
-and thus \(g_t(\theta) \geq f_t (\theta)\) on the interval \([0, \eta)\) for any \(t \in (-T_S, T_{\reflectionangle})\). Note that previously in the Backwards Approximate Symmetry Lemma the \(C^2\) convergence implied that \(R\to 0\) and hence by taking \(t\) close enough to \(-T_S\) we could make \(\eta\) arbitrarily large. This of course does not apply with the relaxed assumptions of \(C^2\) bounds only. Note also that without uniform \(C^2\) bounds, \(\eta\) may in fact be \(0\) and this is where the final argument below may fail.
+and thus \(g_t(\theta) \geq f_t (\theta)\) on the interval \([0, \eta)\) for any \(t \in (-T_S, T_{\reflectionangle})\). Note that previously in the Backwards Approximate Symmetry Lemma, \(C^2\) convergence to \(0\) implied that \(R\to 0\) and hence by taking \(t\) close enough to \(-T_S\) we could make \(\eta\) arbitrarily large. This of course does not apply with the relaxed assumptions of \(C^2\) bounds only, but it turns out that all we require is \(\eta > 0\). Note also that without uniform \(C^2\) bounds, \(\eta\) may in fact be \(0\) and this is where the final argument below may fail.
 
-Now we can let \(C\) vary and observe that we can make \(g_t'(0) - f_t'(0) > 0\) and \(|R|\) bounded independently of \(C\) by the uniform \(C^1\) convergence and uniform \(C^2\) bound, thus obtaining \(\eta\) independent of \(C\). If \(\theta\) is the arc-length parametrisation of \(C\), then it measures the distance from a point on \(\equator\) to \(\reflectionplane \intersect \equator\). Hence
+Now we can let \(C\) vary and observe that we can make \(g_t'(0) - f_t'(0) > 0\) and \(|R|\) bounded independently of \(C\) by the uniform \(C^1\) convergence and uniform \(C^2\) bound, thus obtaining \(\eta\) independent of \(C\). 
+
+Now, \(\reflectionplane \intersect H^+\) projects onto \(\reflectionset{\equator}^+\), and so \(\radialprojection(x_1(t)) \in \reflectionset{\equator}^+\) and we need to extend our boundary estimate over to \(\reflectionset{\equator}^-\). By decreasing \(T_{\reflectionangle}\) if necessary, as \(M_t\intersect\reflectionplane \to \equator\intersect\reflectionplane\) we have that \(\radialprojection(M_t\intersect\reflectionplane) \subseteq \{x \in \equator : d(x, \reflectionplane) < \eta/2\}\) for all \(t \in (-T_S, T_{\reflectionplane})\). Note that \(\radialprojection(x_1(t))\) is contained is this set, and \(g_t(\theta) \geq f_t (\theta)\) holds for \(\theta\) such \(d(\radialprojection(x_1(t)), C(\theta)) < \eta\) if \(\theta\) is the arc-length parameter of \(C\). This is true for any \(C\), hence holds on \(\{x \in \reflectionset{\equator}^+ : d(x, \reflectionplane) < \eta/2\}\). In geodesic coordinates, for graphs the condition \(\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^-\)is equivalent to \(g_t(\theta) \geq f_t (\theta)\) hence we obtain
 \begin{equation}
 \label{eq:boundaryestimate}
-\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^- \quad \text{ over } \{x \in \reflectionset{\equator}^+: d(x, \equator) \leq \eta\}.
+\reflectionmap(\reflectionset{(M_t)}^+) \geq \reflectionset{(M_t)}^- \quad \text{ over } \{x \in \reflectionset{\equator}^+: d(x, \reflectionplane) < \eta/2\}
 \end{equation}
+and all \(t \in (-T_S, T_{\reflectionangle})\).
 
 \emph{Interior Estmates}
 
